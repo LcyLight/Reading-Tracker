@@ -2,7 +2,7 @@ package readtracker.demo3;
 
 public final class BookLogItem extends Book {
 
-    private final int month;
+    private final String month;
     private final int rating;
     private final int pages;
 
@@ -16,7 +16,7 @@ public final class BookLogItem extends Book {
      * @param pages number of pages the book in bookLog has
      * @param genre genre of the book in bookLog from class Book
      */
-    public BookLogItem(String title, String author, int month, int rating, int pages, String genre) {
+    public BookLogItem(String title, String author, String month, int rating, int pages, String genre) {
         super(title, author, genre);
         this.month = month;
         this.rating = rating;
@@ -25,7 +25,7 @@ public final class BookLogItem extends Book {
 
 
     public String toString(){
-        return super.toString() + "MONTH READ: " + Month.getMonthWord(month) + "\n" + "RATING: "+ rating + "\n" + "PAGES: " + pages + "\n" +
+        return super.toString() + "MONTH READ: " + month + "\n" + "RATING: "+ rating + "\n" + "PAGES: " + pages + "\n" +
                 "----------------------------------------" + "\n";
     }
 
@@ -35,7 +35,7 @@ public final class BookLogItem extends Book {
     }
 
 
-    public int getMonth(){
+    public String getMonth(){
         return month;
     }
 

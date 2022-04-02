@@ -1,8 +1,10 @@
 package readtracker.demo3;
 
 import javafx.fxml.FXML;
+import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
+import javafx.scene.control.TextField;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 
@@ -15,6 +17,24 @@ public class ReadingTrackerController {
 
     // Create reading list hashmap
     HashMap <String, ReadingListItem> readingList = new HashMap<>();
+
+    @FXML
+    private TextField logAuthor;
+
+    @FXML
+    private ChoiceBox<String> logGenre;
+
+    @FXML
+    private ChoiceBox<String> logMonth;
+
+    @FXML
+    private TextField logPages;
+
+    @FXML
+    private ChoiceBox<Integer> logRating;
+
+    @FXML
+    private TextField logTitle;
 
     @FXML
     private TextArea logView;
@@ -67,6 +87,17 @@ public class ReadingTrackerController {
     @FXML
     private Color x4;
 
+    /**
+     * Setup the window state
+     */
+    @FXML
+    public void initialize() {
+        // Set up drop down menu choice options
+        logRating.getItems().addAll(1,2,3,4,5);
+        logMonth.getItems().addAll("January", "February", "March", "April", "May", "June", "July", "August", "November",
+                "September", "October", "December");
+        logGenre.getItems().addAll("Fantasy", "Classics", "Mystery", "Non fiction", "Sci-fi", "Thriller", "Romance");
+    }
     /**
      * Updates the book log text area (logView) to the titles in the book log
      */

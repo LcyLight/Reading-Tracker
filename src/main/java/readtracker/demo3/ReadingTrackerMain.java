@@ -26,7 +26,7 @@ public class ReadingTrackerMain {
         // retrieve author
         String author = bookInfoList[AUTHOR_INDEX].strip();
         // retrieve month
-        int month = Integer.parseInt(bookInfoList[MONTH_INDEX].strip());
+        String month = bookInfoList[MONTH_INDEX].strip();
         // retrieve rating
         int rating = Integer.parseInt(bookInfoList[RATING_INDEX].strip());
         // retrieve pages
@@ -193,14 +193,14 @@ public class ReadingTrackerMain {
         int bookCount = 0;
         int totalPages = 0;
 
-        System.out.println("The books you finished in the month of " + Month.getMonthWord(month) + " are:");
+        System.out.println("The books you finished in the month of " + month + " are:");
 
         // Loop through each item in the book log and check if it has the same month value
         for (String key : bookLog.keySet()){
             // Get book log item
             BookLogItem currentBook = bookLog.get(key);
             // Get month value
-            int currentMonth = currentBook.getMonth();
+            String currentMonth = currentBook.getMonth();
 
             // Check if equal
             if (Objects.equals(currentMonth, month)){
@@ -274,7 +274,7 @@ public class ReadingTrackerMain {
         // retrieve book title
         String bookTitle = bookInfoList[TITLE_INDEX].strip();
         // retrieve month
-        int month = Integer.parseInt(bookInfoList[1].strip());
+        String month = bookInfoList[1].strip();
         // retrieve rating
         int rating = Integer.parseInt(bookInfoList[2].strip());
         // retrieve pages
@@ -421,7 +421,7 @@ public class ReadingTrackerMain {
                 }
                 else if (type.equals("BOOK LOG")){
                     // If type is book log, get info from proper indices
-                    int month = Integer.parseInt(lineInfo[MONTH_INDEX + 1]);
+                    String month = lineInfo[MONTH_INDEX + 1];
                     int rating = Integer.parseInt(lineInfo[RATING_INDEX + 1]);
                     int pages = Integer.parseInt(lineInfo[PAGES_INDEX + 1]);
                     String genre = lineInfo[GENRE_INDEX_BOOK_LOG + 1];
