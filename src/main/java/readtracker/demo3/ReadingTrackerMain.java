@@ -713,12 +713,4 @@ public class ReadingTrackerMain {
         // If no errors in input, return true
         return true;
     }
-
-        public static void main(String[] args){
-        // Create book log hashmap
-        HashMap<String, BookLogItem> bookLog = new HashMap<>();
-
-        // Create reading list hashmap
-        HashMap <String, ReadingListItem> readingList = new HashMap<>();
-    }
 }
