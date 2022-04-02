@@ -82,4 +82,20 @@ public class ReadingTrackerController {
         // Set the bookLog text area to the titles
         logView.setText(bookLogText);
     }
+
+    /**
+     * Updates the reading list text area (readView) to the titles in the reading list
+     */
+    @FXML
+    void viewReadingList(){
+        String readingListText = "";
+
+        // Loop through all titles in reading list
+        for (String title : readingList.keySet()){
+            readingListText += title + "\n";
+        }
+
+        // Set the reading list text area to the titles
+        readView.setText(readingListText);
+    }
 }
