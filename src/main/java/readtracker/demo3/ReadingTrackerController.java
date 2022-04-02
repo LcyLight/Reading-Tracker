@@ -2,10 +2,29 @@ package readtracker.demo3;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextArea;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 
+import java.util.HashMap;
+
 public class ReadingTrackerController {
+
+    // Create book log hashmap
+    HashMap<String, BookLogItem> bookLog = new HashMap<>();
+
+    // Create reading list hashmap
+    HashMap <String, ReadingListItem> readingList = new HashMap<>();
+
+    @FXML
+    private TextArea logView;
+
+    @FXML
+    private TextArea output;
+
+    @FXML
+    private TextArea readView;
+
     @FXML
     private Font x1;
 
@@ -47,4 +66,20 @@ public class ReadingTrackerController {
 
     @FXML
     private Color x4;
+
+    /**
+     * Updates the book log text area (logView) to the titles in the book log
+     */
+    @FXML
+    void viewBookLog(){
+        String bookLogText = "";
+
+        // Loop through all titles in book log
+        for (String title : bookLog.keySet()){
+            bookLogText += title + "\n";
+        }
+
+        // Set the bookLog text area to the titles
+        logView.setText(bookLogText);
+    }
 }

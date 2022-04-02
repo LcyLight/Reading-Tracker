@@ -133,9 +133,9 @@
                         <Color red="0.624" green="0.624" blue="0.624" fx:id="x231" />
                      </textFill>
                   </Label>
-                  <TextArea editable="false" layoutX="14.0" layoutY="37.0" prefHeight="220.0" prefWidth="263.0" />
-                  <TextArea editable="false" layoutX="14.0" layoutY="307.0" prefHeight="220.0" prefWidth="263.0" />
-                  <TextArea editable="false" layoutX="313.0" layoutY="98.0" prefHeight="431.0" prefWidth="287.0" />
+                  <TextArea fx:id="logView" layoutX="14.0" layoutY="37.0" prefHeight="220.0" prefWidth="263.0" />
+                  <TextArea fx:id="readView" layoutX="14.0" layoutY="307.0" prefHeight="220.0" prefWidth="263.0" />
+                  <TextArea fx:id="output" layoutX="313.0" layoutY="98.0" prefHeight="431.0" prefWidth="287.0" />
                   <ChoiceBox layoutX="398.0" layoutY="23.0" prefHeight="28.0" prefWidth="202.0" />
           </children>
         </AnchorPane>
