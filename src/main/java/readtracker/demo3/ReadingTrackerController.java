@@ -21,6 +21,9 @@ public class ReadingTrackerController {
     HashMap <String, ReadingListItem> readingList = new HashMap<>();
 
     @FXML
+    private MenuItem bookLogInfo;
+
+    @FXML
     private Button createButton;
 
     @FXML
@@ -132,6 +135,11 @@ public class ReadingTrackerController {
     private Color x4;
 
 
+    /**
+     * Creates a new book log entry, reading list entry, or transfers book from reading list to book log (based on user
+     * selection)
+     * @param event Create button is pressed
+     */
     @FXML
     void newTrack(ActionEvent event) {
         // Ensure only one option is selected, if not, print error
@@ -307,5 +315,52 @@ public class ReadingTrackerController {
         readView.setText(readingListText);
     }
 
+    /**
+     * Prints all book log info in the output window
+     * @param event View book log info function is requested in functions menu
+     */
+    @FXML
+    void viewLogInfo(ActionEvent event) {
+        String outputString = "";
 
+        // Get amount of books in book log
+        int logCount = bookLog.size();
+
+        if (logCount > 1){
+            // Print out number of books in book log
+            outputString += "You have " + logCount + " books in your Book Log, they are:\n";
+
+            // Print out all books in book log
+            for (String key : bookLog.keySet()){
+                // Get BookLogItem
+                BookLogItem currentBook = bookLog.get(key);
+
+                // Retrieve and print information
+                outputString += currentBook + "\n";
+            }
+        }
+        else if (logCount == 1){
+            // Print out number of books in book log
+            outputString += "You have " + logCount + " books in your Book Log, it is:\n";
+
+            // Get book log item and print info
+            for (String key : bookLog.keySet()){
+                BookLogItem currentBook = bookLog.get(key);
+                // Retrieve and print information
+                outputString += currentBook + "\n";
+            }
+
+        }
+        else{
+            // Print out number of books in book log
+            outputString += "You have no books in your Book Log!";
+        }
+
+        // Update output window
+        output.setText(outputString);
+
+        // Print success message
+        statusField.setTextFill(BLACK);
+        statusField.setText("Successfully printed book log info");
+    }
 }
