@@ -122,9 +122,9 @@
                         <MenuItem mnemonicParsing="false" text="December" />
                      </items>
                   </MenuButton>
-                  <MenuButton layoutX="84.0" layoutY="142.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="151.0" text="Genre (fantasy etc.)">
+                  <MenuButton layoutX="84.0" layoutY="142.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="151.0" text="Genre">
                      <items>
-                        <MenuItem mnemonicParsing="false" text="Fantasy" />
+                        <MenuItem mnemonicParsing="false" text="fantasy" />
                         <MenuItem mnemonicParsing="false" text="classics" />
                         <MenuItem mnemonicParsing="false" text="mystery" />
                         <MenuItem mnemonicParsing="false" text="non fiction" />
@@ -139,15 +139,15 @@
                         <MenuItem mnemonicParsing="false" text="Action 2" />
                      </items>
                   </MenuButton>
-                  <MenuButton layoutX="85.0" layoutY="375.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="151.0" text="title of book(reading list)">
+                  <MenuButton layoutX="85.0" layoutY="375.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="151.0" text="Title of book to move">
                      <items>
                         <MenuItem mnemonicParsing="false" text="Action 1" />
                         <MenuItem mnemonicParsing="false" text="Action 2" />
                      </items>
                   </MenuButton>
-                  <MenuButton layoutX="83.0" layoutY="288.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="151.0" text="Genre (fantasy etc.)">
+                  <MenuButton layoutX="83.0" layoutY="288.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="151.0" text="Genre">
                      <items>
-                        <MenuItem mnemonicParsing="false" text="Fantasy" />
+                        <MenuItem mnemonicParsing="false" text="fantasy" />
                         <MenuItem mnemonicParsing="false" text="classics" />
                         <MenuItem mnemonicParsing="false" text="mystery" />
                         <MenuItem mnemonicParsing="false" text="non fiction" />
