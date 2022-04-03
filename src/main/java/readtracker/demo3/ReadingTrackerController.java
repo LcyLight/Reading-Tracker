@@ -91,13 +91,14 @@ public class ReadingTrackerController {
      * Setup the window state
      */
     @FXML
-    public void initialize() {
+    void initialize() {
         // Set up drop down menu choice options
         logRating.getItems().addAll(1,2,3,4,5);
         logMonth.getItems().addAll("January", "February", "March", "April", "May", "June", "July", "August", "November",
                 "September", "October", "December");
         logGenre.getItems().addAll("Fantasy", "Classics", "Mystery", "Non fiction", "Sci-fi", "Thriller", "Romance");
     }
+
     /**
      * Updates the book log text area (logView) to the titles in the book log
      */
