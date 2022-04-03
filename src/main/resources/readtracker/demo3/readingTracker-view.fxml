@@ -83,9 +83,9 @@
                   <TextField fx:id="logPages" layoutX="84.0" layoutY="180.0" prefHeight="10.0" prefWidth="151.0" promptText="number of pages" />
                   <Separator layoutY="519.0" prefHeight="3.0" prefWidth="255.0" />
                   <Label layoutX="15.0" layoutY="243.0" prefHeight="18.0" prefWidth="34.0" text="Title:" textFill="#535353" />
-                  <TextField layoutX="83.0" layoutY="239.0" prefHeight="10.0" prefWidth="151.0" promptText="title of book" />
+                  <TextField fx:id="listTitle" layoutX="83.0" layoutY="239.0" prefHeight="10.0" prefWidth="151.0" promptText="title of book" />
                   <Label layoutX="14.0" layoutY="273.0" prefHeight="18.0" prefWidth="50.0" text="Author:" textFill="#535353" />
-                  <TextField layoutX="84.0" layoutY="269.0" prefHeight="10.0" prefWidth="151.0" promptText="author of book" />
+                  <TextField fx:id="listAuthor" layoutX="84.0" layoutY="269.0" prefHeight="10.0" prefWidth="151.0" promptText="author of book" />
                   <Label layoutX="14.0" layoutY="300.0" prefHeight="26.0" prefWidth="50.0" text="Genre:" textFill="#535353" />
                   <Label layoutX="12.0" layoutY="334.0" prefHeight="18.0" prefWidth="58.0" text="Interest:" textFill="#535353" />
                   <Label layoutX="15.0" layoutY="392.0" prefHeight="26.0" prefWidth="50.0" text="Title:" textFill="#535353" />
@@ -94,27 +94,10 @@
                   <Label layoutX="14.0" layoutY="489.0" prefHeight="18.0" prefWidth="50.0" text="Pages:" textFill="#535353" />
                   <TextField layoutX="84.0" layoutY="488.0" prefHeight="10.0" prefWidth="151.0" promptText="number of pages" />
                   <Separator layoutX="-1.0" layoutY="362.0" prefHeight="3.0" prefWidth="255.0" />
-                  <MenuButton layoutX="83.0" layoutY="330.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="151.0" text="how much you want to read">
-                     <items>
-                        <MenuItem mnemonicParsing="false" text="Action 1" />
-                        <MenuItem mnemonicParsing="false" text="Action 2" />
-                     </items>
-                  </MenuButton>
                   <MenuButton layoutX="85.0" layoutY="392.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="151.0" text="Title of book to move">
                      <items>
                         <MenuItem mnemonicParsing="false" text="Action 1" />
                         <MenuItem mnemonicParsing="false" text="Action 2" />
-                     </items>
-                  </MenuButton>
-                  <MenuButton layoutX="83.0" layoutY="300.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="151.0" text="Genre">
-                     <items>
-                        <MenuItem mnemonicParsing="false" text="fantasy" />
-                        <MenuItem mnemonicParsing="false" text="classics" />
-                        <MenuItem mnemonicParsing="false" text="mystery" />
-                        <MenuItem mnemonicParsing="false" text="non fiction" />
-                        <MenuItem mnemonicParsing="false" text="sci-fi" />
-                        <MenuItem mnemonicParsing="false" text="thriller" />
-                        <MenuItem mnemonicParsing="false" text="romance" />
                      </items>
                   </MenuButton>
                   <MenuButton layoutX="85.0" layoutY="423.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="151.0" text="Rating 1-5">
@@ -143,12 +126,14 @@
                      </items>
                   </MenuButton>
                   <Button fx:id="createButton" layoutX="13.0" layoutY="524.0" mnemonicParsing="false" onAction="#newTrack" prefHeight="22.0" prefWidth="226.0" text="Create" />
-                  <RadioButton layoutX="16.0" layoutY="368.0" mnemonicParsing="false" />
-                  <RadioButton layoutX="16.0" layoutY="216.0" mnemonicParsing="false" />
+                  <RadioButton fx:id="statusToLog" layoutX="16.0" layoutY="368.0" mnemonicParsing="false" />
+                  <RadioButton fx:id="statusReadingList" layoutX="16.0" layoutY="216.0" mnemonicParsing="false" />
                   <RadioButton fx:id="statusBookLog" layoutX="16.0" layoutY="5.0" mnemonicParsing="false" />
                   <ChoiceBox fx:id="logRating" layoutX="83.0" layoutY="86.0" prefWidth="150.0" />
                   <ChoiceBox fx:id="logMonth" layoutX="83.0" layoutY="118.0" prefWidth="150.0" />
                   <ChoiceBox fx:id="logGenre" layoutX="83.0" layoutY="149.0" prefWidth="150.0" />
+                  <ChoiceBox fx:id="listGenre" layoutX="83.0" layoutY="300.0" prefWidth="150.0" />
+                  <ChoiceBox fx:id="listInterest" layoutX="83.0" layoutY="330.0" prefWidth="150.0" />
           </children>
         </AnchorPane>
         <AnchorPane prefHeight="551.0" prefWidth="649.0">

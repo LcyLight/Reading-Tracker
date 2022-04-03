@@ -24,6 +24,18 @@ public class ReadingTrackerController {
     private Button createButton;
 
     @FXML
+    private TextField listAuthor;
+
+    @FXML
+    private ChoiceBox<String> listGenre;
+
+    @FXML
+    private ChoiceBox<Integer> listInterest;
+
+    @FXML
+    private TextField listTitle;
+
+    @FXML
     private TextField logAuthor;
 
     @FXML
@@ -55,6 +67,12 @@ public class ReadingTrackerController {
 
     @FXML
     private Label statusField;
+
+    @FXML
+    private RadioButton statusReadingList;
+
+    @FXML
+    private RadioButton statusToLog;
 
     @FXML
     private Font x1;
@@ -99,9 +117,18 @@ public class ReadingTrackerController {
     private Color x4;
 
 
+
     @FXML
     void newTrack(ActionEvent event) {
-        if (statusBookLog.isSelected()){
+        // Ensure only one option is selected, if not, print error
+        if ((statusBookLog.isSelected() && statusReadingList.isSelected()) ||
+                (statusBookLog.isSelected() && statusToLog.isSelected()) ||
+                (statusToLog.isSelected() && statusReadingList.isSelected())){
+
+            statusField.setTextFill(RED);
+            statusField.setText("Please only select one thing to create at a time, Book Log, Reading List, or List to Log");
+        }
+        else if (statusBookLog.isSelected()){
             try {
                 String title = logTitle.getText();
                 String author = logAuthor.getText();
@@ -133,6 +160,32 @@ public class ReadingTrackerController {
                 statusField.setText("Page value was not proper integer");
             }
         }
+        else if (statusReadingList.isSelected()){
+            try {
+                String title = listTitle.getText();
+                String author = listAuthor.getText();
+                int interest = listInterest.getValue();
+                String genre = logGenre.getValue();
+
+                // Create ReadingListItem object
+                ReadingListItem newBook = new ReadingListItem(title, author, genre, interest);
+
+                // Place ReadingListItem in reading list hashmap with book title as key
+                readingList.put(title, newBook);
+
+                // Update reading list view
+                viewReadingList();
+
+                // Write success message
+                statusField.setTextFill(BLACK);
+                statusField.setText("Book was successfully added to reading list");
+            }
+            // Ensure information is accurately entered, if not, print status message
+            catch (NullPointerException e){
+                statusField.setTextFill(RED);
+                statusField.setText("Reading list information was not properly entered");
+            }
+        }
 
     }
 
@@ -145,6 +198,8 @@ public class ReadingTrackerController {
         logMonth.getItems().addAll("January", "February", "March", "April", "May", "June", "July", "August", "September",
                 "October", "November", "December");
         logGenre.getItems().addAll("Fantasy", "Classics", "Mystery", "Non fiction", "Sci-fi", "Thriller", "Romance");
+        listGenre.getItems().addAll("Fantasy", "Classics", "Mystery", "Non fiction", "Sci-fi", "Thriller", "Romance");
+        listInterest.getItems().addAll(1,2,3,4,5,6,7,8,9,10);
      }
 
     /**
