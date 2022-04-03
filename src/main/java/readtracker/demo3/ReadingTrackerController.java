@@ -8,6 +8,10 @@ import javafx.scene.text.Font;
 
 import java.util.HashMap;
 
+import static javafx.scene.paint.Color.BLACK;
+import static javafx.scene.paint.Color.RED;
+
+
 public class ReadingTrackerController {
 
     // Create book log hashmap
@@ -23,16 +27,16 @@ public class ReadingTrackerController {
     private TextField logAuthor;
 
     @FXML
-    private MenuButton logGenre;
+    private ChoiceBox<String> logGenre;
 
     @FXML
-    private MenuButton logMonth;
+    private ChoiceBox<String> logMonth;
 
     @FXML
     private TextField logPages;
 
     @FXML
-    private MenuButton logRating;
+    private ChoiceBox<Integer> logRating;
 
     @FXML
     private TextField logTitle;
@@ -48,6 +52,9 @@ public class ReadingTrackerController {
 
     @FXML
     private RadioButton statusBookLog;
+
+    @FXML
+    private Label statusField;
 
     @FXML
     private Font x1;
@@ -91,16 +98,54 @@ public class ReadingTrackerController {
     @FXML
     private Color x4;
 
+
     @FXML
     void newTrack(ActionEvent event) {
         if (statusBookLog.isSelected()){
-            String title = logTitle.getText();
-            String author = logAuthor.getText();
-            int rating = Integer.parseInt(logRating.getText());
-            System.out.println(rating);
+            try {
+                String title = logTitle.getText();
+                String author = logAuthor.getText();
+                int rating = logRating.getValue();
+                String month = logMonth.getValue();
+                String genre = logGenre.getValue();
+                int pages = Integer.parseInt(logPages.getText());
+
+                // Create BookLogItem object
+                BookLogItem newBook = new BookLogItem(title, author, month, rating, pages, genre);
+
+                // Place BookLogItem in book log hashmap with book title as key
+                bookLog.put(title, newBook);
+
+                // Update book log view
+                viewBookLog();
+
+                // Write success message
+                statusField.setTextFill(BLACK);
+                statusField.setText("Book was successfully added to book log");
+            }
+            // Ensure information is accurately entered, if not, print status message
+            catch (NullPointerException e){
+                statusField.setTextFill(RED);
+                statusField.setText("Book log information was not properly entered");
+            }
+            catch (NumberFormatException e){
+                statusField.setTextFill(RED);
+                statusField.setText("Page value was not proper integer");
+            }
         }
 
     }
+
+    /**
+     * Set up choice boxes
+     */
+     @FXML
+     void initialize(){
+        logRating.getItems().addAll(1,2,3,4,5);
+        logMonth.getItems().addAll("January", "February", "March", "April", "May", "June", "July", "August", "September",
+                "October", "November", "December");
+        logGenre.getItems().addAll("Fantasy", "Classics", "Mystery", "Non fiction", "Sci-fi", "Thriller", "Romance");
+     }
 
     /**
      * Updates the book log text area (logView) to the titles in the book log

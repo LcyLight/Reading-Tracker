@@ -7,6 +7,7 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
+
 public class ReadingTrackerApplication extends Application {
     @Override
     public void start(Stage stage) throws IOException {
@@ -15,9 +16,12 @@ public class ReadingTrackerApplication extends Application {
         stage.setTitle("Reading Tracker");
         stage.setScene(scene);
         stage.show();
+
     }
+
 
     public static void main(String[] args) {
         launch();
     }
+
 }

@@ -13,34 +13,6 @@ public class ReadingTrackerMain {
     static final int GENRE_INDEX_R_LIST = 3;
     static final int READING_WANT_AMOUNT_INDEX = 2;
 
-    /**
-     * Reformats and adds book info to bookLog hashmap at the key (title) and the value (arrayList of book info)
-     * @param bookLog hashmap containing titles (string) and information (ArrayList of strings) for each book in the log
-     */
-    public static void newBookLog(String info, Map<String, BookLogItem> bookLog){
-        // split the book info into an array by commas
-        String[] bookInfoList = info.split(",");
-
-        // retrieve book title
-        String bookTitle = bookInfoList[TITLE_INDEX].strip();
-        // retrieve author
-        String author = bookInfoList[AUTHOR_INDEX].strip();
-        // retrieve month
-        String month = bookInfoList[MONTH_INDEX].strip();
-        // retrieve rating
-        int rating = Integer.parseInt(bookInfoList[RATING_INDEX].strip());
-        // retrieve pages
-        int pages = Integer.parseInt(bookInfoList[PAGES_INDEX].strip());
-        // retrieve genre
-        String genre = bookInfoList[GENRE_INDEX_BOOK_LOG].strip();
-
-        // Create BookLogItem object
-        BookLogItem newBook = new BookLogItem(bookTitle, author, month, rating, pages, genre);
-
-        // Place BookLogItem in book log hashmap with book title as key
-        bookLog.put(bookTitle, newBook);
-
-    }
 
     /**
      * Prints in terminal message stating number of books in the book log and lists all the titles
