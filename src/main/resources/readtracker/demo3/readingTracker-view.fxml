@@ -119,7 +119,7 @@
                         <Color red="0.624" green="0.624" blue="0.624" fx:id="x22" />
                      </textFill>
                   </Label>
-                  <Label alignment="CENTER" layoutX="330.0" layoutY="27.0" prefHeight="22.0" prefWidth="102.0" style="&#10;" text="Functions:" wrapText="false">
+                  <Label alignment="CENTER" layoutX="295.0" layoutY="27.0" prefHeight="22.0" prefWidth="102.0" style="&#10;" text="Functions:" wrapText="false">
                      <font>
                         <Font size="15.0" fx:id="x13" />
                      </font>
@@ -138,16 +138,16 @@
                   <TextArea fx:id="logView" editable="false" layoutX="14.0" layoutY="37.0" prefHeight="220.0" prefWidth="263.0" />
                   <TextArea fx:id="readView" editable="false" layoutX="14.0" layoutY="307.0" prefHeight="220.0" prefWidth="263.0" />
                   <TextArea fx:id="output" editable="false" layoutX="319.0" layoutY="97.0" prefHeight="431.0" prefWidth="287.0" />
-                  <MenuButton layoutX="432.0" layoutY="24.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="151.0" text="Select a function">
-                     <items>
-                        <MenuItem mnemonicParsing="false" text="fantasy" />
-                        <MenuItem mnemonicParsing="false" text="classics" />
-                        <MenuItem mnemonicParsing="false" text="mystery" />
-                        <MenuItem mnemonicParsing="false" text="non fiction" />
-                        <MenuItem mnemonicParsing="false" text="sci-fi" />
-                        <MenuItem mnemonicParsing="false" text="thriller" />
-                        <MenuItem mnemonicParsing="false" text="romance" />
-                     </items>
+                  <MenuButton fx:id="functionSelect" layoutX="383.0" layoutY="26.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="226.0" text="Select a function">
+                    <items>
+                      <MenuItem mnemonicParsing="false" text="View all book info" />
+                      <MenuItem mnemonicParsing="false" text="View reading list info" />
+                        <MenuItem mnemonicParsing="false" text="View book log info" />
+                        <MenuItem mnemonicParsing="false" text="Get book recommendation" />
+                        <MenuItem mnemonicParsing="false" text="Sort books by rating" />
+                        <MenuItem mnemonicParsing="false" text="View books of certain rating" />
+                        <MenuItem mnemonicParsing="false" text="View reading stats for certain month" />
+                    </items>
                   </MenuButton>
           </children>
         </AnchorPane>

@@ -24,6 +24,9 @@ public class ReadingTrackerController {
     private Button createButton;
 
     @FXML
+    private MenuButton functionSelect;
+
+    @FXML
     private TextField listAuthor;
 
     @FXML
@@ -127,8 +130,6 @@ public class ReadingTrackerController {
 
     @FXML
     private Color x4;
-
-
 
 
     @FXML
@@ -253,7 +254,7 @@ public class ReadingTrackerController {
     }
 
     /**
-     * Set up choice boxes
+     * Sets up choice boxes selection options
      */
      @FXML
      void initialize(){
@@ -266,6 +267,12 @@ public class ReadingTrackerController {
         toLogMonth.getItems().addAll("January", "February", "March", "April", "May", "June", "July", "August", "September",
                 "October", "November", "December");
         toLogRating.getItems().addAll(1,2,3,4,5);
+//        functionSelect.getItems().addAll("View book log info", "View reading list info", "View all book info",
+//                "Sort books by rating", "What should you read next?", "View 5 star books", "View 4 star books",
+//                "View 3 star books", "View 2 star books", "View 1 star books", "View January reading stats",
+//                "View February reading stats", "View March reading stats", "View April reading stats", "View May reading stats",
+//                "View June reading stats", "View July reading stats", "View August reading stats", "View September reading stats",
+//                "View October reading stats", "View November reading stats", "View December reading stats");
      }
 
     /**
