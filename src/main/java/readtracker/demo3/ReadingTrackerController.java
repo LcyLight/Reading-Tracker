@@ -1,10 +1,8 @@
 package readtracker.demo3;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.ChoiceBox;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextArea;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 
@@ -19,19 +17,22 @@ public class ReadingTrackerController {
     HashMap <String, ReadingListItem> readingList = new HashMap<>();
 
     @FXML
+    private Button createButton;
+
+    @FXML
     private TextField logAuthor;
 
     @FXML
-    private ChoiceBox<String> logGenre;
+    private MenuButton logGenre;
 
     @FXML
-    private ChoiceBox<String> logMonth;
+    private MenuButton logMonth;
 
     @FXML
     private TextField logPages;
 
     @FXML
-    private ChoiceBox<Integer> logRating;
+    private MenuButton logRating;
 
     @FXML
     private TextField logTitle;
@@ -44,6 +45,9 @@ public class ReadingTrackerController {
 
     @FXML
     private TextArea readView;
+
+    @FXML
+    private RadioButton statusBookLog;
 
     @FXML
     private Font x1;
@@ -87,16 +91,15 @@ public class ReadingTrackerController {
     @FXML
     private Color x4;
 
-    /**
-     * Setup the window state
-     */
     @FXML
-    void initializeRating() {
-        // Set up drop down menu choice options
-        logRating.getItems().addAll(1,2,3,4,5);
-        logMonth.getItems().addAll("January", "February", "March", "April", "May", "June", "July", "August", "November",
-                "September", "October", "December");
-        logGenre.getItems().addAll("Fantasy", "Classics", "Mystery", "Non fiction", "Sci-fi", "Thriller", "Romance");
+    void newTrack(ActionEvent event) {
+        if (statusBookLog.isSelected()){
+            String title = logTitle.getText();
+            String author = logAuthor.getText();
+            int rating = Integer.parseInt(logRating.getText());
+            System.out.println(rating);
+        }
+
     }
 
     /**
@@ -130,4 +133,6 @@ public class ReadingTrackerController {
         // Set the reading list text area to the titles
         readView.setText(readingListText);
     }
+
+
 }

@@ -2,12 +2,12 @@
 
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.ChoiceBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Menu?>
 <?import javafx.scene.control.MenuBar?>
 <?import javafx.scene.control.MenuButton?>
 <?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.RadioButton?>
 <?import javafx.scene.control.Separator?>
 <?import javafx.scene.control.SeparatorMenuItem?>
 <?import javafx.scene.control.SplitPane?>
@@ -20,7 +20,7 @@
 <?import javafx.scene.paint.Color?>
 <?import javafx.scene.text.Font?>
 
-<VBox prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
+<VBox prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="readtracker.demo3.ReadingTrackerController">
   <children>
     <MenuBar prefWidth="918.0" VBox.vgrow="NEVER">
       <menus>
@@ -42,11 +42,11 @@
         </Menu>
       </menus>
     </MenuBar>
-    <SplitPane dividerPositions="0.3052092609082813" focusTraversable="true" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
+    <SplitPane dividerPositions="0.2876224398931433" focusTraversable="true" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
       <items>
-        <AnchorPane prefHeight="530.0" prefWidth="305.0">
+        <AnchorPane prefHeight="551.0" prefWidth="270.0">
           <children>
-            <Label alignment="CENTER" layoutX="8.0" minWidth="60.0" prefWidth="-1.0" style="&#10;" text="Book Log" textAlignment="CENTER" wrapText="false">
+            <Label alignment="CENTER" layoutX="35.0" layoutY="4.0" minWidth="60.0" prefWidth="-1.0" style="&#10;" text="Book Log" textAlignment="CENTER" wrapText="false">
               <font>
                 <Font size="14.0" fx:id="x1" />
               </font>
@@ -54,7 +54,7 @@
                 <Color red="0.624" green="0.624" blue="0.624" fx:id="x2" />
               </textFill>
             </Label>
-                  <Label alignment="CENTER" layoutX="9.0" layoutY="207.0" minWidth="60.0" prefWidth="-1.0" style="&#10;" text="Reading List" textAlignment="CENTER" wrapText="false">
+                  <Label alignment="CENTER" layoutX="37.0" layoutY="214.0" minWidth="60.0" prefWidth="-1.0" style="&#10;" text="Reading List" textAlignment="CENTER" wrapText="false">
                      <font>
                         <Font size="14.0" fx:id="x11" />
                      </font>
@@ -62,7 +62,7 @@
                         <Color red="0.624" green="0.624" blue="0.624" fx:id="x21" />
                      </textFill>
                   </Label>
-                  <Label alignment="CENTER" layoutX="14.0" layoutY="355.0" minWidth="60.0" prefWidth="-1.0" style="&#10;" text="List to Log" textAlignment="CENTER" wrapText="false">
+                  <Label alignment="CENTER" layoutX="36.0" layoutY="367.0" minWidth="60.0" prefWidth="-1.0" style="&#10;" text="List to Log" textAlignment="CENTER" wrapText="false">
                      <font>
                         <Font size="14.0" fx:id="x111" />
                      </font>
@@ -70,34 +70,30 @@
                         <Color red="0.624" green="0.624" blue="0.624" fx:id="x211" />
                      </textFill>
                   </Label>
-                  <Separator layoutY="203.0" prefHeight="3.0" prefWidth="271.0" />
-                  <Label layoutX="23.0" layoutY="20.0" prefHeight="18.0" prefWidth="34.0" text="Title:" textFill="#535353" />
-                  <TextField fx:id="logTitle" layoutX="83.0" layoutY="14.0" prefHeight="10.0" prefWidth="151.0" promptText="title of book" />
-                  <Label layoutX="13.0" layoutY="47.0" prefHeight="18.0" prefWidth="50.0" text="Author:" textFill="#535353" />
-                  <TextField fx:id="logAuthor" layoutX="84.0" layoutY="44.0" prefHeight="3.0" prefWidth="151.0" promptText="author of book" />
-                  <Label layoutX="15.0" layoutY="80.0" prefHeight="18.0" prefWidth="50.0" text="Rating:" textFill="#535353" />
-                  <Label layoutX="15.0" layoutY="109.0" prefHeight="26.0" prefWidth="50.0" text="Month:" textFill="#535353" />
-                  <Label layoutX="15.0" layoutY="142.0" prefHeight="26.0" prefWidth="50.0" text="Genre:" textFill="#535353" />
-                  <Label layoutX="14.0" layoutY="174.0" prefHeight="18.0" prefWidth="50.0" text="Pages:" textFill="#535353" />
-                  <TextField fx:id="logPages" layoutX="84.0" layoutY="171.0" prefHeight="10.0" prefWidth="151.0" promptText="number of pages" />
-                  <Button layoutX="22.0" layoutY="515.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="228.0" text="Create">
-                     <font>
-                        <Font size="14.0" />
-                     </font></Button>
-                  <Separator layoutX="4.0" layoutY="504.0" prefHeight="3.0" prefWidth="263.0" />
-                  <Label layoutX="24.0" layoutY="231.0" prefHeight="18.0" prefWidth="34.0" text="Title:" textFill="#535353" />
-                  <TextField layoutX="83.0" layoutY="227.0" prefHeight="10.0" prefWidth="151.0" promptText="title of book" />
-                  <Label layoutX="14.0" layoutY="261.0" prefHeight="18.0" prefWidth="50.0" text="Author:" textFill="#535353" />
-                  <TextField layoutX="84.0" layoutY="257.0" prefHeight="10.0" prefWidth="151.0" promptText="author of book" />
-                  <Label layoutX="18.0" layoutY="288.0" prefHeight="26.0" prefWidth="50.0" text="Genre:" textFill="#535353" />
-                  <Label layoutX="10.0" layoutY="322.0" prefHeight="18.0" prefWidth="58.0" text="Interest:" textFill="#535353" />
-                  <Label layoutX="15.0" layoutY="375.0" prefHeight="26.0" prefWidth="50.0" text="Title:" textFill="#535353" />
-                  <Label layoutX="15.0" layoutY="410.0" prefHeight="18.0" prefWidth="50.0" text="Rating:" textFill="#535353" />
-                  <Label layoutX="15.0" layoutY="438.0" prefHeight="26.0" prefWidth="50.0" text="Month:" textFill="#535353" />
-                  <Label layoutX="14.0" layoutY="472.0" prefHeight="18.0" prefWidth="50.0" text="Pages:" textFill="#535353" />
-                  <TextField layoutX="84.0" layoutY="471.0" prefHeight="10.0" prefWidth="151.0" promptText="number of pages" />
-                  <Separator layoutX="5.0" layoutY="350.0" prefHeight="3.0" prefWidth="271.0" />
-                  <MenuButton layoutX="84.0" layoutY="77.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="151.0" text="Rating 1-5">
+                  <Separator layoutX="-1.0" layoutY="210.0" prefHeight="3.0" prefWidth="255.0" />
+                  <Label layoutX="16.0" layoutY="29.0" prefHeight="18.0" prefWidth="34.0" text="Title:" textFill="#535353" />
+                  <TextField fx:id="logTitle" layoutX="83.0" layoutY="23.0" prefHeight="10.0" prefWidth="151.0" promptText="title of book" />
+                  <Label layoutX="14.0" layoutY="57.0" prefHeight="18.0" prefWidth="50.0" text="Author:" textFill="#535353" />
+                  <TextField fx:id="logAuthor" layoutX="84.0" layoutY="53.0" prefHeight="3.0" prefWidth="151.0" promptText="author of book" />
+                  <Label layoutX="13.0" layoutY="89.0" prefHeight="18.0" prefWidth="50.0" text="Rating:" textFill="#535353" />
+                  <Label layoutX="13.0" layoutY="118.0" prefHeight="26.0" prefWidth="50.0" text="Month:" textFill="#535353" />
+                  <Label layoutX="13.0" layoutY="151.0" prefHeight="26.0" prefWidth="50.0" text="Genre:" textFill="#535353" />
+                  <Label layoutX="14.0" layoutY="183.0" prefHeight="18.0" prefWidth="50.0" text="Pages:" textFill="#535353" />
+                  <TextField fx:id="logPages" layoutX="84.0" layoutY="180.0" prefHeight="10.0" prefWidth="151.0" promptText="number of pages" />
+                  <Separator layoutY="519.0" prefHeight="3.0" prefWidth="255.0" />
+                  <Label layoutX="15.0" layoutY="243.0" prefHeight="18.0" prefWidth="34.0" text="Title:" textFill="#535353" />
+                  <TextField layoutX="83.0" layoutY="239.0" prefHeight="10.0" prefWidth="151.0" promptText="title of book" />
+                  <Label layoutX="14.0" layoutY="273.0" prefHeight="18.0" prefWidth="50.0" text="Author:" textFill="#535353" />
+                  <TextField layoutX="84.0" layoutY="269.0" prefHeight="10.0" prefWidth="151.0" promptText="author of book" />
+                  <Label layoutX="14.0" layoutY="300.0" prefHeight="26.0" prefWidth="50.0" text="Genre:" textFill="#535353" />
+                  <Label layoutX="12.0" layoutY="334.0" prefHeight="18.0" prefWidth="58.0" text="Interest:" textFill="#535353" />
+                  <Label layoutX="15.0" layoutY="392.0" prefHeight="26.0" prefWidth="50.0" text="Title:" textFill="#535353" />
+                  <Label layoutX="15.0" layoutY="427.0" prefHeight="18.0" prefWidth="50.0" text="Rating:" textFill="#535353" />
+                  <Label layoutX="15.0" layoutY="455.0" prefHeight="26.0" prefWidth="50.0" text="Month:" textFill="#535353" />
+                  <Label layoutX="14.0" layoutY="489.0" prefHeight="18.0" prefWidth="50.0" text="Pages:" textFill="#535353" />
+                  <TextField layoutX="84.0" layoutY="488.0" prefHeight="10.0" prefWidth="151.0" promptText="number of pages" />
+                  <Separator layoutX="-1.0" layoutY="362.0" prefHeight="3.0" prefWidth="255.0" />
+                  <MenuButton fx:id="logRating" layoutX="84.0" layoutY="86.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="151.0" text="Rating 1-5">
                     <items>
                       <MenuItem mnemonicParsing="false" text="1 Star" />
                       <MenuItem mnemonicParsing="false" text="2 Stars" />
@@ -106,7 +102,7 @@
                         <MenuItem mnemonicParsing="false" text="5 Stars" />
                     </items>
                   </MenuButton>
-                  <MenuButton layoutX="85.0" layoutY="109.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="151.0" text="Month Jan-Dec">
+                  <MenuButton fx:id="logMonth" layoutX="85.0" layoutY="118.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="151.0" text="Month Jan-Dec">
                      <items>
                         <MenuItem mnemonicParsing="false" text="January" />
                         <MenuItem mnemonicParsing="false" text="February" />
@@ -122,7 +118,7 @@
                         <MenuItem mnemonicParsing="false" text="December" />
                      </items>
                   </MenuButton>
-                  <MenuButton layoutX="84.0" layoutY="142.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="151.0" text="Genre">
+                  <MenuButton fx:id="logGenre" layoutX="84.0" layoutY="151.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="151.0" text="Genre">
                      <items>
                         <MenuItem mnemonicParsing="false" text="fantasy" />
                         <MenuItem mnemonicParsing="false" text="classics" />
@@ -133,19 +129,19 @@
                         <MenuItem mnemonicParsing="false" text="romance" />
                      </items>
                   </MenuButton>
-                  <MenuButton layoutX="83.0" layoutY="318.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="151.0" text="how much you want to read">
+                  <MenuButton layoutX="83.0" layoutY="330.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="151.0" text="how much you want to read">
                      <items>
                         <MenuItem mnemonicParsing="false" text="Action 1" />
                         <MenuItem mnemonicParsing="false" text="Action 2" />
                      </items>
                   </MenuButton>
-                  <MenuButton layoutX="85.0" layoutY="375.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="151.0" text="Title of book to move">
+                  <MenuButton layoutX="85.0" layoutY="392.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="151.0" text="Title of book to move">
                      <items>
                         <MenuItem mnemonicParsing="false" text="Action 1" />
                         <MenuItem mnemonicParsing="false" text="Action 2" />
                      </items>
                   </MenuButton>
-                  <MenuButton layoutX="83.0" layoutY="288.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="151.0" text="Genre">
+                  <MenuButton layoutX="83.0" layoutY="300.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="151.0" text="Genre">
                      <items>
                         <MenuItem mnemonicParsing="false" text="fantasy" />
                         <MenuItem mnemonicParsing="false" text="classics" />
@@ -156,7 +152,7 @@
                         <MenuItem mnemonicParsing="false" text="romance" />
                      </items>
                   </MenuButton>
-                  <MenuButton layoutX="85.0" layoutY="406.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="151.0" text="Rating 1-5">
+                  <MenuButton layoutX="85.0" layoutY="423.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="151.0" text="Rating 1-5">
                      <items>
                         <MenuItem mnemonicParsing="false" text="1 Star" />
                         <MenuItem mnemonicParsing="false" text="2 Stars" />
@@ -165,7 +161,7 @@
                         <MenuItem mnemonicParsing="false" text="5 Stars" />
                      </items>
                   </MenuButton>
-                  <MenuButton layoutX="85.0" layoutY="438.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="151.0" text="Month Jan-Dec">
+                  <MenuButton layoutX="85.0" layoutY="455.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="151.0" text="Month Jan-Dec">
                      <items>
                         <MenuItem mnemonicParsing="false" text="January" />
                         <MenuItem mnemonicParsing="false" text="February" />
@@ -181,9 +177,13 @@
                         <MenuItem mnemonicParsing="false" text="December" />
                      </items>
                   </MenuButton>
+                  <Button fx:id="createButton" layoutX="13.0" layoutY="524.0" mnemonicParsing="false" onAction="#newTrack" prefHeight="22.0" prefWidth="226.0" text="Create" />
+                  <RadioButton layoutX="16.0" layoutY="368.0" mnemonicParsing="false" />
+                  <RadioButton layoutX="16.0" layoutY="216.0" mnemonicParsing="false" />
+                  <RadioButton fx:id="statusBookLog" layoutX="16.0" layoutY="5.0" mnemonicParsing="false" />
           </children>
         </AnchorPane>
-        <AnchorPane prefHeight="555.0" prefWidth="482.0">
+        <AnchorPane prefHeight="551.0" prefWidth="649.0">
           <children>
             <Label alignment="CENTER" font="$x1" layoutX="69.0" layoutY="15.0" prefHeight="22.0" prefWidth="143.0" style="&#10;" text="Books Read:" textFill="$x2" wrapText="false" />
                   <Label alignment="CENTER" layoutX="69.0" layoutY="278.0" prefHeight="22.0" prefWidth="143.0" style="&#10;" text="Books to Read:" textAlignment="CENTER" wrapText="false">
@@ -194,7 +194,7 @@
                         <Color red="0.624" green="0.624" blue="0.624" fx:id="x22" />
                      </textFill>
                   </Label>
-                  <Label alignment="CENTER" layoutX="296.0" layoutY="26.0" prefHeight="22.0" prefWidth="102.0" style="&#10;" text="Functions:" wrapText="false">
+                  <Label alignment="CENTER" layoutX="330.0" layoutY="27.0" prefHeight="22.0" prefWidth="102.0" style="&#10;" text="Functions:" wrapText="false">
                      <font>
                         <Font size="15.0" fx:id="x13" />
                      </font>
@@ -212,8 +212,18 @@
                   </Label>
                   <TextArea fx:id="logView" layoutX="14.0" layoutY="37.0" prefHeight="220.0" prefWidth="263.0" />
                   <TextArea fx:id="readView" layoutX="14.0" layoutY="307.0" prefHeight="220.0" prefWidth="263.0" />
-                  <TextArea fx:id="output" layoutX="313.0" layoutY="98.0" prefHeight="431.0" prefWidth="287.0" />
-                  <ChoiceBox layoutX="398.0" layoutY="23.0" prefHeight="28.0" prefWidth="202.0" />
+                  <TextArea fx:id="output" layoutX="319.0" layoutY="97.0" prefHeight="431.0" prefWidth="287.0" />
+                  <MenuButton layoutX="432.0" layoutY="24.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="151.0" text="Select a function">
+                     <items>
+                        <MenuItem mnemonicParsing="false" text="fantasy" />
+                        <MenuItem mnemonicParsing="false" text="classics" />
+                        <MenuItem mnemonicParsing="false" text="mystery" />
+                        <MenuItem mnemonicParsing="false" text="non fiction" />
+                        <MenuItem mnemonicParsing="false" text="sci-fi" />
+                        <MenuItem mnemonicParsing="false" text="thriller" />
+                        <MenuItem mnemonicParsing="false" text="romance" />
+                     </items>
+                  </MenuButton>
           </children>
         </AnchorPane>
       </items>
