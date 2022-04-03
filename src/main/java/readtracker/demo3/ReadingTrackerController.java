@@ -75,6 +75,18 @@ public class ReadingTrackerController {
     private RadioButton statusToLog;
 
     @FXML
+    private ChoiceBox<String> toLogMonth;
+
+    @FXML
+    private TextField toLogPages;
+
+    @FXML
+    private ChoiceBox<Integer> toLogRating;
+
+    @FXML
+    private ChoiceBox<String> toLogTitle;
+
+    @FXML
     private Font x1;
 
     @FXML
@@ -118,18 +130,19 @@ public class ReadingTrackerController {
 
 
 
+
     @FXML
     void newTrack(ActionEvent event) {
         // Ensure only one option is selected, if not, print error
         if ((statusBookLog.isSelected() && statusReadingList.isSelected()) ||
                 (statusBookLog.isSelected() && statusToLog.isSelected()) ||
-                (statusToLog.isSelected() && statusReadingList.isSelected())){
+                (statusToLog.isSelected() && statusReadingList.isSelected())) {
 
             statusField.setTextFill(RED);
             statusField.setText("Please only select one thing to create at a time, Book Log, Reading List, or List to Log");
-        }
-        else if (statusBookLog.isSelected()){
+        } else if (statusBookLog.isSelected()) {
             try {
+                // Get info entered by user
                 String title = logTitle.getText();
                 String author = logAuthor.getText();
                 int rating = logRating.getValue();
@@ -151,17 +164,16 @@ public class ReadingTrackerController {
                 statusField.setText("Book was successfully added to book log");
             }
             // Ensure information is accurately entered, if not, print status message
-            catch (NullPointerException e){
+            catch (NullPointerException e) {
                 statusField.setTextFill(RED);
                 statusField.setText("Book log information was not properly entered");
-            }
-            catch (NumberFormatException e){
+            } catch (NumberFormatException e) {
                 statusField.setTextFill(RED);
                 statusField.setText("Page value was not proper integer");
             }
-        }
-        else if (statusReadingList.isSelected()){
+        } else if (statusReadingList.isSelected()) {
             try {
+                // Get info entered by user
                 String title = listTitle.getText();
                 String author = listAuthor.getText();
                 int interest = listInterest.getValue();
@@ -176,17 +188,68 @@ public class ReadingTrackerController {
                 // Update reading list view
                 viewReadingList();
 
+                // Add title as an option in the title list to log choice box
+                toLogTitle.getItems().add(title);
+
                 // Write success message
                 statusField.setTextFill(BLACK);
                 statusField.setText("Book was successfully added to reading list");
             }
             // Ensure information is accurately entered, if not, print status message
-            catch (NullPointerException e){
+            catch (NullPointerException e) {
                 statusField.setTextFill(RED);
                 statusField.setText("Reading list information was not properly entered");
             }
-        }
+        } else if (statusToLog.isSelected()) {
+            try {
+                // Get info entered by user
+                String title = toLogTitle.getValue();
+                int rating = toLogRating.getValue();
+                String month = toLogMonth.getValue();
+                int pages = Integer.parseInt(toLogPages.getText());
 
+                // Get the book from reading list
+                ReadingListItem listBook = readingList.get(title);
+                // Get extra necessary info from listBook
+                String author = listBook.getAuthor();
+                String genre = listBook.getGenre();
+
+                // Remove book from reading list
+                readingList.remove(title);
+                // Update reading list view
+                viewReadingList();
+
+                // Remove title as an option in list to log title select choice box
+                toLogTitle.getItems().remove(title);
+
+                // Create new BookLogItem
+                BookLogItem logBook = new BookLogItem(title, author, month, rating, pages, genre);
+
+                // Add book to book log
+                bookLog.put(title, logBook);
+
+                // Update book log view
+                viewBookLog();
+
+                // Print success message
+                statusField.setTextFill(BLACK);
+                statusField.setText("Book was successfully transferred to book log");
+            }
+            // Ensure information is accurately entered, if not, print status message
+            catch (NullPointerException e) {
+                statusField.setTextFill(RED);
+                statusField.setText("To log information was not properly entered");
+            } catch (NumberFormatException e) {
+                statusField.setTextFill(RED);
+                statusField.setText("Page value was not proper integer");
+            }
+            // If none of the radio buttons were selected, print status message
+        }
+        else{
+            statusField.setTextFill(RED);
+            statusField.setText("Please select if you would like to create a book log entry, reading list entry, or move" +
+                    "a book from the list to log");
+        }
     }
 
     /**
@@ -200,6 +263,9 @@ public class ReadingTrackerController {
         logGenre.getItems().addAll("Fantasy", "Classics", "Mystery", "Non fiction", "Sci-fi", "Thriller", "Romance");
         listGenre.getItems().addAll("Fantasy", "Classics", "Mystery", "Non fiction", "Sci-fi", "Thriller", "Romance");
         listInterest.getItems().addAll(1,2,3,4,5,6,7,8,9,10);
+        toLogMonth.getItems().addAll("January", "February", "March", "April", "May", "June", "July", "August", "September",
+                "October", "November", "December");
+        toLogRating.getItems().addAll(1,2,3,4,5);
      }
 
     /**

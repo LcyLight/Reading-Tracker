@@ -92,39 +92,8 @@
                   <Label layoutX="15.0" layoutY="427.0" prefHeight="18.0" prefWidth="50.0" text="Rating:" textFill="#535353" />
                   <Label layoutX="15.0" layoutY="455.0" prefHeight="26.0" prefWidth="50.0" text="Month:" textFill="#535353" />
                   <Label layoutX="14.0" layoutY="489.0" prefHeight="18.0" prefWidth="50.0" text="Pages:" textFill="#535353" />
-                  <TextField layoutX="84.0" layoutY="488.0" prefHeight="10.0" prefWidth="151.0" promptText="number of pages" />
+                  <TextField fx:id="toLogPages" layoutX="84.0" layoutY="488.0" prefHeight="10.0" prefWidth="151.0" promptText="number of pages" />
                   <Separator layoutX="-1.0" layoutY="362.0" prefHeight="3.0" prefWidth="255.0" />
-                  <MenuButton layoutX="85.0" layoutY="392.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="151.0" text="Title of book to move">
-                     <items>
-                        <MenuItem mnemonicParsing="false" text="Action 1" />
-                        <MenuItem mnemonicParsing="false" text="Action 2" />
-                     </items>
-                  </MenuButton>
-                  <MenuButton layoutX="85.0" layoutY="423.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="151.0" text="Rating 1-5">
-                     <items>
-                        <MenuItem mnemonicParsing="false" text="1 Star" />
-                        <MenuItem mnemonicParsing="false" text="2 Stars" />
-                        <MenuItem mnemonicParsing="false" text="3 Stars" />
-                        <MenuItem mnemonicParsing="false" text="4 Stars" />
-                        <MenuItem mnemonicParsing="false" text="5 Stars" />
-                     </items>
-                  </MenuButton>
-                  <MenuButton layoutX="85.0" layoutY="455.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="151.0" text="Month Jan-Dec">
-                     <items>
-                        <MenuItem mnemonicParsing="false" text="January" />
-                        <MenuItem mnemonicParsing="false" text="February" />
-                        <MenuItem mnemonicParsing="false" text="March" />
-                        <MenuItem mnemonicParsing="false" text="April" />
-                        <MenuItem mnemonicParsing="false" text="May" />
-                        <MenuItem mnemonicParsing="false" text="June" />
-                        <MenuItem mnemonicParsing="false" text="July" />
-                        <MenuItem mnemonicParsing="false" text="August" />
-                        <MenuItem mnemonicParsing="false" text="September" />
-                        <MenuItem mnemonicParsing="false" text="October" />
-                        <MenuItem mnemonicParsing="false" text="November" />
-                        <MenuItem mnemonicParsing="false" text="December" />
-                     </items>
-                  </MenuButton>
                   <Button fx:id="createButton" layoutX="13.0" layoutY="524.0" mnemonicParsing="false" onAction="#newTrack" prefHeight="22.0" prefWidth="226.0" text="Create" />
                   <RadioButton fx:id="statusToLog" layoutX="16.0" layoutY="368.0" mnemonicParsing="false" />
                   <RadioButton fx:id="statusReadingList" layoutX="16.0" layoutY="216.0" mnemonicParsing="false" />
@@ -134,6 +103,9 @@
                   <ChoiceBox fx:id="logGenre" layoutX="83.0" layoutY="149.0" prefWidth="150.0" />
                   <ChoiceBox fx:id="listGenre" layoutX="83.0" layoutY="300.0" prefWidth="150.0" />
                   <ChoiceBox fx:id="listInterest" layoutX="83.0" layoutY="330.0" prefWidth="150.0" />
+                  <ChoiceBox fx:id="toLogTitle" layoutX="85.0" layoutY="392.0" prefWidth="150.0" />
+                  <ChoiceBox fx:id="toLogRating" layoutX="85.0" layoutY="423.0" prefWidth="150.0" />
+                  <ChoiceBox fx:id="toLogMonth" layoutX="85.0" layoutY="455.0" prefWidth="150.0" />
           </children>
         </AnchorPane>
         <AnchorPane prefHeight="551.0" prefWidth="649.0">
