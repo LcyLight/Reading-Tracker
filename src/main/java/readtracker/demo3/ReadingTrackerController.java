@@ -268,8 +268,8 @@ public class ReadingTrackerController {
     /**
      * Sets up choice boxes selection options
      */
-     @FXML
-     void initialize(){
+    @FXML
+    void initialize(){
         logRating.getItems().addAll(1,2,3,4,5);
         logMonth.getItems().addAll("January", "February", "March", "April", "May", "June", "July", "August", "September",
                 "October", "November", "December");
@@ -285,22 +285,22 @@ public class ReadingTrackerController {
 //                "View February reading stats", "View March reading stats", "View April reading stats", "View May reading stats",
 //                "View June reading stats", "View July reading stats", "View August reading stats", "View September reading stats",
 //                "View October reading stats", "View November reading stats", "View December reading stats");
-     }
+    }
 
     /**
      * Updates the book log text area (logView) to the titles in the book log
      */
     @FXML
     void viewBookLog(){
-        String bookLogText = "";
+        StringBuilder bookLogText = new StringBuilder();
 
         // Loop through all titles in book log
         for (String title : bookLog.keySet()){
-            bookLogText += title + "\n";
+            bookLogText.append(title).append("\n");
         }
 
         // Set the bookLog text area to the titles
-        logView.setText(bookLogText);
+        logView.setText(bookLogText.toString());
     }
 
     /**
@@ -308,15 +308,15 @@ public class ReadingTrackerController {
      */
     @FXML
     void viewReadingList(){
-        String readingListText = "";
+        StringBuilder readingListText = new StringBuilder();
 
         // Loop through all titles in reading list
         for (String title : readingList.keySet()){
-            readingListText += title + "\n";
+            readingListText.append(title).append("\n");
         }
 
         // Set the reading list text area to the titles
-        readView.setText(readingListText);
+        readView.setText(readingListText.toString());
     }
 
     /**
@@ -325,14 +325,14 @@ public class ReadingTrackerController {
      */
     @FXML
     void viewLogInfo(ActionEvent event) {
-        String outputString = "";
+        StringBuilder outputString = new StringBuilder();
 
         // Get amount of books in book log
         int logCount = bookLog.size();
 
         if (logCount > 1){
             // Print out number of books in book log
-            outputString += "You have " + logCount + " books in your Book Log, they are:\n";
+            outputString.append("You have ").append(logCount).append(" books in your Book Log, they are:\n");
 
             // Print out all books in book log
             for (String key : bookLog.keySet()){
@@ -340,28 +340,28 @@ public class ReadingTrackerController {
                 BookLogItem currentBook = bookLog.get(key);
 
                 // Retrieve and print information
-                outputString += currentBook + "\n";
+                outputString.append(currentBook).append("\n");
             }
         }
         else if (logCount == 1){
             // Print out number of books in book log
-            outputString += "You have " + logCount + " books in your Book Log, it is:\n";
+            outputString.append("You have ").append(logCount).append(" books in your Book Log, it is:\n");
 
             // Get book log item and print info
             for (String key : bookLog.keySet()){
                 BookLogItem currentBook = bookLog.get(key);
                 // Retrieve and print information
-                outputString += currentBook + "\n";
+                outputString.append(currentBook).append("\n");
             }
 
         }
         else{
             // Print out number of books in book log
-            outputString += "You have no books in your Book Log!";
+            outputString.append("You have no books in your Book Log!");
         }
 
         // Update output window
-        output.setText(outputString);
+        output.setText(outputString.toString());
 
         // Print success message
         statusField.setTextFill(BLACK);
