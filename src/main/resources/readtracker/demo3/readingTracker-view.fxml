@@ -27,18 +27,10 @@
       <menus>
         <Menu mnemonicParsing="false" text="File">
           <items>
-            <MenuItem mnemonicParsing="false" text="New" />
-            <MenuItem mnemonicParsing="false" text="Open…" />
-            <Menu mnemonicParsing="false" text="Open Recent" />
+            <MenuItem mnemonicParsing="false" text="Open from file" />
+            <MenuItem mnemonicParsing="false" text="Save to file" />
             <SeparatorMenuItem mnemonicParsing="false" />
-            <MenuItem mnemonicParsing="false" text="Close" />
-            <MenuItem mnemonicParsing="false" text="Save" />
-            <MenuItem mnemonicParsing="false" text="Save As…" />
-            <MenuItem mnemonicParsing="false" text="Revert" />
-            <SeparatorMenuItem mnemonicParsing="false" />
-            <MenuItem mnemonicParsing="false" text="Preferences…" />
-            <SeparatorMenuItem mnemonicParsing="false" />
-            <MenuItem mnemonicParsing="false" text="Quit" />
+            <MenuItem fx:id="quitButton" mnemonicParsing="false" onAction="#quitProgram" text="Quit" />
           </items>
         </Menu>
       </menus>
@@ -119,7 +111,7 @@
                         <Color red="0.624" green="0.624" blue="0.624" fx:id="x22" />
                      </textFill>
                   </Label>
-                  <Label alignment="CENTER" layoutX="295.0" layoutY="27.0" prefHeight="22.0" prefWidth="102.0" style="&#10;" text="Functions:" wrapText="false">
+                  <Label alignment="CENTER" layoutX="299.0" layoutY="25.0" prefHeight="22.0" prefWidth="102.0" style="&#10;" text="Functions:" wrapText="false">
                      <font>
                         <Font size="15.0" fx:id="x13" />
                      </font>
@@ -138,15 +130,20 @@
                   <TextArea fx:id="logView" editable="false" layoutX="14.0" layoutY="37.0" prefHeight="220.0" prefWidth="263.0" />
                   <TextArea fx:id="readView" editable="false" layoutX="14.0" layoutY="307.0" prefHeight="220.0" prefWidth="263.0" />
                   <TextArea fx:id="output" editable="false" layoutX="319.0" layoutY="97.0" prefHeight="431.0" prefWidth="287.0" />
-                  <MenuButton fx:id="functionSelect" layoutX="383.0" layoutY="26.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="226.0" text="Select a function">
+                  <MenuButton fx:id="functionSelect" layoutX="387.0" layoutY="24.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="226.0" text="Select a function">
                     <items>
                       <MenuItem mnemonicParsing="false" text="View all book info" />
                       <MenuItem mnemonicParsing="false" text="View reading list info" />
                         <MenuItem fx:id="bookLogInfo" mnemonicParsing="false" onAction="#viewLogInfo" text="View book log info" />
                         <MenuItem mnemonicParsing="false" text="Get book recommendation" />
                         <MenuItem mnemonicParsing="false" text="Sort books by rating" />
-                        <MenuItem mnemonicParsing="false" text="View books of certain rating" />
-                        <MenuItem mnemonicParsing="false" text="View reading stats for certain month" />
+                        <MenuItem mnemonicParsing="false" text="View books rated 5 stars" />
+                        <MenuItem mnemonicParsing="false" text="View books rated 4 stars" />
+                        <MenuItem mnemonicParsing="false" text="View books rated 3 stars" />
+                        <MenuItem mnemonicParsing="false" text="View books rated 2 stars" />
+                        <MenuItem mnemonicParsing="false" text="View books rated 1 stars" />
+                        <MenuItem mnemonicParsing="false" text="View reading stats for January" />
+                        <MenuItem mnemonicParsing="false" text="Gotta add all the months, too lazy rn" />
                     </items>
                   </MenuButton>
           </children>

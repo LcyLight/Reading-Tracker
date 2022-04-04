@@ -66,6 +66,10 @@ public class ReadingTrackerController {
     private TextArea output;
 
     @FXML
+    private MenuItem quitButton;
+
+
+    @FXML
     private TextArea readView;
 
     @FXML
@@ -362,5 +366,14 @@ public class ReadingTrackerController {
         // Print success message
         statusField.setTextFill(BLACK);
         statusField.setText("Successfully printed book log info");
+    }
+
+    /**
+     * Ends the program
+     * @param event Quit is selected in the menu bar under File
+     */
+    @FXML
+    void quitProgram(ActionEvent event) {
+        System.exit(1);
     }
 }
