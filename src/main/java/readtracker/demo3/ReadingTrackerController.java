@@ -5,7 +5,10 @@ import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
+import javafx.stage.FileChooser;
+import javafx.stage.Stage;
 
+import java.io.*;
 import java.util.HashMap;
 
 import static javafx.scene.paint.Color.BLACK;
@@ -13,6 +16,16 @@ import static javafx.scene.paint.Color.RED;
 
 
 public class ReadingTrackerController {
+
+    //GLOBAL CONSTANTS
+    static final int TITLE_INDEX= 0;
+    static final int AUTHOR_INDEX = 1;
+    static final int MONTH_INDEX = 2;
+    static final int RATING_INDEX = 3;
+    static final int PAGES_INDEX = 4;
+    static final int GENRE_INDEX_BOOK_LOG = 5;
+    static final int GENRE_INDEX_R_LIST = 3;
+    static final int READING_WANT_AMOUNT_INDEX = 2;
 
     // Create book log hashmap
     HashMap<String, BookLogItem> bookLog = new HashMap<>();
@@ -66,8 +79,10 @@ public class ReadingTrackerController {
     private TextArea output;
 
     @FXML
-    private MenuItem quitButton;
+    private MenuItem openSelect;
 
+    @FXML
+    private MenuItem quitButton;
 
     @FXML
     private TextArea readView;
@@ -367,6 +382,88 @@ public class ReadingTrackerController {
         statusField.setTextFill(BLACK);
         statusField.setText("Successfully printed book log info");
     }
+
+    /**
+     * Loads reading track log/list information from a pre written csv file selected by the user
+     * @param event Open from file is selected from menu in file
+     */
+    @FXML
+    void openFile(ActionEvent event) {
+        // Create file chooser for user to pick file to load from
+        FileChooser fileChooser = new FileChooser();
+        File loadFile = fileChooser.showOpenDialog(new Stage());
+
+        //Make sure file was chosen before starting read, if not, print error status
+        if (loadFile == null){
+            statusField.setTextFill(RED);
+            statusField.setText("File was not selected");
+        }
+        else {
+            try {
+                // Read info file
+                FileReader file_reader = new FileReader(loadFile);
+                BufferedReader buffered_reader = new BufferedReader(file_reader);
+                String line = buffered_reader.readLine();
+
+                // Read each line of file
+                while (line != null) {
+                    // split line by commas
+                    String[] lineInfo = line.split(",");
+
+                    // Get the info that's shared in all book types from lineInfo (+1 because type position)
+                    String title = lineInfo[TITLE_INDEX + 1];
+                    String author = lineInfo[AUTHOR_INDEX + 1];
+
+                    // Get info type (reading list entry or book log entry
+                    String type = lineInfo[0];
+
+                    if (type.equals("READING LIST")) {
+                        // If type is reading list, get info from proper indices
+                        String genre = lineInfo[4];
+                        int readWant = Integer.parseInt(lineInfo[READING_WANT_AMOUNT_INDEX + 1]);
+
+                        // Create new reading list item with line info
+                        ReadingListItem newRList = new ReadingListItem(title, author, genre, readWant);
+                        // Add item to readingList hashmap with title as key and object as value
+                        readingList.put(title, newRList);
+                    } else if (type.equals("BOOK LOG")) {
+                        // If type is book log, get info from proper indices
+                        String month = lineInfo[MONTH_INDEX + 1];
+                        int rating = Integer.parseInt(lineInfo[RATING_INDEX + 1]);
+                        int pages = Integer.parseInt(lineInfo[PAGES_INDEX + 1]);
+                        String genre = lineInfo[GENRE_INDEX_BOOK_LOG + 1];
+
+                        // Create new book log item with line info
+                        BookLogItem newLog = new BookLogItem(title, author, month, rating, pages, genre);
+                        // Add item to bookLog hashmap with title as key and object as value
+                        bookLog.put(title, newLog);
+
+                    }
+
+                    // Read next line
+                    line = buffered_reader.readLine();
+                }
+            }
+            catch (FileNotFoundException e) {
+                // Handle file not found exceptions
+                statusField.setTextFill(RED);
+                statusField.setText("File could not be located");
+            } catch (IOException e) {
+                statusField.setTextFill(RED);
+                statusField.setText("IO exception occurred while trying to read info file!");
+            }
+
+            // Update book log and reading list view
+            viewReadingList();
+            viewBookLog();
+
+            // Print success message
+            statusField.setTextFill(BLACK);
+            statusField.setText("Successfully loaded information from file");
+            }
+
+    }
+
 
     /**
      * Ends the program

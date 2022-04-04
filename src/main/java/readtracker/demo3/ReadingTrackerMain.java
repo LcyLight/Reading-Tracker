@@ -2,6 +2,8 @@ package readtracker.demo3;
 import java.io.*;
 import java.util.*;
 
+import static javafx.scene.paint.Color.RED;
+
 public class ReadingTrackerMain {
     //GLOBAL CONSTANTS
     static final int TITLE_INDEX= 0;
@@ -291,71 +293,6 @@ public class ReadingTrackerMain {
         " books you want to read in this genre! In total, you've tracked " + genreSum + " books for this genre!");
     }
 
-    /**
-     * Reads information from a user provided csv file and creates book log items and reading list items using info
-     * @param fileName Name of file given by user to read
-     * @param bookLog Hashmap containing all book log item objects at the title keys
-     * @param readingList Hashmap containing all reading list item objects at the title keys
-     */
-    public static void readFile(String fileName, HashMap<String, BookLogItem> bookLog, HashMap <String, ReadingListItem> readingList) {
-
-        try {
-            // Read info file
-            FileReader file_reader = new FileReader(fileName);
-            BufferedReader buffered_reader = new BufferedReader(file_reader);
-            String line = buffered_reader.readLine();
-
-            // Read each line of file
-            while (line != null) {
-                // split line by commas
-                String[] lineInfo = line.split(",");
-
-                // Get the info that's shared in all book types from lineInfo (+1 because type position)
-                String title = lineInfo[TITLE_INDEX + 1];
-                String author = lineInfo[AUTHOR_INDEX + 1];
-
-                // Get info type (reading list entry or book log entry
-                String type = lineInfo[0];
-
-                if (type.equals("READING LIST")){
-                    // If type is reading list, get info from proper indices
-                    String genre = lineInfo[4];
-                    int readWant = Integer.parseInt(lineInfo[READING_WANT_AMOUNT_INDEX + 1]);
-
-                    // Create new reading list item with line info
-                    ReadingListItem newRList = new ReadingListItem(title, author, genre, readWant);
-                    // Add item to readingList hashmap with title as key and object as value
-                    readingList.put(title, newRList);
-                }
-                else if (type.equals("BOOK LOG")){
-                    // If type is book log, get info from proper indices
-                    String month = lineInfo[MONTH_INDEX + 1];
-                    int rating = Integer.parseInt(lineInfo[RATING_INDEX + 1]);
-                    int pages = Integer.parseInt(lineInfo[PAGES_INDEX + 1]);
-                    String genre = lineInfo[GENRE_INDEX_BOOK_LOG + 1];
-
-                    // Create new book log item with line info
-                    BookLogItem newLog = new BookLogItem(title, author, month, rating, pages, genre);
-                    // Add item to bookLog hashmap with title as key and object as value
-                    bookLog.put(title, newLog);
-
-                }
-
-                // Read next line
-                line = buffered_reader.readLine();
-            }
-
-
-        } catch (FileNotFoundException e) {
-            // Handle file not found exceptions
-            System.err.println("Could not locate info file!");
-            e.printStackTrace();
-        } catch (IOException e) {
-            // Handle IO exceptions
-            System.err.println("IO exception occurred while trying to read info file!");
-            e.printStackTrace();
-        }
-    }
 
     /**
      * Formats and writes all book log items and reading list items information into a csv file
