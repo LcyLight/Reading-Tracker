@@ -397,7 +397,7 @@ public class ReadingTrackerController {
 
         if (listCount > 1){
             // Print out number of books in book log
-            outputString.append("You have ").append(listCount).append(" books in your Book Log, they are:\n");
+            outputString.append("You have ").append(listCount).append(" books in your Reading List, they are:\n");
 
             // Print out all books in book log
             for (String key : readingList.keySet()){
@@ -410,7 +410,7 @@ public class ReadingTrackerController {
         }
         else if (listCount == 1){
             // Print out number of books in book log
-            outputString.append("You have ").append(listCount).append(" book in your Book Log, it is:\n");
+            outputString.append("You have ").append(listCount).append(" book in your Reading List, it is:\n");
 
             // Get book log item and print info
             for (String key : readingList.keySet()){
@@ -422,7 +422,7 @@ public class ReadingTrackerController {
         }
         else{
             // Print out number of books in book log
-            outputString.append("You have no books in your Book Log!");
+            outputString.append("You have no books in your Reading List!");
         }
 
         // Update output window
