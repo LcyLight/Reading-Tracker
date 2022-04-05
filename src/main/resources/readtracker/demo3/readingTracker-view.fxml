@@ -132,7 +132,7 @@
                         <TextArea fx:id="output" editable="false" layoutX="319.0" layoutY="97.0" prefHeight="431.0" prefWidth="287.0" />
                         <MenuButton fx:id="functionSelect" layoutX="387.0" layoutY="24.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="226.0" text="Select a function">
                             <items>
-                                <MenuItem mnemonicParsing="false" text="View all book info" />
+                                <MenuItem mnemonicParsing="false" onAction="#printAllBookInfo" text="View all book info" />
                                 <MenuItem mnemonicParsing="false" onAction="#viewListInfo" text="View reading list info" />
                                 <MenuItem mnemonicParsing="false" onAction="#viewLogInfo" text="View book log info" />
                                 <MenuItem mnemonicParsing="false" text="Get book recommendation" />
