@@ -360,7 +360,7 @@ public class ReadingTrackerController {
         }
         else if (logCount == 1){
             // Print out number of books in book log
-            outputString.append("You have ").append(logCount).append(" books in your Book Log, it is:\n");
+            outputString.append("You have ").append(logCount).append(" book in your Book Log, it is:\n");
 
             // Get book log item and print info
             for (String key : bookLog.keySet()){
