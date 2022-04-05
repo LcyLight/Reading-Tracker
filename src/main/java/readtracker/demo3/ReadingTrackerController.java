@@ -69,6 +69,9 @@ public class ReadingTrackerController {
     private TextField logPages;
 
     @FXML
+    private MenuItem rating5;
+
+    @FXML
     private ChoiceBox<Integer> logRating;
 
     @FXML
@@ -447,7 +450,7 @@ public class ReadingTrackerController {
             // Increment book counter
             countLog +=1;
             // Print book number
-            outputString.append("Book ").append(countLog).append(" in Book Log: ");
+            outputString.append("Book ").append(countLog).append(" in Book Log: \n");
 
             // Get BookLogItem
             BookLogItem currentBook = bookLog.get(key);
@@ -465,7 +468,7 @@ public class ReadingTrackerController {
             // Increment book counter
             countList +=1;
             // Print book number
-            outputString.append("Book ").append(countList).append(" in Reading List: ");
+            outputString.append("Book ").append(countList).append(" in Reading List: \n");
 
             // Get ReadingListItem
             ReadingListItem currentBook = readingList.get(key);
@@ -639,7 +642,46 @@ public class ReadingTrackerController {
         // Print success message
         statusField.setTextFill(BLACK);
         statusField.setText("Successfully sorted books by rating");
+    }
 
+    /**
+     * Outputs a list of all book titles rated 5 stars
+     * @param event User selects view all books rated 5 stars option from functions menu
+     */
+    @FXML
+    void viewRating5(ActionEvent event) {
+        String outputString = "";
+        int counter = 0;
+        ArrayList<String> fiveStarTitles = new ArrayList<>();
+
+        // Iterate through all books in bookLog
+        for (String key : bookLog.keySet()){
+            // Get book log item
+            BookLogItem item = bookLog.get(key);
+
+            // Check if rating is 5, if so, add title to five star titles
+            if (item.getRating() == 5){
+                fiveStarTitles.add(key);
+
+                // increment counter
+                counter += 1;
+            }
+        }
+
+        // Add message for number of books
+        outputString += "You rated " + counter + " books 5 stars!\n";
+
+        // Add all the titles of 5 star rated books to output
+        for (String title : fiveStarTitles){
+            outputString += title + "\n";
+        }
+
+        // Print output to output window
+        output.setText(outputString);
+
+        // Print success message
+        statusField.setTextFill(BLACK);
+        statusField.setText("Successfully retrieved 5 star rated books");
     }
 
     /**
