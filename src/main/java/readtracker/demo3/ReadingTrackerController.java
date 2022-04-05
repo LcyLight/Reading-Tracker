@@ -296,12 +296,6 @@ public class ReadingTrackerController {
         toLogMonth.getItems().addAll("January", "February", "March", "April", "May", "June", "July", "August", "September",
                 "October", "November", "December");
         toLogRating.getItems().addAll(1,2,3,4,5);
-//        functionSelect.getItems().addAll("View book log info", "View reading list info", "View all book info",
-//                "Sort books by rating", "What should you read next?", "View 5 star books", "View 4 star books",
-//                "View 3 star books", "View 2 star books", "View 1 star books", "View January reading stats",
-//                "View February reading stats", "View March reading stats", "View April reading stats", "View May reading stats",
-//                "View June reading stats", "View July reading stats", "View August reading stats", "View September reading stats",
-//                "View October reading stats", "View November reading stats", "View December reading stats");
     }
 
     /**
@@ -394,14 +388,14 @@ public class ReadingTrackerController {
     void viewListInfo(ActionEvent event) {
         StringBuilder outputString = new StringBuilder();
 
-        // Get amount of books in book log
+        // Get amount of books in reading list
         int listCount = readingList.size();
 
         if (listCount > 1){
-            // Print out number of books in book log
+            // Print out number of books in reading list
             outputString.append("You have ").append(listCount).append(" books in your Reading List, they are:\n");
 
-            // Print out all books in book log
+            // Print out all books in reading list
             for (String key : readingList.keySet()){
                 // Get BookLogItem
                 ReadingListItem currentBook = readingList.get(key);
@@ -411,7 +405,7 @@ public class ReadingTrackerController {
             }
         }
         else if (listCount == 1){
-            // Print out number of books in book log
+            // Print out number of books in reading list
             outputString.append("You have ").append(listCount).append(" book in your Reading List, it is:\n");
 
             // Get book log item and print info
@@ -432,7 +426,7 @@ public class ReadingTrackerController {
 
         // Print success message
         statusField.setTextFill(BLACK);
-        statusField.setText("Successfully printed book log info");
+        statusField.setText("Successfully printed reading list info");
     }
 
 
@@ -487,8 +481,6 @@ public class ReadingTrackerController {
         statusField.setTextFill(BLACK);
         statusField.setText("Successfully printed all book info");
     }
-
-
 
     /**
      * Loads reading track log/list information from a pre written csv file selected by the user
@@ -568,7 +560,6 @@ public class ReadingTrackerController {
             statusField.setTextFill(BLACK);
             statusField.setText("Successfully loaded information from file");
         }
-
     }
 
     /**
@@ -610,6 +601,10 @@ public class ReadingTrackerController {
         // return randomly selected title
         output.setText(nextReadOptions.get(randomInt));
 
+        // Print success message
+        statusField.setTextFill(BLACK);
+        statusField.setText("Successfully retrieved recommendation");
+
     }
 
 
@@ -640,6 +635,10 @@ public class ReadingTrackerController {
 
         // Return sorted ArrayList
         output.setText(String.valueOf(outputString));
+
+        // Print success message
+        statusField.setTextFill(BLACK);
+        statusField.setText("Successfully sorted books by rating");
 
     }
 
