@@ -383,6 +383,56 @@ public class ReadingTrackerController {
         statusField.setText("Successfully printed book log info");
     }
 
+
+    /**
+     * Prints all reading list info in the output window
+     * @param event View reading list info function is requested in functions menu
+     */
+    @FXML
+    void viewListInfo(ActionEvent event) {
+        StringBuilder outputString = new StringBuilder();
+
+        // Get amount of books in book log
+        int listCount = readingList.size();
+
+        if (listCount > 1){
+            // Print out number of books in book log
+            outputString.append("You have ").append(listCount).append(" books in your Book Log, they are:\n");
+
+            // Print out all books in book log
+            for (String key : readingList.keySet()){
+                // Get BookLogItem
+                ReadingListItem currentBook = readingList.get(key);
+
+                // Retrieve and print information
+                outputString.append(currentBook).append("\n");
+            }
+        }
+        else if (listCount == 1){
+            // Print out number of books in book log
+            outputString.append("You have ").append(listCount).append(" book in your Book Log, it is:\n");
+
+            // Get book log item and print info
+            for (String key : readingList.keySet()){
+                ReadingListItem currentBook = readingList.get(key);
+                // Retrieve and print information
+                outputString.append(currentBook).append("\n");
+            }
+
+        }
+        else{
+            // Print out number of books in book log
+            outputString.append("You have no books in your Book Log!");
+        }
+
+        // Update output window
+        output.setText(outputString.toString());
+
+        // Print success message
+        statusField.setTextFill(BLACK);
+        statusField.setText("Successfully printed book log info");
+    }
+
     /**
      * Loads reading track log/list information from a pre written csv file selected by the user
      * @param event Open from file is selected from menu in file
@@ -460,7 +510,7 @@ public class ReadingTrackerController {
             // Print success message
             statusField.setTextFill(BLACK);
             statusField.setText("Successfully loaded information from file");
-            }
+        }
 
     }
 
