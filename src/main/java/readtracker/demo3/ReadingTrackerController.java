@@ -10,6 +10,7 @@ import javafx.stage.Stage;
 
 import java.io.*;
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.HashMap;
 
 import static javafx.scene.paint.Color.BLACK;
@@ -608,6 +609,38 @@ public class ReadingTrackerController {
 
         // return randomly selected title
         output.setText(nextReadOptions.get(randomInt));
+
+    }
+
+
+    /**
+     * Prints a list of all book log books sorted from the highest rated to the lowest rated\
+     * @param event  sortedBooks, Arraylist of all bookLog books sorted by rating
+     */
+    @FXML
+    void sortByRating(ActionEvent event){
+
+        StringBuilder outputString = new StringBuilder();
+
+        // Create arrayList for books that we'll sort
+        ArrayList<BookLogItem> sortedBooks = new ArrayList<>();
+
+        // Iterate through all books in bookLog
+        for (String key : bookLog.keySet()){
+            BookLogItem current = bookLog.get(key);
+            sortedBooks.add(current);
+        }
+
+        // Use comparator to sort books by ratings
+        sortedBooks.sort(Comparator.comparingInt(BookLogItem::getRating));
+
+        for(BookLogItem item: sortedBooks){
+            outputString.append(item);
+        }
+
+        // Return sorted ArrayList
+        output.setText(String.valueOf(outputString));
+
     }
 
     /**
