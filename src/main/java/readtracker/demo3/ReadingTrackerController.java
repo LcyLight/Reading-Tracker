@@ -69,6 +69,18 @@ public class ReadingTrackerController {
     private TextField logPages;
 
     @FXML
+    private MenuItem rating1;
+
+    @FXML
+    private MenuItem rating2;
+
+    @FXML
+    private MenuItem rating3;
+
+    @FXML
+    private MenuItem rating4;
+
+    @FXML
     private MenuItem rating5;
 
     @FXML
@@ -642,6 +654,166 @@ public class ReadingTrackerController {
         // Print success message
         statusField.setTextFill(BLACK);
         statusField.setText("Successfully sorted books by rating");
+    }
+
+    /**
+     * Outputs a list of all book titles rated 1 stars
+     * @param event User selects view all books rated 1 stars option from functions menu
+     */
+    @FXML
+    void viewRating1(ActionEvent event) {
+        String outputString = "";
+        int counter = 0;
+        ArrayList<String> oneStarTitles = new ArrayList<>();
+
+        // Iterate through all books in bookLog
+        for (String key : bookLog.keySet()){
+            // Get book log item
+            BookLogItem item = bookLog.get(key);
+
+            // Check if rating is 1, if so, add title to one star titles
+            if (item.getRating() == 1){
+                oneStarTitles.add(key);
+
+                // increment counter
+                counter += 1;
+            }
+        }
+
+        // Add message for number of books
+        outputString += "You rated " + counter + " books 1 stars!\n";
+
+        // Add all the titles of 1 star rated books to output
+        for (String title : oneStarTitles){
+            outputString += title + "\n";
+        }
+
+        // Print output to output window
+        output.setText(outputString);
+
+        // Print success message
+        statusField.setTextFill(BLACK);
+        statusField.setText("Successfully retrieved 1 star rated books");
+    }
+
+    /**
+     * Outputs a list of all book titles rated 2 stars
+     * @param event User selects view all books rated 2 stars option from functions menu
+     */
+    @FXML
+    void viewRating2(ActionEvent event) {
+        String outputString = "";
+        int counter = 0;
+        ArrayList<String> twoStarTitles = new ArrayList<>();
+
+        // Iterate through all books in bookLog
+        for (String key : bookLog.keySet()){
+            // Get book log item
+            BookLogItem item = bookLog.get(key);
+
+            // Check if rating is 2, if so, add title to two star titles
+            if (item.getRating() == 2){
+                twoStarTitles.add(key);
+
+                // increment counter
+                counter += 1;
+            }
+        }
+
+        // Add message for number of books
+        outputString += "You rated " + counter + " books 2 stars!\n";
+
+        // Add all the titles of 2 star rated books to output
+        for (String title : twoStarTitles){
+            outputString += title + "\n";
+        }
+
+        // Print output to output window
+        output.setText(outputString);
+
+        // Print success message
+        statusField.setTextFill(BLACK);
+        statusField.setText("Successfully retrieved 2 star rated books");
+    }
+
+    /**
+     * Outputs a list of all book titles rated 3 stars
+     * @param event User selects view all books rated 3 stars option from functions menu
+     */
+    @FXML
+    void viewRating3(ActionEvent event) {
+        String outputString = "";
+        int counter = 0;
+        ArrayList<String> threeStarTitles = new ArrayList<>();
+
+        // Iterate through all books in bookLog
+        for (String key : bookLog.keySet()){
+            // Get book log item
+            BookLogItem item = bookLog.get(key);
+
+            // Check if rating is 3, if so, add title to three star titles
+            if (item.getRating() == 3){
+                threeStarTitles.add(key);
+
+                // increment counter
+                counter += 1;
+            }
+        }
+
+        // Add message for number of books
+        outputString += "You rated " + counter + " books 3 stars!\n";
+
+        // Add all the titles of 3 star rated books to output
+        for (String title : threeStarTitles){
+            outputString += title + "\n";
+        }
+
+        // Print output to output window
+        output.setText(outputString);
+
+        // Print success message
+        statusField.setTextFill(BLACK);
+        statusField.setText("Successfully retrieved 3 star rated books");
+    }
+
+    /**
+     * Outputs a list of all book titles rated 4 stars
+     * @param event User selects view all books rated 4 stars option from functions menu
+     */
+    @FXML
+    void viewRating4(ActionEvent event) {
+        String outputString = "";
+        int counter = 0;
+        ArrayList<String> fourStarTitles = new ArrayList<>();
+
+        // Iterate through all books in bookLog
+        for (String key : bookLog.keySet()){
+            // Get book log item
+            BookLogItem item = bookLog.get(key);
+
+            // Check if rating is 5, if so, add title to four star titles
+            if (item.getRating() == 4){
+                fourStarTitles.add(key);
+
+                // increment counter
+                counter += 1;
+            }
+        }
+
+        // Add message for number of books
+        outputString += "You rated " + counter + " books 4 stars!\n";
+
+        // Add all the titles of 4 star rated books to output
+        for (String title : fourStarTitles){
+            outputString += title + "\n";
+        }
+
+        // Print output to output window
+        output.setText(outputString);
+
+        // Print success message
+        statusField.setTextFill(BLACK);
+        statusField.setText("Successfully retrieved 4 star rated books");
     }
 
     /**

@@ -138,10 +138,10 @@
                                 <MenuItem mnemonicParsing="false" onAction="#readNext" text="Get book recommendation" />
                                 <MenuItem mnemonicParsing="false" onAction="#sortByRating" text="Sort books by rating" />
                                 <MenuItem fx:id="rating5" mnemonicParsing="false" onAction="#viewRating5" text="View books rated 5 stars" />
-                                <MenuItem mnemonicParsing="false" text="View books rated 4 stars" />
-                                <MenuItem mnemonicParsing="false" text="View books rated 3 stars" />
-                                <MenuItem mnemonicParsing="false" text="View books rated 2 stars" />
-                                <MenuItem mnemonicParsing="false" text="View books rated 1 stars" />
+                                <MenuItem fx:id="rating4" mnemonicParsing="false" onAction="#viewRating4" text="View books rated 4 stars" />
+                                <MenuItem fx:id="rating3" mnemonicParsing="false" onAction="#viewRating3" text="View books rated 3 stars" />
+                                <MenuItem fx:id="rating2" mnemonicParsing="false" onAction="#viewRating2" text="View books rated 2 stars" />
+                                <MenuItem fx:id="rating1" mnemonicParsing="false" onAction="#viewRating1" text="View books rated 1 stars" />
                                 <MenuItem mnemonicParsing="false" text="View reading stats for January" />
                                 <MenuItem mnemonicParsing="false" text="View reading stats for February" />
                         <MenuItem mnemonicParsing="false" text="View reading stats for March" />
