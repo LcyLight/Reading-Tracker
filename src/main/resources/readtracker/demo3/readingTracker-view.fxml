@@ -136,7 +136,7 @@
                                 <MenuItem mnemonicParsing="false" onAction="#viewListInfo" text="View reading list info" />
                                 <MenuItem mnemonicParsing="false" onAction="#viewLogInfo" text="View book log info" />
                                 <MenuItem mnemonicParsing="false" onAction="#readNext" text="Get book recommendation" />
-                                <MenuItem mnemonicParsing="false" text="Sort books by rating" />
+                                <MenuItem mnemonicParsing="false" onAction="#sortByRating" text="Sort books by rating" />
                                 <MenuItem mnemonicParsing="false" text="View books rated 5 stars" />
                                 <MenuItem mnemonicParsing="false" text="View books rated 4 stars" />
                                 <MenuItem mnemonicParsing="false" text="View books rated 3 stars" />
