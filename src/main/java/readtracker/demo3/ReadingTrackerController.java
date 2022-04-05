@@ -9,6 +9,7 @@ import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 
 import java.io.*;
+import java.util.ArrayList;
 import java.util.HashMap;
 
 import static javafx.scene.paint.Color.BLACK;
@@ -486,6 +487,8 @@ public class ReadingTrackerController {
         statusField.setText("Successfully printed all book info");
     }
 
+
+
     /**
      * Loads reading track log/list information from a pre written csv file selected by the user
      * @param event Open from file is selected from menu in file
@@ -567,6 +570,45 @@ public class ReadingTrackerController {
 
     }
 
+    /**
+     * Figures out the highest ranked books in reading list and returns title as result\
+     * @param event  nextRead, the title of the book the user should read next
+     */
+    @FXML
+    void readNext(ActionEvent event){
+        int maxRating = 0;
+
+        // Loop through reading list hashmap keys and get values
+        for (String item: readingList.keySet()){
+            ReadingListItem bookInfo = readingList.get(item);
+            //get rating(how much you want to read) of books in reading list
+            int bookRating = bookInfo.getReadWantAmount();
+
+            if (bookRating > maxRating){
+                maxRating = bookRating;
+            }
+        }
+
+        // Loop through reading list hashmap keys and get values
+        ArrayList<String> nextReadOptions;
+        nextReadOptions = new ArrayList<>();
+        for (String item: readingList.keySet()){
+            ReadingListItem bookInfo = readingList.get(item);
+            //get rating(how much you want to read) of books in reading list
+            int bookRating = bookInfo.getReadWantAmount();
+
+            // if rating matches max rating, add title to list of next read options
+            if (bookRating == maxRating){
+                nextReadOptions.add(item);
+            }
+        }
+
+        // Select random index from list of the highest ranked books, get title
+        int randomInt = (int) Math.floor(Math.random()*(nextReadOptions.size()));
+
+        // return randomly selected title
+        output.setText(nextReadOptions.get(randomInt));
+    }
 
     /**
      * Ends the program
