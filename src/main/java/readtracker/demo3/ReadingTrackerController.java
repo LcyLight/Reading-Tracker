@@ -498,7 +498,7 @@ public class ReadingTrackerController {
     }
 
     /**
-     * Loads reading track log/list information from a pre written csv file selected by the user
+     * Loads reading track log/list information from a pre-written csv file selected by the user
      * @param event Open from file is selected from menu in file
      */
     @FXML
@@ -662,7 +662,7 @@ public class ReadingTrackerController {
      */
     @FXML
     void viewRating1(ActionEvent event) {
-        String outputString = "";
+        StringBuilder outputString = new StringBuilder();
         int counter = 0;
         ArrayList<String> oneStarTitles = new ArrayList<>();
 
@@ -671,7 +671,7 @@ public class ReadingTrackerController {
             // Get book log item
             BookLogItem item = bookLog.get(key);
 
-            // Check if rating is 1, if so, add title to one star titles
+            // Check if rating is 1, if so, add title to one-star titles
             if (item.getRating() == 1){
                 oneStarTitles.add(key);
 
@@ -681,15 +681,15 @@ public class ReadingTrackerController {
         }
 
         // Add message for number of books
-        outputString += "You rated " + counter + " books 1 stars!\n";
+        outputString.append("You rated ").append(counter).append(" books 1 stars!\n");
 
         // Add all the titles of 1 star rated books to output
         for (String title : oneStarTitles){
-            outputString += title + "\n";
+            outputString.append(title).append("\n");
         }
 
         // Print output to output window
-        output.setText(outputString);
+        output.setText(outputString.toString());
 
         // Print success message
         statusField.setTextFill(BLACK);
@@ -702,7 +702,7 @@ public class ReadingTrackerController {
      */
     @FXML
     void viewRating2(ActionEvent event) {
-        String outputString = "";
+        StringBuilder outputString = new StringBuilder();
         int counter = 0;
         ArrayList<String> twoStarTitles = new ArrayList<>();
 
@@ -711,7 +711,7 @@ public class ReadingTrackerController {
             // Get book log item
             BookLogItem item = bookLog.get(key);
 
-            // Check if rating is 2, if so, add title to two star titles
+            // Check if rating is 2, if so, add title to two-star titles
             if (item.getRating() == 2){
                 twoStarTitles.add(key);
 
@@ -721,15 +721,15 @@ public class ReadingTrackerController {
         }
 
         // Add message for number of books
-        outputString += "You rated " + counter + " books 2 stars!\n";
+        outputString.append("You rated ").append(counter).append(" books 2 stars!\n");
 
         // Add all the titles of 2 star rated books to output
         for (String title : twoStarTitles){
-            outputString += title + "\n";
+            outputString.append(title).append("\n");
         }
 
         // Print output to output window
-        output.setText(outputString);
+        output.setText(outputString.toString());
 
         // Print success message
         statusField.setTextFill(BLACK);
@@ -742,7 +742,7 @@ public class ReadingTrackerController {
      */
     @FXML
     void viewRating3(ActionEvent event) {
-        String outputString = "";
+        StringBuilder outputString = new StringBuilder();
         int counter = 0;
         ArrayList<String> threeStarTitles = new ArrayList<>();
 
@@ -751,7 +751,7 @@ public class ReadingTrackerController {
             // Get book log item
             BookLogItem item = bookLog.get(key);
 
-            // Check if rating is 3, if so, add title to three star titles
+            // Check if rating is 3, if so, add title to three-star titles
             if (item.getRating() == 3){
                 threeStarTitles.add(key);
 
@@ -761,15 +761,15 @@ public class ReadingTrackerController {
         }
 
         // Add message for number of books
-        outputString += "You rated " + counter + " books 3 stars!\n";
+        outputString.append("You rated ").append(counter).append(" books 3 stars!\n");
 
         // Add all the titles of 3 star rated books to output
         for (String title : threeStarTitles){
-            outputString += title + "\n";
+            outputString.append(title).append("\n");
         }
 
         // Print output to output window
-        output.setText(outputString);
+        output.setText(outputString.toString());
 
         // Print success message
         statusField.setTextFill(BLACK);
@@ -782,7 +782,7 @@ public class ReadingTrackerController {
      */
     @FXML
     void viewRating4(ActionEvent event) {
-        String outputString = "";
+        StringBuilder outputString = new StringBuilder();
         int counter = 0;
         ArrayList<String> fourStarTitles = new ArrayList<>();
 
@@ -791,7 +791,7 @@ public class ReadingTrackerController {
             // Get book log item
             BookLogItem item = bookLog.get(key);
 
-            // Check if rating is 5, if so, add title to four star titles
+            // Check if rating is 5, if so, add title to four-star titles
             if (item.getRating() == 4){
                 fourStarTitles.add(key);
 
@@ -801,15 +801,15 @@ public class ReadingTrackerController {
         }
 
         // Add message for number of books
-        outputString += "You rated " + counter + " books 4 stars!\n";
+        outputString.append("You rated ").append(counter).append(" books 4 stars!\n");
 
         // Add all the titles of 4 star rated books to output
         for (String title : fourStarTitles){
-            outputString += title + "\n";
+            outputString.append(title).append("\n");
         }
 
         // Print output to output window
-        output.setText(outputString);
+        output.setText(outputString.toString());
 
         // Print success message
         statusField.setTextFill(BLACK);
@@ -822,7 +822,7 @@ public class ReadingTrackerController {
      */
     @FXML
     void viewRating5(ActionEvent event) {
-        String outputString = "";
+        StringBuilder outputString = new StringBuilder();
         int counter = 0;
         ArrayList<String> fiveStarTitles = new ArrayList<>();
 
@@ -831,7 +831,7 @@ public class ReadingTrackerController {
             // Get book log item
             BookLogItem item = bookLog.get(key);
 
-            // Check if rating is 5, if so, add title to five star titles
+            // Check if rating is 5, if so, add title to five-star titles
             if (item.getRating() == 5){
                 fiveStarTitles.add(key);
 
@@ -841,15 +841,15 @@ public class ReadingTrackerController {
         }
 
         // Add message for number of books
-        outputString += "You rated " + counter + " books 5 stars!\n";
+        outputString.append("You rated ").append(counter).append(" books 5 stars!\n");
 
         // Add all the titles of 5 star rated books to output
         for (String title : fiveStarTitles){
-            outputString += title + "\n";
+            outputString.append(title).append("\n");
         }
 
         // Print output to output window
-        output.setText(outputString);
+        output.setText(outputString.toString());
 
         // Print success message
         statusField.setTextFill(BLACK);
