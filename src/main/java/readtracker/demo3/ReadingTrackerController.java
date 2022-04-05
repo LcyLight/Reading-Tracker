@@ -433,6 +433,59 @@ public class ReadingTrackerController {
         statusField.setText("Successfully printed book log info");
     }
 
+
+    /**
+     * Prints out all books in both reading log and book log and their info
+     * @param event View all book info function is requested in functions menu
+     */
+    @FXML
+    void printAllBookInfo(ActionEvent event){
+
+        StringBuilder outputString = new StringBuilder();
+
+        //initiate a count to store the number of books
+        int countLog = 0;
+
+        //Loop through each key in the bookLog hashmap and print its information
+        for (String key : bookLog.keySet()){
+            // Increment book counter
+            countLog +=1;
+            // Print book number
+            outputString.append("Book ").append(countLog).append(" in Book Log: ");
+
+            // Get BookLogItem
+            BookLogItem currentBook = bookLog.get(key);
+
+            // Retrieve and print information
+            outputString.append(currentBook);
+
+        }
+
+        //initiate a count to store the number of books
+        int countList = 0;
+
+        //Loop through each key in the readingList hashmap and print its information
+        for (String key : readingList.keySet()){
+            // Increment book counter
+            countList +=1;
+            // Print book number
+            outputString.append("Book ").append(countList).append(" in Reading List: ");
+
+            // Get ReadingListItem
+            ReadingListItem currentBook = readingList.get(key);
+
+
+            // Retrieve and print information
+            outputString.append(currentBook);
+
+        }
+
+        output.setText(String.valueOf(outputString));
+        // Print success message
+        statusField.setTextFill(BLACK);
+        statusField.setText("Successfully printed all book info");
+    }
+
     /**
      * Loads reading track log/list information from a pre written csv file selected by the user
      * @param event Open from file is selected from menu in file
