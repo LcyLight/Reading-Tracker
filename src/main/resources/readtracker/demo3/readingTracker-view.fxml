@@ -154,13 +154,13 @@
                                 <MenuItem mnemonicParsing="false" onAction="#monthStatsOct" text="View reading stats for October" />
                                 <MenuItem mnemonicParsing="false" onAction="#monthStatsNov" text="View reading stats for November" />
                                 <MenuItem mnemonicParsing="false" onAction="#monthStatsDec" text="View reading stats for December" />
-                                <MenuItem mnemonicParsing="false" text="View books in fantasy genre" />
-                                <MenuItem mnemonicParsing="false" text="View books in classics genre" />
-                                <MenuItem mnemonicParsing="false" text="View books in mystery genre" />
-                                <MenuItem mnemonicParsing="false" text="View books in non fiction genre" />
-                                <MenuItem mnemonicParsing="false" text="View books in sci-fi genre" />
-                                <MenuItem mnemonicParsing="false" text="View books in thriller genre" />
-                                <MenuItem mnemonicParsing="false" text="View books in romance genre" />
+                                <MenuItem mnemonicParsing="false" onAction="#genreStatsFan" text="View books in fantasy genre" />
+                                <MenuItem mnemonicParsing="false" onAction="#genreStatsCla" text="View books in classics genre" />
+                                <MenuItem mnemonicParsing="false" onAction="#genreStatsMys" text="View books in mystery genre" />
+                                <MenuItem mnemonicParsing="false" onAction="#genreStatsNonFic" text="View books in non fiction genre" />
+                                <MenuItem mnemonicParsing="false" onAction="#genreStatsSci" text="View books in sci-fi genre" />
+                                <MenuItem mnemonicParsing="false" onAction="#genreStatsTri" text="View books in thriller genre" />
+                                <MenuItem mnemonicParsing="false" onAction="#genreStatsRom" text="View books in romance genre" />
                             </items>
                         </MenuButton>
                     </children>
