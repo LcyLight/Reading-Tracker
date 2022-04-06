@@ -857,8 +857,8 @@ public class ReadingTrackerController {
 
 
     /**
-     * print out all the books read in a certain month and the total number of pages read
-     * @param event shows the books read in a certain month
+     * shows the books read in a January and the total number of pages read in testArea
+     * @param event shows the books read in a January
      */
     @FXML
     void monthStatsJan(ActionEvent event){
@@ -875,16 +875,19 @@ public class ReadingTrackerController {
         for (String key : bookLog.keySet()){
             // Get book log item
             BookLogItem currentBook = bookLog.get(key);
+
             // Get month value
             String currentMonth = currentBook.getMonth();
 
-            // If so, increment book counter
-            bookCount++;
-            // Get pages of current book and add to total pages
-            totalPages += currentBook.getPages();
+            if(Objects.equals(currentMonth, "January")){
+                // If so, increment book counter
+                bookCount++;
+                // Get pages of current book and add to total pages
+                totalPages += currentBook.getPages();
 
-            // Print out book title
-            outputString.append(currentBook.getTitle()).append("\n");
+                // Print out book title
+                outputString.append(currentBook.getTitle()).append("\n");
+            }
 
         }
 
@@ -896,6 +899,505 @@ public class ReadingTrackerController {
         // Print success message
         statusField.setTextFill(BLACK);
         statusField.setText("Successfully retrieved all books read in January!");
+    }
+
+
+    /**
+     * shows the books read in a February and the total number of pages read in testArea
+     * @param event shows the books read in a February
+     */
+    @FXML
+    void monthStatsFeb(ActionEvent event){
+
+        StringBuilder outputString = new StringBuilder();
+
+        // Create book counter and total pages counter
+        int bookCount = 0;
+        int totalPages = 0;
+
+        outputString.append("The books you finished in the month of February are:\n");
+
+        // Loop through each item in the book log and check if it has the same month value
+        for (String key : bookLog.keySet()){
+            // Get book log item
+            BookLogItem currentBook = bookLog.get(key);
+
+            // Get month value
+            String currentMonth = currentBook.getMonth();
+
+            if(Objects.equals(currentMonth, "February")){
+                // If so, increment book counter
+                bookCount++;
+                // Get pages of current book and add to total pages
+                totalPages += currentBook.getPages();
+
+                // Print out book title
+                outputString.append(currentBook.getTitle()).append("\n");
+            }
+
+        }
+
+        // Print out stats
+        outputString.append("This is a total of ").append(bookCount).append(" books, and ").append(totalPages).append(" pages read!");
+
+        output.setText(String.valueOf(outputString));
+
+        // Print success message
+        statusField.setTextFill(BLACK);
+        statusField.setText("Successfully retrieved all books read in February!");
+    }
+
+
+    /**
+     * shows the books read in a March and the total number of pages read in testArea
+     * @param event shows the books read in a March
+     */
+    @FXML
+    void monthStatsMar(ActionEvent event){
+
+        StringBuilder outputString = new StringBuilder();
+
+        // Create book counter and total pages counter
+        int bookCount = 0;
+        int totalPages = 0;
+
+        outputString.append("The books you finished in the month of March are:\n");
+
+        // Loop through each item in the book log and check if it has the same month value
+        for (String key : bookLog.keySet()){
+            // Get book log item
+            BookLogItem currentBook = bookLog.get(key);
+
+            // Get month value
+            String currentMonth = currentBook.getMonth();
+
+            if(Objects.equals(currentMonth, "March")){
+                // If so, increment book counter
+                bookCount++;
+                // Get pages of current book and add to total pages
+                totalPages += currentBook.getPages();
+
+                // Print out book title
+                outputString.append(currentBook.getTitle()).append("\n");
+            }
+
+        }
+
+        // Print out stats
+        outputString.append("This is a total of ").append(bookCount).append(" books, and ").append(totalPages).append(" pages read!");
+
+        output.setText(String.valueOf(outputString));
+
+        // Print success message
+        statusField.setTextFill(BLACK);
+        statusField.setText("Successfully retrieved all books read in March!");
+    }
+
+    /**
+     * shows the books read in a April and the total number of pages read in testArea
+     * @param event shows the books read in a April
+     */
+    @FXML
+    void monthStatsApr(ActionEvent event){
+
+        StringBuilder outputString = new StringBuilder();
+
+        // Create book counter and total pages counter
+        int bookCount = 0;
+        int totalPages = 0;
+
+        outputString.append("The books you finished in the month of April are:\n");
+
+        // Loop through each item in the book log and check if it has the same month value
+        for (String key : bookLog.keySet()){
+            // Get book log item
+            BookLogItem currentBook = bookLog.get(key);
+
+            // Get month value
+            String currentMonth = currentBook.getMonth();
+
+            if(Objects.equals(currentMonth, "April")){
+                // If so, increment book counter
+                bookCount++;
+                // Get pages of current book and add to total pages
+                totalPages += currentBook.getPages();
+
+                // Print out book title
+                outputString.append(currentBook.getTitle()).append("\n");
+            }
+
+        }
+
+
+
+        // Print out stats
+        outputString.append("This is a total of ").append(bookCount).append(" books, and ").append(totalPages).append(" pages read!");
+
+        output.setText(String.valueOf(outputString));
+
+        // Print success message
+        statusField.setTextFill(BLACK);
+        statusField.setText("Successfully retrieved all books read in April!");
+    }
+
+    /**
+     * shows the books read in a May and the total number of pages read in testArea
+     * @param event shows the books read in a May
+     */
+    @FXML
+    void monthStatsMay(ActionEvent event){
+
+        StringBuilder outputString = new StringBuilder();
+
+        // Create book counter and total pages counter
+        int bookCount = 0;
+        int totalPages = 0;
+
+        outputString.append("The books you finished in the month of May are:\n");
+
+        // Loop through each item in the book log and check if it has the same month value
+        for (String key : bookLog.keySet()){
+            // Get book log item
+            BookLogItem currentBook = bookLog.get(key);
+
+            // Get month value
+            String currentMonth = currentBook.getMonth();
+
+            if(Objects.equals(currentMonth, "May")){
+                // If so, increment book counter
+                bookCount++;
+                // Get pages of current book and add to total pages
+                totalPages += currentBook.getPages();
+
+                // Print out book title
+                outputString.append(currentBook.getTitle()).append("\n");
+            }
+
+        }
+
+        // Print out stats
+        outputString.append("This is a total of ").append(bookCount).append(" books, and ").append(totalPages).append(" pages read!");
+
+        output.setText(String.valueOf(outputString));
+
+        // Print success message
+        statusField.setTextFill(BLACK);
+        statusField.setText("Successfully retrieved all books read in May!");
+    }
+
+    /**
+     * shows the books read in a June and the total number of pages read in testArea
+     * @param event shows the books read in a June
+     */
+    @FXML
+    void monthStatsJun(ActionEvent event){
+
+        StringBuilder outputString = new StringBuilder();
+
+        // Create book counter and total pages counter
+        int bookCount = 0;
+        int totalPages = 0;
+
+        outputString.append("The books you finished in the month of June are:\n");
+
+        // Loop through each item in the book log and check if it has the same month value
+        for (String key : bookLog.keySet()){
+            // Get book log item
+            BookLogItem currentBook = bookLog.get(key);
+
+            // Get month value
+            String currentMonth = currentBook.getMonth();
+
+            if(Objects.equals(currentMonth, "June")){
+                // If so, increment book counter
+                bookCount++;
+                // Get pages of current book and add to total pages
+                totalPages += currentBook.getPages();
+
+                // Print out book title
+                outputString.append(currentBook.getTitle()).append("\n");
+            }
+
+        }
+
+        // Print out stats
+        outputString.append("This is a total of ").append(bookCount).append(" books, and ").append(totalPages).append(" pages read!");
+
+        output.setText(String.valueOf(outputString));
+
+        // Print success message
+        statusField.setTextFill(BLACK);
+        statusField.setText("Successfully retrieved all books read in June!");
+    }
+
+    /**
+     * shows the books read in a July and the total number of pages read in testArea
+     * @param event shows the books read in a July
+     */
+    @FXML
+    void monthStatsJul(ActionEvent event){
+
+        StringBuilder outputString = new StringBuilder();
+
+        // Create book counter and total pages counter
+        int bookCount = 0;
+        int totalPages = 0;
+
+        outputString.append("The books you finished in the month of July are:\n");
+
+        // Loop through each item in the book log and check if it has the same month value
+        for (String key : bookLog.keySet()){
+            // Get book log item
+            BookLogItem currentBook = bookLog.get(key);
+
+            // Get month value
+            String currentMonth = currentBook.getMonth();
+
+            if(Objects.equals(currentMonth, "July")){
+                // If so, increment book counter
+                bookCount++;
+                // Get pages of current book and add to total pages
+                totalPages += currentBook.getPages();
+
+                // Print out book title
+                outputString.append(currentBook.getTitle()).append("\n");
+            }
+
+        }
+
+        // Print out stats
+        outputString.append("This is a total of ").append(bookCount).append(" books, and ").append(totalPages).append(" pages read!");
+
+        output.setText(String.valueOf(outputString));
+
+        // Print success message
+        statusField.setTextFill(BLACK);
+        statusField.setText("Successfully retrieved all books read in July!");
+    }
+
+    /**
+     * shows the books read in a August and the total number of pages read in testArea
+     * @param event shows the books read in a August
+     */
+    @FXML
+    void monthStatsAug(ActionEvent event){
+
+        StringBuilder outputString = new StringBuilder();
+
+        // Create book counter and total pages counter
+        int bookCount = 0;
+        int totalPages = 0;
+
+        outputString.append("The books you finished in the month of August are:\n");
+
+        // Loop through each item in the book log and check if it has the same month value
+        for (String key : bookLog.keySet()){
+            // Get book log item
+            BookLogItem currentBook = bookLog.get(key);
+
+            // Get month value
+            String currentMonth = currentBook.getMonth();
+
+            if(Objects.equals(currentMonth, "August")){
+                // If so, increment book counter
+                bookCount++;
+                // Get pages of current book and add to total pages
+                totalPages += currentBook.getPages();
+
+                // Print out book title
+                outputString.append(currentBook.getTitle()).append("\n");
+            }
+
+        }
+
+        // Print out stats
+        outputString.append("This is a total of ").append(bookCount).append(" books, and ").append(totalPages).append(" pages read!");
+
+        output.setText(String.valueOf(outputString));
+
+        // Print success message
+        statusField.setTextFill(BLACK);
+        statusField.setText("Successfully retrieved all books read in August!");
+    }
+
+    /**
+     * shows the books read in a September and the total number of pages read in testArea
+     * @param event shows the books read in a September
+     */
+    @FXML
+    void monthStatsSep(ActionEvent event){
+
+        StringBuilder outputString = new StringBuilder();
+
+        // Create book counter and total pages counter
+        int bookCount = 0;
+        int totalPages = 0;
+
+        outputString.append("The books you finished in the month of September are:\n");
+
+        // Loop through each item in the book log and check if it has the same month value
+        for (String key : bookLog.keySet()){
+            // Get book log item
+            BookLogItem currentBook = bookLog.get(key);
+
+            // Get month value
+            String currentMonth = currentBook.getMonth();
+
+            if(Objects.equals(currentMonth, "September")){
+                // If so, increment book counter
+                bookCount++;
+                // Get pages of current book and add to total pages
+                totalPages += currentBook.getPages();
+
+                // Print out book title
+                outputString.append(currentBook.getTitle()).append("\n");
+            }
+
+        }
+
+        // Print out stats
+        outputString.append("This is a total of ").append(bookCount).append(" books, and ").append(totalPages).append(" pages read!");
+
+        output.setText(String.valueOf(outputString));
+
+        // Print success message
+        statusField.setTextFill(BLACK);
+        statusField.setText("Successfully retrieved all books read in September!");
+    }
+
+    /**
+     * shows the books read in a October and the total number of pages read in testArea
+     * @param event shows the books read in a October
+     */
+    @FXML
+    void monthStatsOct(ActionEvent event){
+
+        StringBuilder outputString = new StringBuilder();
+
+        // Create book counter and total pages counter
+        int bookCount = 0;
+        int totalPages = 0;
+
+        outputString.append("The books you finished in the month of October are:\n");
+
+        // Loop through each item in the book log and check if it has the same month value
+        for (String key : bookLog.keySet()){
+            // Get book log item
+            BookLogItem currentBook = bookLog.get(key);
+
+            // Get month value
+            String currentMonth = currentBook.getMonth();
+
+            if(Objects.equals(currentMonth, "October")){
+                // If so, increment book counter
+                bookCount++;
+                // Get pages of current book and add to total pages
+                totalPages += currentBook.getPages();
+
+                // Print out book title
+                outputString.append(currentBook.getTitle()).append("\n");
+            }
+
+        }
+
+        // Print out stats
+        outputString.append("This is a total of ").append(bookCount).append(" books, and ").append(totalPages).append(" pages read!");
+
+        output.setText(String.valueOf(outputString));
+
+        // Print success message
+        statusField.setTextFill(BLACK);
+        statusField.setText("Successfully retrieved all books read in October!");
+    }
+
+    /**
+     * shows the books read in a November and the total number of pages read in testArea
+     * @param event shows the books read in a November
+     */
+    @FXML
+    void monthStatsNov(ActionEvent event){
+
+        StringBuilder outputString = new StringBuilder();
+
+        // Create book counter and total pages counter
+        int bookCount = 0;
+        int totalPages = 0;
+
+        outputString.append("The books you finished in the month of November are:\n");
+
+        // Loop through each item in the book log and check if it has the same month value
+        for (String key : bookLog.keySet()){
+            // Get book log item
+            BookLogItem currentBook = bookLog.get(key);
+
+            // Get month value
+            String currentMonth = currentBook.getMonth();
+
+            if(Objects.equals(currentMonth, "November")){
+                // If so, increment book counter
+                bookCount++;
+                // Get pages of current book and add to total pages
+                totalPages += currentBook.getPages();
+
+                // Print out book title
+                outputString.append(currentBook.getTitle()).append("\n");
+            }
+
+        }
+
+        // Print out stats
+        outputString.append("This is a total of ").append(bookCount).append(" books, and ").append(totalPages).append(" pages read!");
+
+        output.setText(String.valueOf(outputString));
+
+        // Print success message
+        statusField.setTextFill(BLACK);
+        statusField.setText("Successfully retrieved all books read in November!");
+    }
+
+    /**
+     * shows the books read in a December and the total number of pages read in testArea
+     * @param event shows the books read in a December
+     */
+    @FXML
+    void monthStatsDec(ActionEvent event){
+
+        StringBuilder outputString = new StringBuilder();
+
+        // Create book counter and total pages counter
+        int bookCount = 0;
+        int totalPages = 0;
+
+        outputString.append("The books you finished in the month of December are:\n");
+
+        // Loop through each item in the book log and check if it has the same month value
+        for (String key : bookLog.keySet()){
+            // Get book log item
+            BookLogItem currentBook = bookLog.get(key);
+
+            // Get month value
+            String currentMonth = currentBook.getMonth();
+
+            if(Objects.equals(currentMonth, "December")){
+                // If so, increment book counter
+                bookCount++;
+                // Get pages of current book and add to total pages
+                totalPages += currentBook.getPages();
+
+                // Print out book title
+                outputString.append(currentBook.getTitle()).append("\n");
+            }
+
+        }
+
+        // Print out stats
+        outputString.append("This is a total of ").append(bookCount).append(" books, and ").append(totalPages).append(" pages read!");
+
+        output.setText(String.valueOf(outputString));
+
+        // Print success message
+        statusField.setTextFill(BLACK);
+        statusField.setText("Successfully retrieved all books read in December!");
     }
 
     /**
