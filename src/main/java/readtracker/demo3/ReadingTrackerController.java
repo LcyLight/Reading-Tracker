@@ -994,8 +994,8 @@ public class ReadingTrackerController {
     }
 
     /**
-     * shows the books read in a April and the total number of pages read in testArea
-     * @param event shows the books read in a April
+     * shows the books read in April and the total number of pages read in testArea
+     * @param event shows the books read in April
      */
     @FXML
     void monthStatsApr(ActionEvent event){
@@ -1176,8 +1176,8 @@ public class ReadingTrackerController {
     }
 
     /**
-     * shows the books read in a August and the total number of pages read in testArea
-     * @param event shows the books read in a August
+     * shows the books read in August and the total number of pages read in testArea
+     * @param event shows the books read in August
      */
     @FXML
     void monthStatsAug(ActionEvent event){
@@ -1266,8 +1266,8 @@ public class ReadingTrackerController {
     }
 
     /**
-     * shows the books read in a October and the total number of pages read in testArea
-     * @param event shows the books read in a October
+     * shows the books read in October and the total number of pages read in testArea
+     * @param event shows the books read in October
      */
     @FXML
     void monthStatsOct(ActionEvent event){
@@ -1400,6 +1400,342 @@ public class ReadingTrackerController {
         statusField.setText("Successfully retrieved all books read in December!");
     }
 
+
+    /**
+     * Shows the titles read/want to read in Fantasy genre, and a sum of the amounts in both book long and reading list
+     */
+    @FXML
+    void genreStatsFan(){
+
+        StringBuilder outputString = new StringBuilder();
+
+        outputString.append("The books you've read in the Fantasy genre are: \n");
+
+        // Create book log genre counter
+        int bookLogCounter = 0;
+        // Loop through all the books in book log
+        for (String item: bookLog.keySet()){
+            BookLogItem currentBook = bookLog.get(item);
+            // Check if currentBook genre matches user entered genre, if so, print out title and update counter
+            if (currentBook.getGenre().equals("Fantasy")){
+                outputString.append(item).append("\n");
+                bookLogCounter++;
+            }
+        }
+
+        outputString.append("The books you want to read in the Fantasy genre are: \n");
+        // Create reading list genre counter
+        int readingListCounter = 0;
+        // Loop through all the books in book log
+        for (String item: readingList.keySet()){
+            ReadingListItem currentBook = readingList.get(item);
+            // Check if currentBook genre matches user entered genre, if so, print out title and update counter
+            if (currentBook.getGenre().equals("Fantasy")){
+                outputString.append(item).append("\n");
+                readingListCounter++;
+            }
+        }
+
+        // Create sum of books in genre
+        int genreSum = readingListCounter + bookLogCounter;
+        outputString.append("This is ").append(bookLogCounter).append(" books read in this genre, and ")
+                .append(readingListCounter).append(" books you want to read in this genre! In total, you've tracked ")
+                .append(genreSum).append(" books for this genre!");
+
+        output.setText(String.valueOf(outputString));
+
+        // Print success message
+        statusField.setTextFill(BLACK);
+        statusField.setText("Successfully retrieved all books in genre Fantasy!");
+    }
+
+    /**
+     * Shows the titles read/want to read in Classics genre, and a sum of the amounts in both book long and reading list
+     */
+    @FXML
+    void genreStatsCla(){
+
+        StringBuilder outputString = new StringBuilder();
+
+        outputString.append("The books you've read in the Classics genre are: \n");
+
+        // Create book log genre counter
+        int bookLogCounter = 0;
+        // Loop through all the books in book log
+        for (String item: bookLog.keySet()){
+            BookLogItem currentBook = bookLog.get(item);
+            // Check if currentBook genre matches user entered genre, if so, print out title and update counter
+            if (currentBook.getGenre().equals("Classics")){
+                outputString.append(item).append("\n");
+                bookLogCounter++;
+            }
+        }
+
+        outputString.append("The books you want to read in the Classics genre are: \n");
+        // Create reading list genre counter
+        int readingListCounter = 0;
+        // Loop through all the books in book log
+        for (String item: readingList.keySet()){
+            ReadingListItem currentBook = readingList.get(item);
+            // Check if currentBook genre matches user entered genre, if so, print out title and update counter
+            if (currentBook.getGenre().equals("Classics")){
+                outputString.append(item).append("\n");
+                readingListCounter++;
+            }
+        }
+
+        // Create sum of books in genre
+        int genreSum = readingListCounter + bookLogCounter;
+        outputString.append("This is ").append(bookLogCounter).append(" books read in this genre, and ")
+                .append(readingListCounter).append(" books you want to read in this genre! In total, you've tracked ")
+                .append(genreSum).append(" books for this genre!");
+
+        output.setText(String.valueOf(outputString));
+
+        // Print success message
+        statusField.setTextFill(BLACK);
+        statusField.setText("Successfully retrieved all books in genre Classics!");
+    }
+
+    /**
+     * Shows the titles read/want to read in Mystery genre, and a sum of the amounts in both book long and reading list
+     */
+    @FXML
+    void genreStatsMys(){
+
+        StringBuilder outputString = new StringBuilder();
+
+        outputString.append("The books you've read in the Mystery genre are: \n");
+
+        // Create book log genre counter
+        int bookLogCounter = 0;
+        // Loop through all the books in book log
+        for (String item: bookLog.keySet()){
+            BookLogItem currentBook = bookLog.get(item);
+            // Check if currentBook genre matches user entered genre, if so, print out title and update counter
+            if (currentBook.getGenre().equals("Mystery")){
+                outputString.append(item).append("\n");
+                bookLogCounter++;
+            }
+        }
+
+        outputString.append("The books you want to read in the Mystery genre are: \n");
+        // Create reading list genre counter
+        int readingListCounter = 0;
+        // Loop through all the books in book log
+        for (String item: readingList.keySet()){
+            ReadingListItem currentBook = readingList.get(item);
+            // Check if currentBook genre matches user entered genre, if so, print out title and update counter
+            if (currentBook.getGenre().equals("Mystery")){
+                outputString.append(item).append("\n");
+                readingListCounter++;
+            }
+        }
+
+        // Create sum of books in genre
+        int genreSum = readingListCounter + bookLogCounter;
+        outputString.append("This is ").append(bookLogCounter).append(" books read in this genre, and ")
+                .append(readingListCounter).append(" books you want to read in this genre! In total, you've tracked ")
+                .append(genreSum).append(" books for this genre!");
+
+        output.setText(String.valueOf(outputString));
+
+        // Print success message
+        statusField.setTextFill(BLACK);
+        statusField.setText("Successfully retrieved all books in genre Mystery!");
+    }
+
+    /**
+     * Shows the titles read/want to read in Non fiction genre, and a sum of the amounts in both book long and reading list
+     */
+    @FXML
+    void genreStatsNonFic(){
+
+        StringBuilder outputString = new StringBuilder();
+
+        outputString.append("The books you've read in the Non fiction genre are: \n");
+
+        // Create book log genre counter
+        int bookLogCounter = 0;
+        // Loop through all the books in book log
+        for (String item: bookLog.keySet()){
+            BookLogItem currentBook = bookLog.get(item);
+            // Check if currentBook genre matches user entered genre, if so, print out title and update counter
+            if (currentBook.getGenre().equals("Non fiction")){
+                outputString.append(item).append("\n");
+                bookLogCounter++;
+            }
+        }
+
+        outputString.append("The books you want to read in the Non fiction genre are: \n");
+        // Create reading list genre counter
+        int readingListCounter = 0;
+        // Loop through all the books in book log
+        for (String item: readingList.keySet()){
+            ReadingListItem currentBook = readingList.get(item);
+            // Check if currentBook genre matches user entered genre, if so, print out title and update counter
+            if (currentBook.getGenre().equals("Non fiction")){
+                outputString.append(item).append("\n");
+                readingListCounter++;
+            }
+        }
+
+        // Create sum of books in genre
+        int genreSum = readingListCounter + bookLogCounter;
+        outputString.append("This is ").append(bookLogCounter).append(" books read in this genre, and ")
+                .append(readingListCounter).append(" books you want to read in this genre! In total, you've tracked ")
+                .append(genreSum).append(" books for this genre!");
+
+        output.setText(String.valueOf(outputString));
+
+        // Print success message
+        statusField.setTextFill(BLACK);
+        statusField.setText("Successfully retrieved all books in genre Non Fiction!");
+    }
+
+    /**
+     * Shows the titles read/want to read in Sci-fi genre, and a sum of the amounts in both book long and reading list
+     */
+    @FXML
+    void genreStatsSci(){
+
+        StringBuilder outputString = new StringBuilder();
+
+        outputString.append("The books you've read in the Sci-fi genre are: \n");
+
+        // Create book log genre counter
+        int bookLogCounter = 0;
+        // Loop through all the books in book log
+        for (String item: bookLog.keySet()){
+            BookLogItem currentBook = bookLog.get(item);
+            // Check if currentBook genre matches user entered genre, if so, print out title and update counter
+            if (currentBook.getGenre().equals("Sci-fi")){
+                outputString.append(item).append("\n");
+                bookLogCounter++;
+            }
+        }
+
+        outputString.append("The books you want to read in the Sci-fi genre are: \n");
+        // Create reading list genre counter
+        int readingListCounter = 0;
+        // Loop through all the books in book log
+        for (String item: readingList.keySet()){
+            ReadingListItem currentBook = readingList.get(item);
+            // Check if currentBook genre matches user entered genre, if so, print out title and update counter
+            if (currentBook.getGenre().equals("Sci-fi")){
+                outputString.append(item).append("\n");
+                readingListCounter++;
+            }
+        }
+
+        // Create sum of books in genre
+        int genreSum = readingListCounter + bookLogCounter;
+        outputString.append("This is ").append(bookLogCounter).append(" books read in this genre, and ")
+                .append(readingListCounter).append(" books you want to read in this genre! In total, you've tracked ")
+                .append(genreSum).append(" books for this genre!");
+
+        output.setText(String.valueOf(outputString));
+
+        // Print success message
+        statusField.setTextFill(BLACK);
+        statusField.setText("Successfully retrieved all books in genre Sci-fi!");
+    }
+
+    /**
+     * Shows the titles read/want to read in Thriller genre, and a sum of the amounts in both book long and reading list
+     */
+    @FXML
+    void genreStatsTri(){
+
+        StringBuilder outputString = new StringBuilder();
+
+        outputString.append("The books you've read in the Thriller genre are: \n");
+
+        // Create book log genre counter
+        int bookLogCounter = 0;
+        // Loop through all the books in book log
+        for (String item: bookLog.keySet()){
+            BookLogItem currentBook = bookLog.get(item);
+            // Check if currentBook genre matches user entered genre, if so, print out title and update counter
+            if (currentBook.getGenre().equals("Thriller")){
+                outputString.append(item).append("\n");
+                bookLogCounter++;
+            }
+        }
+
+        outputString.append("The books you want to read in the Thriller genre are: \n");
+        // Create reading list genre counter
+        int readingListCounter = 0;
+        // Loop through all the books in book log
+        for (String item: readingList.keySet()){
+            ReadingListItem currentBook = readingList.get(item);
+            // Check if currentBook genre matches user entered genre, if so, print out title and update counter
+            if (currentBook.getGenre().equals("Thriller")){
+                outputString.append(item).append("\n");
+                readingListCounter++;
+            }
+        }
+
+        // Create sum of books in genre
+        int genreSum = readingListCounter + bookLogCounter;
+        outputString.append("This is ").append(bookLogCounter).append(" books read in this genre, and ")
+                .append(readingListCounter).append(" books you want to read in this genre! In total, you've tracked ")
+                .append(genreSum).append(" books for this genre!");
+
+        output.setText(String.valueOf(outputString));
+
+        // Print success message
+        statusField.setTextFill(BLACK);
+        statusField.setText("Successfully retrieved all books in genre Thriller!");
+    }
+
+    /**
+     * Shows the titles read/want to read in Romance genre, and a sum of the amounts in both book long and reading list
+     */
+    @FXML
+    void genreStatsRom(){
+
+        StringBuilder outputString = new StringBuilder();
+
+        outputString.append("The books you've read in the Romance genre are: \n");
+
+        // Create book log genre counter
+        int bookLogCounter = 0;
+        // Loop through all the books in book log
+        for (String item: bookLog.keySet()){
+            BookLogItem currentBook = bookLog.get(item);
+            // Check if currentBook genre matches user entered genre, if so, print out title and update counter
+            if (currentBook.getGenre().equals("Romance")){
+                outputString.append(item).append("\n");
+                bookLogCounter++;
+            }
+        }
+
+        outputString.append("The books you want to read in the Romance genre are: \n");
+        // Create reading list genre counter
+        int readingListCounter = 0;
+        // Loop through all the books in book log
+        for (String item: readingList.keySet()){
+            ReadingListItem currentBook = readingList.get(item);
+            // Check if currentBook genre matches user entered genre, if so, print out title and update counter
+            if (currentBook.getGenre().equals("Romance")){
+                outputString.append(item).append("\n");
+                readingListCounter++;
+            }
+        }
+
+        // Create sum of books in genre
+        int genreSum = readingListCounter + bookLogCounter;
+        outputString.append("This is ").append(bookLogCounter).append(" books read in this genre, and ")
+                .append(readingListCounter).append(" books you want to read in this genre! In total, you've tracked ")
+                .append(genreSum).append(" books for this genre!");
+
+        output.setText(String.valueOf(outputString));
+
+        // Print success message
+        statusField.setTextFill(BLACK);
+        statusField.setText("Successfully retrieved all books in genre Romance!");
+    }
     /**
      * Ends the program
      * @param event Quit is selected in the menu bar under File
