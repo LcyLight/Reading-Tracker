@@ -1742,6 +1742,6 @@ public class ReadingTrackerController {
      */
     @FXML
     void quitProgram(ActionEvent event) {
-        System.exit(1);
+        javafx.application.Platform.exit();
     }
 }
