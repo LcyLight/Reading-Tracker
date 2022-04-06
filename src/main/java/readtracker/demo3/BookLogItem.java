@@ -31,7 +31,7 @@ public final class BookLogItem extends Book {
 
     // Format string method (for formatting in the csv file format)
     public String formatString(){
-        return String.format("BOOK LOG,%s,%s,%d,%d,%d,%s",this.getTitle(),this.getAuthor(),month,rating,pages,this.getGenre());
+        return String.format("BOOK LOG,%s,%s,%s,%d,%d,%s",this.getTitle(),this.getAuthor(),month,rating,pages,this.getGenre());
     }
 
 
