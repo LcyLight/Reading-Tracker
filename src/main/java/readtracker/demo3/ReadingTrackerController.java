@@ -1409,7 +1409,7 @@ public class ReadingTrackerController {
 
         StringBuilder outputString = new StringBuilder();
 
-        outputString.append("The books you've read in the Fantasy genre are: \n");
+        outputString.append("The books you've read in the fantasy genre are: \n");
 
         // Create book log genre counter
         int bookLogCounter = 0;
@@ -1417,20 +1417,20 @@ public class ReadingTrackerController {
         for (String item: bookLog.keySet()){
             BookLogItem currentBook = bookLog.get(item);
             // Check if currentBook genre matches user entered genre, if so, print out title and update counter
-            if (currentBook.getGenre().equals("Fantasy")){
+            if (currentBook.getGenre().equals("fantasy")){
                 outputString.append(item).append("\n");
                 bookLogCounter++;
             }
         }
 
-        outputString.append("The books you want to read in the Fantasy genre are: \n");
+        outputString.append("The books you want to read in the fantasy genre are: \n");
         // Create reading list genre counter
         int readingListCounter = 0;
         // Loop through all the books in book log
         for (String item: readingList.keySet()){
             ReadingListItem currentBook = readingList.get(item);
             // Check if currentBook genre matches user entered genre, if so, print out title and update counter
-            if (currentBook.getGenre().equals("Fantasy")){
+            if (currentBook.getGenre().equals("fantasy")){
                 outputString.append(item).append("\n");
                 readingListCounter++;
             }
@@ -1439,14 +1439,14 @@ public class ReadingTrackerController {
         // Create sum of books in genre
         int genreSum = readingListCounter + bookLogCounter;
         outputString.append("This is ").append(bookLogCounter).append(" books read in this genre, and ")
-                .append(readingListCounter).append(" books you want to read in this genre! In total, you've tracked ")
+                .append(readingListCounter).append(" books you \nwant to read in this genre!\nIn total, you've tracked ")
                 .append(genreSum).append(" books for this genre!");
 
         output.setText(String.valueOf(outputString));
 
         // Print success message
         statusField.setTextFill(BLACK);
-        statusField.setText("Successfully retrieved all books in genre Fantasy!");
+        statusField.setText("Successfully retrieved all books in genre fantasy!");
     }
 
     /**
@@ -1457,7 +1457,7 @@ public class ReadingTrackerController {
 
         StringBuilder outputString = new StringBuilder();
 
-        outputString.append("The books you've read in the Classics genre are: \n");
+        outputString.append("The books you've read in the classics genre are: \n");
 
         // Create book log genre counter
         int bookLogCounter = 0;
@@ -1465,20 +1465,20 @@ public class ReadingTrackerController {
         for (String item: bookLog.keySet()){
             BookLogItem currentBook = bookLog.get(item);
             // Check if currentBook genre matches user entered genre, if so, print out title and update counter
-            if (currentBook.getGenre().equals("Classics")){
+            if (currentBook.getGenre().equals("classics")){
                 outputString.append(item).append("\n");
                 bookLogCounter++;
             }
         }
 
-        outputString.append("The books you want to read in the Classics genre are: \n");
+        outputString.append("The books you want to read in the classics genre are: \n");
         // Create reading list genre counter
         int readingListCounter = 0;
         // Loop through all the books in book log
         for (String item: readingList.keySet()){
             ReadingListItem currentBook = readingList.get(item);
             // Check if currentBook genre matches user entered genre, if so, print out title and update counter
-            if (currentBook.getGenre().equals("Classics")){
+            if (currentBook.getGenre().equals("classics")){
                 outputString.append(item).append("\n");
                 readingListCounter++;
             }
@@ -1487,14 +1487,14 @@ public class ReadingTrackerController {
         // Create sum of books in genre
         int genreSum = readingListCounter + bookLogCounter;
         outputString.append("This is ").append(bookLogCounter).append(" books read in this genre, and ")
-                .append(readingListCounter).append(" books you want to read in this genre! In total, you've tracked ")
+                .append(readingListCounter).append(" books you \nwant to read in this genre!\nIn total, you've tracked ")
                 .append(genreSum).append(" books for this genre!");
 
         output.setText(String.valueOf(outputString));
 
         // Print success message
         statusField.setTextFill(BLACK);
-        statusField.setText("Successfully retrieved all books in genre Classics!");
+        statusField.setText("Successfully retrieved all books in genre classics!");
     }
 
     /**
@@ -1505,7 +1505,7 @@ public class ReadingTrackerController {
 
         StringBuilder outputString = new StringBuilder();
 
-        outputString.append("The books you've read in the Mystery genre are: \n");
+        outputString.append("The books you've read in the mystery genre are: \n");
 
         // Create book log genre counter
         int bookLogCounter = 0;
@@ -1513,20 +1513,20 @@ public class ReadingTrackerController {
         for (String item: bookLog.keySet()){
             BookLogItem currentBook = bookLog.get(item);
             // Check if currentBook genre matches user entered genre, if so, print out title and update counter
-            if (currentBook.getGenre().equals("Mystery")){
+            if (currentBook.getGenre().equals("mystery")){
                 outputString.append(item).append("\n");
                 bookLogCounter++;
             }
         }
 
-        outputString.append("The books you want to read in the Mystery genre are: \n");
+        outputString.append("The books you want to read in the mystery genre are: \n");
         // Create reading list genre counter
         int readingListCounter = 0;
         // Loop through all the books in book log
         for (String item: readingList.keySet()){
             ReadingListItem currentBook = readingList.get(item);
             // Check if currentBook genre matches user entered genre, if so, print out title and update counter
-            if (currentBook.getGenre().equals("Mystery")){
+            if (currentBook.getGenre().equals("mystery")){
                 outputString.append(item).append("\n");
                 readingListCounter++;
             }
@@ -1535,14 +1535,14 @@ public class ReadingTrackerController {
         // Create sum of books in genre
         int genreSum = readingListCounter + bookLogCounter;
         outputString.append("This is ").append(bookLogCounter).append(" books read in this genre, and ")
-                .append(readingListCounter).append(" books you want to read in this genre! In total, you've tracked ")
+                .append(readingListCounter).append(" books you \nwant to read in this genre!\nIn total, you've tracked ")
                 .append(genreSum).append(" books for this genre!");
 
         output.setText(String.valueOf(outputString));
 
         // Print success message
         statusField.setTextFill(BLACK);
-        statusField.setText("Successfully retrieved all books in genre Mystery!");
+        statusField.setText("Successfully retrieved all books in genre mystery!");
     }
 
     /**
@@ -1553,7 +1553,7 @@ public class ReadingTrackerController {
 
         StringBuilder outputString = new StringBuilder();
 
-        outputString.append("The books you've read in the Non fiction genre are: \n");
+        outputString.append("The books you've read in the non fiction genre are: \n");
 
         // Create book log genre counter
         int bookLogCounter = 0;
@@ -1561,20 +1561,20 @@ public class ReadingTrackerController {
         for (String item: bookLog.keySet()){
             BookLogItem currentBook = bookLog.get(item);
             // Check if currentBook genre matches user entered genre, if so, print out title and update counter
-            if (currentBook.getGenre().equals("Non fiction")){
+            if (currentBook.getGenre().equals("non fiction")){
                 outputString.append(item).append("\n");
                 bookLogCounter++;
             }
         }
 
-        outputString.append("The books you want to read in the Non fiction genre are: \n");
+        outputString.append("The books you want to read in the non fiction genre are: \n");
         // Create reading list genre counter
         int readingListCounter = 0;
         // Loop through all the books in book log
         for (String item: readingList.keySet()){
             ReadingListItem currentBook = readingList.get(item);
             // Check if currentBook genre matches user entered genre, if so, print out title and update counter
-            if (currentBook.getGenre().equals("Non fiction")){
+            if (currentBook.getGenre().equals("non fiction")){
                 outputString.append(item).append("\n");
                 readingListCounter++;
             }
@@ -1583,14 +1583,14 @@ public class ReadingTrackerController {
         // Create sum of books in genre
         int genreSum = readingListCounter + bookLogCounter;
         outputString.append("This is ").append(bookLogCounter).append(" books read in this genre, and ")
-                .append(readingListCounter).append(" books you want to read in this genre! In total, you've tracked ")
+                .append(readingListCounter).append(" books you \nwant to read in this genre!\nIn total, you've tracked ")
                 .append(genreSum).append(" books for this genre!");
 
         output.setText(String.valueOf(outputString));
 
         // Print success message
         statusField.setTextFill(BLACK);
-        statusField.setText("Successfully retrieved all books in genre Non Fiction!");
+        statusField.setText("Successfully retrieved all books in genre non fiction!");
     }
 
     /**
@@ -1601,7 +1601,7 @@ public class ReadingTrackerController {
 
         StringBuilder outputString = new StringBuilder();
 
-        outputString.append("The books you've read in the Sci-fi genre are: \n");
+        outputString.append("The books you've read in the sci-fi genre are: \n");
 
         // Create book log genre counter
         int bookLogCounter = 0;
@@ -1609,20 +1609,20 @@ public class ReadingTrackerController {
         for (String item: bookLog.keySet()){
             BookLogItem currentBook = bookLog.get(item);
             // Check if currentBook genre matches user entered genre, if so, print out title and update counter
-            if (currentBook.getGenre().equals("Sci-fi")){
+            if (currentBook.getGenre().equals("sci-fi")){
                 outputString.append(item).append("\n");
                 bookLogCounter++;
             }
         }
 
-        outputString.append("The books you want to read in the Sci-fi genre are: \n");
+        outputString.append("The books you want to read in the sci-fi genre are: \n");
         // Create reading list genre counter
         int readingListCounter = 0;
         // Loop through all the books in book log
         for (String item: readingList.keySet()){
             ReadingListItem currentBook = readingList.get(item);
             // Check if currentBook genre matches user entered genre, if so, print out title and update counter
-            if (currentBook.getGenre().equals("Sci-fi")){
+            if (currentBook.getGenre().equals("sci-fi")){
                 outputString.append(item).append("\n");
                 readingListCounter++;
             }
@@ -1631,14 +1631,14 @@ public class ReadingTrackerController {
         // Create sum of books in genre
         int genreSum = readingListCounter + bookLogCounter;
         outputString.append("This is ").append(bookLogCounter).append(" books read in this genre, and ")
-                .append(readingListCounter).append(" books you want to read in this genre! In total, you've tracked ")
+                .append(readingListCounter).append(" books you \nwant to read in this genre!\nIn total, you've tracked ")
                 .append(genreSum).append(" books for this genre!");
 
         output.setText(String.valueOf(outputString));
 
         // Print success message
         statusField.setTextFill(BLACK);
-        statusField.setText("Successfully retrieved all books in genre Sci-fi!");
+        statusField.setText("Successfully retrieved all books in genre sci-fi!");
     }
 
     /**
@@ -1649,7 +1649,7 @@ public class ReadingTrackerController {
 
         StringBuilder outputString = new StringBuilder();
 
-        outputString.append("The books you've read in the Thriller genre are: \n");
+        outputString.append("The books you've read in the thriller genre are: \n");
 
         // Create book log genre counter
         int bookLogCounter = 0;
@@ -1657,20 +1657,20 @@ public class ReadingTrackerController {
         for (String item: bookLog.keySet()){
             BookLogItem currentBook = bookLog.get(item);
             // Check if currentBook genre matches user entered genre, if so, print out title and update counter
-            if (currentBook.getGenre().equals("Thriller")){
+            if (currentBook.getGenre().equals("thriller")){
                 outputString.append(item).append("\n");
                 bookLogCounter++;
             }
         }
 
-        outputString.append("The books you want to read in the Thriller genre are: \n");
+        outputString.append("The books you want to read in the thriller genre are: \n");
         // Create reading list genre counter
         int readingListCounter = 0;
         // Loop through all the books in book log
         for (String item: readingList.keySet()){
             ReadingListItem currentBook = readingList.get(item);
             // Check if currentBook genre matches user entered genre, if so, print out title and update counter
-            if (currentBook.getGenre().equals("Thriller")){
+            if (currentBook.getGenre().equals("thriller")){
                 outputString.append(item).append("\n");
                 readingListCounter++;
             }
@@ -1679,14 +1679,14 @@ public class ReadingTrackerController {
         // Create sum of books in genre
         int genreSum = readingListCounter + bookLogCounter;
         outputString.append("This is ").append(bookLogCounter).append(" books read in this genre, and ")
-                .append(readingListCounter).append(" books you want to read in this genre! In total, you've tracked ")
+                .append(readingListCounter).append(" books you \nwant to read in this genre!\nIn total, you've tracked ")
                 .append(genreSum).append(" books for this genre!");
 
         output.setText(String.valueOf(outputString));
 
         // Print success message
         statusField.setTextFill(BLACK);
-        statusField.setText("Successfully retrieved all books in genre Thriller!");
+        statusField.setText("Successfully retrieved all books in genre thriller!");
     }
 
     /**
@@ -1697,7 +1697,7 @@ public class ReadingTrackerController {
 
         StringBuilder outputString = new StringBuilder();
 
-        outputString.append("The books you've read in the Romance genre are: \n");
+        outputString.append("The books you've read in the romance genre are: \n");
 
         // Create book log genre counter
         int bookLogCounter = 0;
@@ -1705,20 +1705,20 @@ public class ReadingTrackerController {
         for (String item: bookLog.keySet()){
             BookLogItem currentBook = bookLog.get(item);
             // Check if currentBook genre matches user entered genre, if so, print out title and update counter
-            if (currentBook.getGenre().equals("Romance")){
+            if (currentBook.getGenre().equals("romance")){
                 outputString.append(item).append("\n");
                 bookLogCounter++;
             }
         }
 
-        outputString.append("The books you want to read in the Romance genre are: \n");
+        outputString.append("The books you want to read in the romance genre are: \n");
         // Create reading list genre counter
         int readingListCounter = 0;
         // Loop through all the books in book log
         for (String item: readingList.keySet()){
             ReadingListItem currentBook = readingList.get(item);
             // Check if currentBook genre matches user entered genre, if so, print out title and update counter
-            if (currentBook.getGenre().equals("Romance")){
+            if (currentBook.getGenre().equals("romance")){
                 outputString.append(item).append("\n");
                 readingListCounter++;
             }
@@ -1727,14 +1727,14 @@ public class ReadingTrackerController {
         // Create sum of books in genre
         int genreSum = readingListCounter + bookLogCounter;
         outputString.append("This is ").append(bookLogCounter).append(" books read in this genre, and ")
-                .append(readingListCounter).append(" books you want to read in this genre! In total, you've tracked ")
+                .append(readingListCounter).append(" books you \nwant to read in this genre!\nIn total, you've tracked ")
                 .append(genreSum).append(" books for this genre!");
 
         output.setText(String.valueOf(outputString));
 
         // Print success message
         statusField.setTextFill(BLACK);
-        statusField.setText("Successfully retrieved all books in genre Romance!");
+        statusField.setText("Successfully retrieved all books in genre romance!");
     }
     /**
      * Ends the program
