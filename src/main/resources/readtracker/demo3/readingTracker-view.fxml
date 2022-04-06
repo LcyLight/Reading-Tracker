@@ -142,25 +142,25 @@
                                 <MenuItem fx:id="rating3" mnemonicParsing="false" onAction="#viewRating3" text="View books rated 3 stars" />
                                 <MenuItem fx:id="rating2" mnemonicParsing="false" onAction="#viewRating2" text="View books rated 2 stars" />
                                 <MenuItem fx:id="rating1" mnemonicParsing="false" onAction="#viewRating1" text="View books rated 1 stars" />
-                                <MenuItem mnemonicParsing="false" text="View reading stats for January" />
+                                <MenuItem mnemonicParsing="false" onAction="#monthStatsJan" text="View reading stats for January" />
                                 <MenuItem mnemonicParsing="false" text="View reading stats for February" />
-                        <MenuItem mnemonicParsing="false" text="View reading stats for March" />
-                        <MenuItem mnemonicParsing="false" text="View reading stats for April" />
-                        <MenuItem mnemonicParsing="false" text="View reading stats for May" />
-                        <MenuItem mnemonicParsing="false" text="View reading stats for June" />
-                        <MenuItem mnemonicParsing="false" text="View reading stats for July" />
-                        <MenuItem mnemonicParsing="false" text="View reading stats for August" />
-                        <MenuItem mnemonicParsing="false" text="View reading stats for September" />
-                        <MenuItem mnemonicParsing="false" text="View reading stats for October" />
-                        <MenuItem mnemonicParsing="false" text="View reading stats for November" />
-                        <MenuItem mnemonicParsing="false" text="View reading stats for December" />
-                        <MenuItem mnemonicParsing="false" text="View books in fantasy genre" />
-                        <MenuItem mnemonicParsing="false" text="View books in classics genre" />
-                        <MenuItem mnemonicParsing="false" text="View books in mystery genre" />
-                        <MenuItem mnemonicParsing="false" text="View books in non fiction genre" />
-                        <MenuItem mnemonicParsing="false" text="View books in sci-fi genre" />
-                        <MenuItem mnemonicParsing="false" text="View books in thriller genre" />
-                        <MenuItem mnemonicParsing="false" text="View books in romance genre" />
+                                <MenuItem mnemonicParsing="false" text="View reading stats for March" />
+                                <MenuItem mnemonicParsing="false" text="View reading stats for April" />
+                                <MenuItem mnemonicParsing="false" text="View reading stats for May" />
+                                <MenuItem mnemonicParsing="false" text="View reading stats for June" />
+                                <MenuItem mnemonicParsing="false" text="View reading stats for July" />
+                                <MenuItem mnemonicParsing="false" text="View reading stats for August" />
+                                <MenuItem mnemonicParsing="false" text="View reading stats for September" />
+                                <MenuItem mnemonicParsing="false" text="View reading stats for October" />
+                                <MenuItem mnemonicParsing="false" text="View reading stats for November" />
+                                <MenuItem mnemonicParsing="false" text="View reading stats for December" />
+                                <MenuItem mnemonicParsing="false" text="View books in fantasy genre" />
+                                <MenuItem mnemonicParsing="false" text="View books in classics genre" />
+                                <MenuItem mnemonicParsing="false" text="View books in mystery genre" />
+                                <MenuItem mnemonicParsing="false" text="View books in non fiction genre" />
+                                <MenuItem mnemonicParsing="false" text="View books in sci-fi genre" />
+                                <MenuItem mnemonicParsing="false" text="View books in thriller genre" />
+                                <MenuItem mnemonicParsing="false" text="View books in romance genre" />
                             </items>
                         </MenuButton>
                     </children>
