@@ -9,9 +9,7 @@ import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 
 import java.io.*;
-import java.util.ArrayList;
-import java.util.Comparator;
-import java.util.HashMap;
+import java.util.*;
 
 import static javafx.scene.paint.Color.BLACK;
 import static javafx.scene.paint.Color.RED;
@@ -854,6 +852,50 @@ public class ReadingTrackerController {
         // Print success message
         statusField.setTextFill(BLACK);
         statusField.setText("Successfully retrieved 5 star rated books");
+    }
+
+
+
+    /**
+     * print out all the books read in a certain month and the total number of pages read
+     * @param event shows the books read in a certain month
+     */
+    @FXML
+    void monthStatsJan(ActionEvent event){
+
+        StringBuilder outputString = new StringBuilder();
+
+        // Create book counter and total pages counter
+        int bookCount = 0;
+        int totalPages = 0;
+
+        outputString.append("The books you finished in the month of January are:\n");
+
+        // Loop through each item in the book log and check if it has the same month value
+        for (String key : bookLog.keySet()){
+            // Get book log item
+            BookLogItem currentBook = bookLog.get(key);
+            // Get month value
+            String currentMonth = currentBook.getMonth();
+
+            // If so, increment book counter
+            bookCount++;
+            // Get pages of current book and add to total pages
+            totalPages += currentBook.getPages();
+
+            // Print out book title
+            outputString.append(currentBook.getTitle()).append("\n");
+
+        }
+
+        // Print out stats
+        outputString.append("This is a total of ").append(bookCount).append(" books, and ").append(totalPages).append(" pages read!");
+
+        output.setText(String.valueOf(outputString));
+
+        // Print success message
+        statusField.setTextFill(BLACK);
+        statusField.setText("Successfully retrieved all books read in January!");
     }
 
     /**
