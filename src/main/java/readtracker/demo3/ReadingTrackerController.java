@@ -1799,7 +1799,7 @@ public class ReadingTrackerController {
 
     /**
      * Ends the program
-     * @param event Quit is selected in the menu bar under File
+     * @param event Quit is selected in the menu bar under 'File'
      */
     @FXML
     void quitProgram(ActionEvent event) {
