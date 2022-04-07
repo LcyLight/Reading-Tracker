@@ -33,6 +33,31 @@
                         <MenuItem fx:id="quitButton" mnemonicParsing="false" onAction="#quitProgram" text="Quit" />
                     </items>
                 </Menu>
+            <Menu mnemonicParsing="false" text="View rating">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#viewRating1" text="1 Star" />
+                  <MenuItem mnemonicParsing="false" onAction="#viewRating2" text="2 Stars" />
+                  <MenuItem mnemonicParsing="false" onAction="#viewRating3" text="3 Stars" />
+                  <MenuItem mnemonicParsing="false" onAction="#viewRating4" text="4 Stars" />
+                  <MenuItem mnemonicParsing="false" onAction="#viewRating5" text="5 Stars" />
+               </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="View monthStats">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#monthStatsJan" text="January" />
+                  <MenuItem mnemonicParsing="false" onAction="#monthStatsFeb" text="February" />
+                  <MenuItem mnemonicParsing="false" onAction="#monthStatsMar" text="March" />
+                  <MenuItem mnemonicParsing="false" onAction="#monthStatsApr" text="April" />
+                  <MenuItem mnemonicParsing="false" onAction="#monthStatsMay" text="May" />
+                  <MenuItem mnemonicParsing="false" onAction="#monthStatsJun" text="June" />
+                  <MenuItem mnemonicParsing="false" onAction="#monthStatsJul" text="July" />
+                  <MenuItem mnemonicParsing="false" onAction="#monthStatsAug" text="August" />
+                  <MenuItem mnemonicParsing="false" onAction="#monthStatsSep" text="September" />
+                  <MenuItem mnemonicParsing="false" onAction="#monthStatsOct" text="October" />
+                  <MenuItem mnemonicParsing="false" onAction="#monthStatsNov" text="November" />
+                  <MenuItem mnemonicParsing="false" onAction="#monthStatsDec" text="December" />
+               </items>
+            </Menu>
             </menus>
         </MenuBar>
         <SplitPane dividerPositions="0.5" focusTraversable="true" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
@@ -137,23 +162,6 @@
                                 <MenuItem mnemonicParsing="false" onAction="#viewLogInfo" text="View book log info" />
                                 <MenuItem mnemonicParsing="false" onAction="#readNext" text="Get book recommendation" />
                                 <MenuItem mnemonicParsing="false" onAction="#sortByRating" text="Sort books by rating" />
-                                <MenuItem fx:id="rating5" mnemonicParsing="false" onAction="#viewRating5" text="View books rated 5 stars" />
-                                <MenuItem fx:id="rating4" mnemonicParsing="false" onAction="#viewRating4" text="View books rated 4 stars" />
-                                <MenuItem fx:id="rating3" mnemonicParsing="false" onAction="#viewRating3" text="View books rated 3 stars" />
-                                <MenuItem fx:id="rating2" mnemonicParsing="false" onAction="#viewRating2" text="View books rated 2 stars" />
-                                <MenuItem fx:id="rating1" mnemonicParsing="false" onAction="#viewRating1" text="View books rated 1 stars" />
-                                <MenuItem mnemonicParsing="false" onAction="#monthStatsJan" text="View reading stats for January" />
-                                <MenuItem mnemonicParsing="false" onAction="#monthStatsFeb" text="View reading stats for February" />
-                                <MenuItem mnemonicParsing="false" onAction="#monthStatsMar" text="View reading stats for March" />
-                                <MenuItem mnemonicParsing="false" onAction="#monthStatsApr" text="View reading stats for April" />
-                                <MenuItem mnemonicParsing="false" onAction="#monthStatsMay" text="View reading stats for May" />
-                                <MenuItem mnemonicParsing="false" onAction="#monthStatsJun" text="View reading stats for June" />
-                                <MenuItem mnemonicParsing="false" onAction="#monthStatsJul" text="View reading stats for July" />
-                                <MenuItem mnemonicParsing="false" onAction="#monthStatsAug" text="View reading stats for August" />
-                                <MenuItem mnemonicParsing="false" onAction="#monthStatsSep" text="View reading stats for September" />
-                                <MenuItem mnemonicParsing="false" onAction="#monthStatsOct" text="View reading stats for October" />
-                                <MenuItem mnemonicParsing="false" onAction="#monthStatsNov" text="View reading stats for November" />
-                                <MenuItem mnemonicParsing="false" onAction="#monthStatsDec" text="View reading stats for December" />
                                 <MenuItem mnemonicParsing="false" onAction="#genreStatsFan" text="View books in fantasy genre" />
                                 <MenuItem mnemonicParsing="false" onAction="#genreStatsCla" text="View books in classics genre" />
                                 <MenuItem mnemonicParsing="false" onAction="#genreStatsMys" text="View books in mystery genre" />
