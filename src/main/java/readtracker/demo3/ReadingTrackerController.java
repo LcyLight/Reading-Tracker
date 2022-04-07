@@ -103,6 +103,9 @@ public class ReadingTrackerController {
     private TextArea readView;
 
     @FXML
+    private MenuItem saveSelect;
+
+    @FXML
     private RadioButton statusBookLog;
 
     @FXML
@@ -1735,7 +1738,61 @@ public class ReadingTrackerController {
         // Print success message
         statusField.setTextFill(BLACK);
         statusField.setText("Successfully retrieved all books in genre romance!");
+
     }
+
+    @FXML
+    void saveToFile(ActionEvent event) {
+
+        // Create file chooser for user to pick file to load from
+        FileChooser fileChooser = new FileChooser();
+        File loadFile = fileChooser.showOpenDialog(new Stage());
+
+        //Make sure file was chosen before starting read, if not, print error status
+        if (loadFile == null){
+            statusField.setTextFill(RED);
+            statusField.setText("File was not selected");
+        }
+        else {
+            try {
+                FileWriter file_writer = new FileWriter(loadFile);
+                PrintWriter print_writer = new PrintWriter(file_writer);
+
+                // Loop through all objects in bookLog
+                for (String key : bookLog.keySet()){
+                    BookLogItem currentBook = bookLog.get(key);
+                    // Print object information formatted for save file
+                    print_writer.println(currentBook.formatString());
+                }
+
+
+                // Loop through all objects in readingList
+                for (String key : readingList.keySet()){
+                    ReadingListItem currentBook = readingList.get(key);
+                    // Print object information formatted for save file
+                    print_writer.println(currentBook.formatString());
+                }
+
+                print_writer.flush();
+
+            }
+            catch (FileNotFoundException e) {
+                // Handle file not found exceptions
+                statusField.setTextFill(RED);
+                statusField.setText("File could not be located");
+            }
+            catch (IOException e) {
+                statusField.setTextFill(RED);
+                statusField.setText("IO exception occurred while trying to write save file");
+            }
+
+        }
+
+        // Write success message
+        statusField.setTextFill(BLACK);
+        statusField.setText("Successfully saved reading tracker information to file");
+    }
+
     /**
      * Ends the program
      * @param event Quit is selected in the menu bar under File
