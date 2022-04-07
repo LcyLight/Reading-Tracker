@@ -566,11 +566,13 @@ public class ReadingTrackerController {
         // Use comparator to sort books by ratings
         sortedBooks.sort(Comparator.comparingInt(BookLogItem::getRating));
 
-        for(BookLogItem item: sortedBooks){
-            outputString.append(item);
+        // Add all the books to the output string in reverse (highest to lowest) order
+        for (int i = sortedBooks.size() - 1; i >= 0; i--){
+            BookLogItem current = sortedBooks.get(i);
+            outputString.append(current);
         }
 
-        // Return sorted ArrayList
+        // Print sorted ArrayList
         output.setText(String.valueOf(outputString));
 
         // Print success message
