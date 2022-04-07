@@ -24,7 +24,6 @@ public class ReadingTrackerController {
     static final int RATING_INDEX = 3;
     static final int PAGES_INDEX = 4;
     static final int GENRE_INDEX_BOOK_LOG = 5;
-    static final int GENRE_INDEX_R_LIST = 3;
     static final int READING_WANT_AMOUNT_INDEX = 2;
 
     // Create book log hashmap
@@ -32,15 +31,6 @@ public class ReadingTrackerController {
 
     // Create reading list hashmap
     HashMap <String, ReadingListItem> readingList = new HashMap<>();
-
-    @FXML
-    private MenuItem bookLogInfo;
-
-    @FXML
-    private Button createButton;
-
-    @FXML
-    private MenuButton functionSelect;
 
     @FXML
     private TextField listAuthor;
@@ -67,21 +57,6 @@ public class ReadingTrackerController {
     private TextField logPages;
 
     @FXML
-    private MenuItem rating1;
-
-    @FXML
-    private MenuItem rating2;
-
-    @FXML
-    private MenuItem rating3;
-
-    @FXML
-    private MenuItem rating4;
-
-    @FXML
-    private MenuItem rating5;
-
-    @FXML
     private ChoiceBox<Integer> logRating;
 
     @FXML
@@ -94,16 +69,7 @@ public class ReadingTrackerController {
     private TextArea output;
 
     @FXML
-    private MenuItem openSelect;
-
-    @FXML
-    private MenuItem quitButton;
-
-    @FXML
     private TextArea readView;
-
-    @FXML
-    private MenuItem saveSelect;
 
     @FXML
     private RadioButton statusBookLog;
@@ -128,49 +94,6 @@ public class ReadingTrackerController {
 
     @FXML
     private ChoiceBox<String> toLogTitle;
-
-    @FXML
-    private Font x1;
-
-    @FXML
-    private Font x11;
-
-    @FXML
-    private Font x111;
-
-    @FXML
-    private Font x12;
-
-    @FXML
-    private Font x13;
-
-    @FXML
-    private Font x131;
-
-    @FXML
-    private Color x2;
-
-    @FXML
-    private Color x21;
-
-    @FXML
-    private Color x211;
-
-    @FXML
-    private Color x22;
-
-    @FXML
-    private Color x23;
-
-    @FXML
-    private Color x231;
-
-    @FXML
-    private Font x3;
-
-    @FXML
-    private Color x4;
-
 
     /**
      * Creates a new book log entry, reading list entry, or transfers book from reading list to book log (based on user
