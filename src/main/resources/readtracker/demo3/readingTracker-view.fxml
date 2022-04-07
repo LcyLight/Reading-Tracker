@@ -58,6 +58,17 @@
                   <MenuItem mnemonicParsing="false" onAction="#monthStatsDec" text="December" />
                </items>
             </Menu>
+            <Menu mnemonicParsing="false" text="View genreStats">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#monthStatsJan" text="Fantasy" />
+                  <MenuItem mnemonicParsing="false" onAction="#genreStatsCla" text="Classic" />
+                  <MenuItem mnemonicParsing="false" onAction="#genreStatsMys" text="Mystery" />
+                  <MenuItem mnemonicParsing="false" onAction="#genreStatsNonFic" text="Non fiction" />
+                  <MenuItem mnemonicParsing="false" onAction="#genreStatsSci" text="Sci fi" />
+                  <MenuItem mnemonicParsing="false" onAction="#genreStatsTri" text="Thriller" />
+                  <MenuItem mnemonicParsing="false" onAction="#genreStatsRom" text="Romance" />
+               </items>
+            </Menu>
             </menus>
         </MenuBar>
         <SplitPane dividerPositions="0.5" focusTraversable="true" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
@@ -162,13 +173,6 @@
                                 <MenuItem mnemonicParsing="false" onAction="#viewLogInfo" text="View book log info" />
                                 <MenuItem mnemonicParsing="false" onAction="#readNext" text="Get book recommendation" />
                                 <MenuItem mnemonicParsing="false" onAction="#sortByRating" text="Sort books by rating" />
-                                <MenuItem mnemonicParsing="false" onAction="#genreStatsFan" text="View books in fantasy genre" />
-                                <MenuItem mnemonicParsing="false" onAction="#genreStatsCla" text="View books in classics genre" />
-                                <MenuItem mnemonicParsing="false" onAction="#genreStatsMys" text="View books in mystery genre" />
-                                <MenuItem mnemonicParsing="false" onAction="#genreStatsNonFic" text="View books in non fiction genre" />
-                                <MenuItem mnemonicParsing="false" onAction="#genreStatsSci" text="View books in sci-fi genre" />
-                                <MenuItem mnemonicParsing="false" onAction="#genreStatsTri" text="View books in thriller genre" />
-                                <MenuItem mnemonicParsing="false" onAction="#genreStatsRom" text="View books in romance genre" />
                             </items>
                         </MenuButton>
                     </children>
