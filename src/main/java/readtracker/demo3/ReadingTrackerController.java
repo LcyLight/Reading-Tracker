@@ -1741,6 +1741,10 @@ public class ReadingTrackerController {
 
     }
 
+    /**
+     * Saves book log and reading list information to a runable csv text file chosen by user
+     * @param event User selects save to file from file menu
+     */
     @FXML
     void saveToFile(ActionEvent event) {
 
