@@ -71,56 +71,55 @@
                 </Menu>
             </menus>
         </MenuBar>
-        <SplitPane dividerPositions="0.5" focusTraversable="true" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
+        <SplitPane dividerPositions="0.2878619153674833" focusTraversable="true" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
             <items>
                 <AnchorPane prefHeight="551.0" prefWidth="270.0">
                     <children>
-                        <Label alignment="CENTER" layoutX="35.0" layoutY="2.0" minWidth="60.0" prefWidth="-1.0" style="&#10;" text="Book Log" textAlignment="CENTER" wrapText="false">
+                        <Label alignment="CENTER" layoutX="38.0" layoutY="1.0" minWidth="60.0" prefWidth="-1.0" style="&#10;" text="Book Log" textAlignment="CENTER" textFill="#686666" wrapText="false">
                             <font>
-                                <Font size="14.0" fx:id="x1" />
+                                <Font name="Kefa Regular" size="17.0" fx:id="x1" />
                             </font>
-                            <textFill>
-                                <Color red="0.624" green="0.624" blue="0.624" fx:id="x2" />
-                            </textFill>
-                        </Label>
-                        <Label alignment="CENTER" layoutX="37.0" layoutY="214.0" minWidth="60.0" prefWidth="-1.0" style="&#10;" text="Reading List" textAlignment="CENTER" wrapText="false">
-                            <font>
-                                <Font size="14.0" fx:id="x11" />
-                            </font>
-                            <textFill>
-                                <Color red="0.624" green="0.624" blue="0.624" fx:id="x21" />
-                            </textFill>
-                        </Label>
-                        <Label alignment="CENTER" layoutX="36.0" layoutY="367.0" minWidth="60.0" prefWidth="-1.0" style="&#10;" text="List to Log" textAlignment="CENTER" wrapText="false">
-                            <font>
-                                <Font size="14.0" fx:id="x111" />
-                            </font>
-                            <textFill>
-                                <Color red="0.624" green="0.624" blue="0.624" fx:id="x211" />
-                            </textFill>
                         </Label>
                         <Separator layoutX="-1.0" layoutY="210.0" prefHeight="3.0" prefWidth="255.0" />
                         <Label layoutX="16.0" layoutY="29.0" prefHeight="18.0" prefWidth="34.0" text="Title:" textFill="#535353" />
-                        <TextField fx:id="logTitle" layoutX="83.0" layoutY="23.0" prefHeight="10.0" prefWidth="151.0" promptText="title of book" />
+                        <TextField fx:id="logTitle" layoutX="83.0" layoutY="23.0" prefHeight="10.0" prefWidth="151.0" promptText="title of book">
+                     <font>
+                        <Font name="Copperplate" size="14.0" />
+                     </font></TextField>
                         <Label layoutX="14.0" layoutY="57.0" prefHeight="18.0" prefWidth="50.0" text="Author:" textFill="#535353" />
-                        <TextField fx:id="logAuthor" layoutX="84.0" layoutY="53.0" prefHeight="3.0" prefWidth="151.0" promptText="author of book" />
+                        <TextField fx:id="logAuthor" layoutX="84.0" layoutY="53.0" prefHeight="3.0" prefWidth="151.0" promptText="author of book">
+                     <font>
+                        <Font name="Copperplate" size="14.0" />
+                     </font></TextField>
                         <Label layoutX="13.0" layoutY="90.0" prefHeight="18.0" prefWidth="50.0" text="Rating:" textFill="#535353" />
                         <Label layoutX="13.0" layoutY="118.0" prefHeight="26.0" prefWidth="50.0" text="Month:" textFill="#535353" />
                         <Label layoutX="13.0" layoutY="151.0" prefHeight="26.0" prefWidth="50.0" text="Genre:" textFill="#535353" />
                         <Label layoutX="14.0" layoutY="183.0" prefHeight="18.0" prefWidth="50.0" text="Pages:" textFill="#535353" />
-                        <TextField fx:id="logPages" layoutX="84.0" layoutY="180.0" prefHeight="10.0" prefWidth="151.0" promptText="number of pages" />
+                        <TextField fx:id="logPages" layoutX="84.0" layoutY="180.0" prefHeight="10.0" prefWidth="151.0" promptText="number of pages">
+                     <font>
+                        <Font name="Copperplate" size="14.0" />
+                     </font></TextField>
                         <Separator layoutY="519.0" prefHeight="3.0" prefWidth="255.0" />
                         <Label layoutX="15.0" layoutY="243.0" prefHeight="18.0" prefWidth="34.0" text="Title:" textFill="#535353" />
-                        <TextField fx:id="listTitle" layoutX="83.0" layoutY="239.0" prefHeight="10.0" prefWidth="151.0" promptText="title of book" />
+                        <TextField fx:id="listTitle" layoutX="83.0" layoutY="239.0" prefHeight="10.0" prefWidth="151.0" promptText="title of book">
+                     <font>
+                        <Font name="Copperplate" size="14.0" />
+                     </font></TextField>
                         <Label layoutX="14.0" layoutY="273.0" prefHeight="18.0" prefWidth="50.0" text="Author:" textFill="#535353" />
-                        <TextField fx:id="listAuthor" layoutX="84.0" layoutY="269.0" prefHeight="10.0" prefWidth="151.0" promptText="author of book" />
+                        <TextField fx:id="listAuthor" layoutX="84.0" layoutY="269.0" prefHeight="10.0" prefWidth="151.0" promptText="author of book">
+                     <font>
+                        <Font name="Copperplate" size="14.0" />
+                     </font></TextField>
                         <Label layoutX="14.0" layoutY="300.0" prefHeight="26.0" prefWidth="50.0" text="Genre:" textFill="#535353" />
                         <Label layoutX="12.0" layoutY="334.0" prefHeight="18.0" prefWidth="58.0" text="Interest:" textFill="#535353" />
                         <Label layoutX="15.0" layoutY="392.0" prefHeight="26.0" prefWidth="50.0" text="Title:" textFill="#535353" />
                         <Label layoutX="15.0" layoutY="427.0" prefHeight="18.0" prefWidth="50.0" text="Rating:" textFill="#535353" />
                         <Label layoutX="15.0" layoutY="455.0" prefHeight="26.0" prefWidth="50.0" text="Month:" textFill="#535353" />
                         <Label layoutX="14.0" layoutY="489.0" prefHeight="18.0" prefWidth="50.0" text="Pages:" textFill="#535353" />
-                        <TextField fx:id="toLogPages" layoutX="84.0" layoutY="488.0" prefHeight="10.0" prefWidth="151.0" promptText="number of pages" />
+                        <TextField fx:id="toLogPages" layoutX="84.0" layoutY="488.0" prefHeight="10.0" prefWidth="151.0" promptText="number of pages">
+                     <font>
+                        <Font name="Copperplate" size="14.0" />
+                     </font></TextField>
                         <Separator layoutX="-1.0" layoutY="362.0" prefHeight="3.0" prefWidth="255.0" />
                         <Button fx:id="createButton" layoutX="13.0" layoutY="524.0" mnemonicParsing="false" onAction="#newTrack" prefHeight="22.0" prefWidth="226.0" text="Create" />
                         <RadioButton fx:id="statusToLog" layoutX="16.0" layoutY="368.0" mnemonicParsing="false" />
@@ -134,19 +133,21 @@
                         <ChoiceBox fx:id="toLogTitle" layoutX="85.0" layoutY="392.0" prefWidth="150.0" />
                         <ChoiceBox fx:id="toLogRating" layoutX="85.0" layoutY="423.0" prefWidth="150.0" />
                         <ChoiceBox fx:id="toLogMonth" layoutX="85.0" layoutY="455.0" prefWidth="150.0" />
+                  <Label alignment="CENTER" layoutX="40.0" layoutY="214.0" minWidth="60.0" prefWidth="-1.0" style="&#10;" text="Reading List" textAlignment="CENTER" textFill="#686666" wrapText="false">
+                     <font>
+                        <Font name="Kefa Regular" size="17.0" fx:id="x14" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" layoutX="40.0" layoutY="367.0" minWidth="60.0" prefWidth="-1.0" style="&#10;" text="List to Log" textAlignment="CENTER" textFill="#686666" wrapText="false">
+                     <font>
+                        <Font name="Kefa Regular" size="17.0" fx:id="x141" />
+                     </font>
+                  </Label>
                     </children>
                 </AnchorPane>
                 <AnchorPane prefHeight="551.0" prefWidth="649.0">
                     <children>
-                        <Label alignment="CENTER" font="$x1" layoutX="69.0" layoutY="15.0" prefHeight="22.0" prefWidth="143.0" style="&#10;" text="Books Read:" textFill="$x2" wrapText="false" />
-                        <Label alignment="CENTER" layoutX="69.0" layoutY="278.0" prefHeight="22.0" prefWidth="143.0" style="&#10;" text="Books to Read:" textAlignment="CENTER" wrapText="false">
-                            <font>
-                                <Font size="15.0" fx:id="x12" />
-                            </font>
-                            <textFill>
-                                <Color red="0.624" green="0.624" blue="0.624" fx:id="x22" />
-                            </textFill>
-                        </Label>
+                        <Label alignment="CENTER" font="$x1" layoutX="69.0" layoutY="15.0" prefHeight="22.0" prefWidth="143.0" style="&#10;" text="Books Read:" wrapText="false" />
                         <Label alignment="CENTER" layoutX="297.0" layoutY="25.0" prefHeight="22.0" prefWidth="102.0" style="&#10;" text="Functions:" wrapText="false">
                             <font>
                                 <Font size="15.0" fx:id="x13" />
@@ -175,6 +176,11 @@
                                 <MenuItem mnemonicParsing="false" onAction="#sortByRating" text="Sort books by rating" />
                             </items>
                         </MenuButton>
+                  <Label alignment="CENTER" layoutX="69.0" layoutY="276.0" prefHeight="22.0" prefWidth="143.0" style="&#10;" text="Books to Read:" wrapText="false">
+                     <font>
+                        <Font name="Kefa Regular" size="17.0" fx:id="x11" />
+                     </font>
+                  </Label>
                     </children>
                 </AnchorPane>
             </items>
