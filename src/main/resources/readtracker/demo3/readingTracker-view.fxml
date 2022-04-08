@@ -148,7 +148,7 @@
                 <AnchorPane prefHeight="551.0" prefWidth="649.0">
                     <children>
                         <Label alignment="CENTER" font="$x1" layoutX="69.0" layoutY="12.0" prefHeight="22.0" prefWidth="143.0" style="&#10;" text="Books Read:" wrapText="false" />
-                        <Label alignment="CENTER" layoutX="297.0" layoutY="25.0" prefHeight="22.0" prefWidth="102.0" style="&#10;" text="Functions:" wrapText="false">
+                        <Label alignment="CENTER" layoutX="298.0" layoutY="25.0" prefHeight="22.0" prefWidth="102.0" style="&#10;" text="Functions:" wrapText="false">
                             <font>
                                 <Font size="15.0" fx:id="x13" />
                             </font>
@@ -161,7 +161,7 @@
                         <TextArea fx:id="logView" editable="false" layoutX="14.0" layoutY="37.0" prefHeight="220.0" prefWidth="263.0" />
                         <TextArea fx:id="readView" editable="false" layoutX="14.0" layoutY="307.0" prefHeight="220.0" prefWidth="263.0" />
                         <TextArea fx:id="output" editable="false" layoutX="319.0" layoutY="97.0" prefHeight="431.0" prefWidth="287.0" />
-                        <MenuButton fx:id="functionSelect" layoutX="387.0" layoutY="24.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="219.0" text="Select a function">
+                        <MenuButton fx:id="functionSelect" layoutX="388.0" layoutY="24.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="219.0" text="Select a function">
                             <items>
                                 <MenuItem mnemonicParsing="false" onAction="#printAllBookInfo" text="View all book info" />
                                 <MenuItem mnemonicParsing="false" onAction="#viewListInfo" text="View reading list info" />
