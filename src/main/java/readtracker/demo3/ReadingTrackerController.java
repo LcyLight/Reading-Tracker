@@ -462,6 +462,10 @@ public class ReadingTrackerController {
                         ReadingListItem newRList = new ReadingListItem(title, author, genre, readWant);
                         // Add item to readingList hashmap with title as key and object as value
                         readingList.put(title, newRList);
+
+                        // Add title as an option in list to log select title
+                        toLogTitle.getItems().add(title);
+
                     } else if (type.equals("BOOK LOG")) {
                         // If type is book log, get info from proper indices
                         String month = lineInfo[MONTH_INDEX + 1];
@@ -1671,7 +1675,7 @@ public class ReadingTrackerController {
     @FXML
     void saveToFile(ActionEvent event) {
 
-        // Create file chooser for user to pick file to load from
+        // Create file chooser for user to pick file to save to
         FileChooser fileChooser = new FileChooser();
         File loadFile = fileChooser.showOpenDialog(new Stage());
 
