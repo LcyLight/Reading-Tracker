@@ -227,8 +227,8 @@ public class ReadingTrackerController {
         logRating.getItems().addAll(1,2,3,4,5);
         logMonth.getItems().addAll("January", "February", "March", "April", "May", "June", "July", "August", "September",
                 "October", "November", "December");
-        logGenre.getItems().addAll("Fantasy", "Classics", "Mystery", "Non fiction", "Sci-fi", "Thriller", "Romance");
-        listGenre.getItems().addAll("Fantasy", "Classics", "Mystery", "Non fiction", "Sci-fi", "Thriller", "Romance");
+        logGenre.getItems().addAll("fantasy", "classics", "mystery", "non fiction", "sci-fi", "thriller", "romance");
+        listGenre.getItems().addAll("fantasy", "classics", "mystery", "non fiction", "sci-fi", "thriller", "romance");
         listInterest.getItems().addAll(1,2,3,4,5,6,7,8,9,10);
         toLogMonth.getItems().addAll("January", "February", "March", "April", "May", "June", "July", "August", "September",
                 "October", "November", "December");
