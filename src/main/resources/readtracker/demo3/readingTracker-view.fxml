@@ -75,7 +75,7 @@
             <items>
                 <AnchorPane prefHeight="551.0" prefWidth="270.0">
                     <children>
-                        <Label alignment="CENTER" layoutX="38.0" layoutY="1.0" minWidth="60.0" prefWidth="-1.0" style="&#10;" text="Book Log" textAlignment="CENTER" textFill="#686666" wrapText="false">
+                        <Label alignment="CENTER" layoutX="38.0" layoutY="-1.0" minWidth="60.0" prefWidth="-1.0" style="&#10;" text="Book Log" textAlignment="CENTER" textFill="#686666" wrapText="false">
                             <font>
                                 <Font name="Kefa Regular" size="17.0" fx:id="x1" />
                             </font>
@@ -133,12 +133,12 @@
                         <ChoiceBox fx:id="toLogTitle" layoutX="85.0" layoutY="392.0" prefWidth="150.0" />
                         <ChoiceBox fx:id="toLogRating" layoutX="85.0" layoutY="423.0" prefWidth="150.0" />
                         <ChoiceBox fx:id="toLogMonth" layoutX="85.0" layoutY="455.0" prefWidth="150.0" />
-                  <Label alignment="CENTER" layoutX="40.0" layoutY="214.0" minWidth="60.0" prefWidth="-1.0" style="&#10;" text="Reading List" textAlignment="CENTER" textFill="#686666" wrapText="false">
+                  <Label alignment="CENTER" layoutX="40.0" layoutY="211.0" minWidth="60.0" prefWidth="-1.0" style="&#10;" text="Reading List" textAlignment="CENTER" textFill="#686666" wrapText="false">
                      <font>
                         <Font name="Kefa Regular" size="17.0" fx:id="x14" />
                      </font>
                   </Label>
-                  <Label alignment="CENTER" layoutX="40.0" layoutY="367.0" minWidth="60.0" prefWidth="-1.0" style="&#10;" text="List to Log" textAlignment="CENTER" textFill="#686666" wrapText="false">
+                  <Label alignment="CENTER" layoutX="40.0" layoutY="364.0" minWidth="60.0" prefWidth="-1.0" style="&#10;" text="List to Log" textAlignment="CENTER" textFill="#686666" wrapText="false">
                      <font>
                         <Font name="Kefa Regular" size="17.0" fx:id="x141" />
                      </font>
@@ -147,22 +147,16 @@
                 </AnchorPane>
                 <AnchorPane prefHeight="551.0" prefWidth="649.0">
                     <children>
-                        <Label alignment="CENTER" font="$x1" layoutX="69.0" layoutY="15.0" prefHeight="22.0" prefWidth="143.0" style="&#10;" text="Books Read:" wrapText="false" />
+                        <Label alignment="CENTER" font="$x1" layoutX="69.0" layoutY="12.0" prefHeight="22.0" prefWidth="143.0" style="&#10;" text="Books Read:" wrapText="false" />
                         <Label alignment="CENTER" layoutX="297.0" layoutY="25.0" prefHeight="22.0" prefWidth="102.0" style="&#10;" text="Functions:" wrapText="false">
                             <font>
                                 <Font size="15.0" fx:id="x13" />
                             </font>
-                            <textFill>
-                                <Color red="0.624" green="0.624" blue="0.624" fx:id="x23" />
-                            </textFill>
                         </Label>
-                        <Label alignment="CENTER" layoutX="385.0" layoutY="75.0" prefHeight="22.0" prefWidth="143.0" style="&#10;" text="Output:" wrapText="false">
+                        <Label alignment="CENTER" layoutX="385.0" layoutY="71.0" prefHeight="22.0" prefWidth="143.0" style="&#10;" text="Output:" wrapText="false">
                             <font>
-                                <Font size="15.0" fx:id="x131" />
+                                <Font size="17.0" fx:id="x131" />
                             </font>
-                            <textFill>
-                                <Color red="0.624" green="0.624" blue="0.624" fx:id="x231" />
-                            </textFill>
                         </Label>
                         <TextArea fx:id="logView" editable="false" layoutX="14.0" layoutY="37.0" prefHeight="220.0" prefWidth="263.0" />
                         <TextArea fx:id="readView" editable="false" layoutX="14.0" layoutY="307.0" prefHeight="220.0" prefWidth="263.0" />
@@ -176,7 +170,7 @@
                                 <MenuItem mnemonicParsing="false" onAction="#sortByRating" text="Sort books by rating" />
                             </items>
                         </MenuButton>
-                  <Label alignment="CENTER" layoutX="69.0" layoutY="276.0" prefHeight="22.0" prefWidth="143.0" style="&#10;" text="Books to Read:" wrapText="false">
+                  <Label alignment="CENTER" layoutX="69.0" layoutY="280.0" prefHeight="22.0" prefWidth="143.0" style="&#10;" text="Books to Read:" wrapText="false">
                      <font>
                         <Font name="Kefa Regular" size="17.0" fx:id="x11" />
                      </font>
