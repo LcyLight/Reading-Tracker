@@ -10,7 +10,7 @@ public final class ReadingListItem extends Book {
     }
 
     public String toString(){
-        return super.toString() + "HOW MUCH YOU WANT TO READ THIS BOOK: " + readWantAmount + "\n" +
+        return super.toString() + "INTEREST: " + readWantAmount + "\n" +
                 "----------------------------------------" + "\n";
     }
 
