@@ -170,7 +170,7 @@
                                 <MenuItem mnemonicParsing="false" onAction="#sortByRating" text="Sort books by rating" />
                             </items>
                         </MenuButton>
-                  <Label alignment="CENTER" layoutX="69.0" layoutY="280.0" prefHeight="22.0" prefWidth="143.0" style="&#10;" text="Books to Read:" wrapText="false">
+                  <Label alignment="CENTER" layoutX="69.0" layoutY="281.0" prefHeight="22.0" prefWidth="143.0" style="&#10;" text="Books to Read:" wrapText="false">
                      <font>
                         <Font name="Kefa Regular" size="17.0" fx:id="x11" />
                      </font>
