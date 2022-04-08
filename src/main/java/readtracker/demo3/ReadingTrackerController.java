@@ -1349,7 +1349,7 @@ public class ReadingTrackerController {
             }
         }
 
-        outputString.append("The books you want to read in the fantasy genre are: \n");
+        outputString.append("\nThe books you want to read in the fantasy genre are: \n");
         // Create reading list genre counter
         int readingListCounter = 0;
         // Loop through all the books in book log
@@ -1364,7 +1364,7 @@ public class ReadingTrackerController {
 
         // Create sum of books in genre
         int genreSum = readingListCounter + bookLogCounter;
-        outputString.append("This is ").append(bookLogCounter).append(" books read in this genre, and ")
+        outputString.append("\nThis is ").append(bookLogCounter).append(" books read in this genre, and ")
                 .append(readingListCounter).append(" books you \nwant to read in this genre!\nIn total, you've tracked ")
                 .append(genreSum).append(" books for this genre!");
 
@@ -1397,7 +1397,7 @@ public class ReadingTrackerController {
             }
         }
 
-        outputString.append("The books you want to read in the classics genre are: \n");
+        outputString.append("\nThe books you want to read in the classics genre are: \n");
         // Create reading list genre counter
         int readingListCounter = 0;
         // Loop through all the books in book log
@@ -1412,7 +1412,7 @@ public class ReadingTrackerController {
 
         // Create sum of books in genre
         int genreSum = readingListCounter + bookLogCounter;
-        outputString.append("This is ").append(bookLogCounter).append(" books read in this genre, and ")
+        outputString.append("\nThis is ").append(bookLogCounter).append(" books read in this genre, and ")
                 .append(readingListCounter).append(" books you \nwant to read in this genre!\nIn total, you've tracked ")
                 .append(genreSum).append(" books for this genre!");
 
@@ -1445,7 +1445,7 @@ public class ReadingTrackerController {
             }
         }
 
-        outputString.append("The books you want to read in the mystery genre are: \n");
+        outputString.append("\nThe books you want to read in the mystery genre are: \n");
         // Create reading list genre counter
         int readingListCounter = 0;
         // Loop through all the books in book log
@@ -1460,7 +1460,7 @@ public class ReadingTrackerController {
 
         // Create sum of books in genre
         int genreSum = readingListCounter + bookLogCounter;
-        outputString.append("This is ").append(bookLogCounter).append(" books read in this genre, and ")
+        outputString.append("\nThis is ").append(bookLogCounter).append(" books read in this genre, and ")
                 .append(readingListCounter).append(" books you \nwant to read in this genre!\nIn total, you've tracked ")
                 .append(genreSum).append(" books for this genre!");
 
@@ -1493,7 +1493,7 @@ public class ReadingTrackerController {
             }
         }
 
-        outputString.append("The books you want to read in the non fiction genre are: \n");
+        outputString.append("\nThe books you want to read in the non fiction genre are: \n");
         // Create reading list genre counter
         int readingListCounter = 0;
         // Loop through all the books in book log
@@ -1508,7 +1508,7 @@ public class ReadingTrackerController {
 
         // Create sum of books in genre
         int genreSum = readingListCounter + bookLogCounter;
-        outputString.append("This is ").append(bookLogCounter).append(" books read in this genre, and ")
+        outputString.append("\nThis is ").append(bookLogCounter).append(" books read in this genre, and ")
                 .append(readingListCounter).append(" books you \nwant to read in this genre!\nIn total, you've tracked ")
                 .append(genreSum).append(" books for this genre!");
 
@@ -1541,7 +1541,7 @@ public class ReadingTrackerController {
             }
         }
 
-        outputString.append("The books you want to read in the sci-fi genre are: \n");
+        outputString.append("\nThe books you want to read in the sci-fi genre are: \n");
         // Create reading list genre counter
         int readingListCounter = 0;
         // Loop through all the books in book log
@@ -1556,7 +1556,7 @@ public class ReadingTrackerController {
 
         // Create sum of books in genre
         int genreSum = readingListCounter + bookLogCounter;
-        outputString.append("This is ").append(bookLogCounter).append(" books read in this genre, and ")
+        outputString.append("\nThis is ").append(bookLogCounter).append(" books read in this genre, and ")
                 .append(readingListCounter).append(" books you \nwant to read in this genre!\nIn total, you've tracked ")
                 .append(genreSum).append(" books for this genre!");
 
@@ -1589,7 +1589,7 @@ public class ReadingTrackerController {
             }
         }
 
-        outputString.append("The books you want to read in the thriller genre are: \n");
+        outputString.append("\nThe books you want to read in the thriller genre are: \n");
         // Create reading list genre counter
         int readingListCounter = 0;
         // Loop through all the books in book log
@@ -1604,7 +1604,7 @@ public class ReadingTrackerController {
 
         // Create sum of books in genre
         int genreSum = readingListCounter + bookLogCounter;
-        outputString.append("This is ").append(bookLogCounter).append(" books read in this genre, and ")
+        outputString.append("\nThis is ").append(bookLogCounter).append(" books read in this genre, and ")
                 .append(readingListCounter).append(" books you \nwant to read in this genre!\nIn total, you've tracked ")
                 .append(genreSum).append(" books for this genre!");
 
@@ -1637,7 +1637,7 @@ public class ReadingTrackerController {
             }
         }
 
-        outputString.append("The books you want to read in the romance genre are: \n");
+        outputString.append("\nThe books you want to read in the romance genre are: \n");
         // Create reading list genre counter
         int readingListCounter = 0;
         // Loop through all the books in book log
@@ -1652,7 +1652,7 @@ public class ReadingTrackerController {
 
         // Create sum of books in genre
         int genreSum = readingListCounter + bookLogCounter;
-        outputString.append("This is ").append(bookLogCounter).append(" books read in this genre, and ")
+        outputString.append("\nThis is ").append(bookLogCounter).append(" books read in this genre, and ")
                 .append(readingListCounter).append(" books you \nwant to read in this genre!\nIn total, you've tracked ")
                 .append(genreSum).append(" books for this genre!");
 
