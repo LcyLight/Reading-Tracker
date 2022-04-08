@@ -123,4 +123,53 @@ public class ReadingTrackerMain {
 
         return outputString;
     }
+
+    /**
+     * Creates a formatted string of all the book info
+     * @param readingList readingList Hashmap containing all readinglist items with titles as the key and objects as the values
+     * @param bookLog bookLog Hashmap containing all book log items with titles as the key and objects as the values
+     * @return StringBuilder object outputString, string of all book info
+     */
+    public static StringBuilder allInfoView(HashMap<String, ReadingListItem> readingList, HashMap<String, BookLogItem> bookLog){
+        StringBuilder outputString = new StringBuilder();
+
+        //initiate a count to store the number of books
+        int countLog = 0;
+
+        //Loop through each key in the bookLog hashmap and print its information
+        for (String key : bookLog.keySet()){
+            // Increment book counter
+            countLog +=1;
+            // Print book number
+            outputString.append("Book ").append(countLog).append(" in Book Log: \n");
+
+            // Get BookLogItem
+            BookLogItem currentBook = bookLog.get(key);
+
+            // Retrieve and print information
+            outputString.append(currentBook);
+
+        }
+
+        //initiate a count to store the number of books
+        int countList = 0;
+
+        //Loop through each key in the readingList hashmap and print its information
+        for (String key : readingList.keySet()){
+            // Increment book counter
+            countList +=1;
+            // Print book number
+            outputString.append("Book ").append(countList).append(" in Reading List: \n");
+
+            // Get ReadingListItem
+            ReadingListItem currentBook = readingList.get(key);
+
+
+            // Retrieve and print information
+            outputString.append(currentBook);
+        }
+
+        return outputString;
+    }
+
 }

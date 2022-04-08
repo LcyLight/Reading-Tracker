@@ -311,45 +311,8 @@ public class ReadingTrackerController {
      */
     @FXML
     void printAllBookInfo(){
-
-        StringBuilder outputString = new StringBuilder();
-
-        //initiate a count to store the number of books
-        int countLog = 0;
-
-        //Loop through each key in the bookLog hashmap and print its information
-        for (String key : bookLog.keySet()){
-            // Increment book counter
-            countLog +=1;
-            // Print book number
-            outputString.append("Book ").append(countLog).append(" in Book Log: \n");
-
-            // Get BookLogItem
-            BookLogItem currentBook = bookLog.get(key);
-
-            // Retrieve and print information
-            outputString.append(currentBook);
-
-        }
-
-        //initiate a count to store the number of books
-        int countList = 0;
-
-        //Loop through each key in the readingList hashmap and print its information
-        for (String key : readingList.keySet()){
-            // Increment book counter
-            countList +=1;
-            // Print book number
-            outputString.append("Book ").append(countList).append(" in Reading List: \n");
-
-            // Get ReadingListItem
-            ReadingListItem currentBook = readingList.get(key);
-
-
-            // Retrieve and print information
-            outputString.append(currentBook);
-
-        }
+        // Call allInfoView method to convert all books into an output string of book info
+        StringBuilder outputString = ReadingTrackerMain.allInfoView(readingList, bookLog);
 
         output.setText(String.valueOf(outputString));
         // Print success message
