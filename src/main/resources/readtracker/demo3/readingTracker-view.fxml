@@ -33,6 +33,11 @@
                         <MenuItem fx:id="quitButton" mnemonicParsing="false" onAction="#quitProgram" text="Quit" />
                     </items>
                 </Menu>
+            <Menu mnemonicParsing="false" text="Help">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#aboutPage" text="About Reading Tracker" />
+               </items>
+            </Menu>
                 <Menu mnemonicParsing="false" text="View rating">
                     <items>
                         <MenuItem mnemonicParsing="false" onAction="#viewRating1" text="1 Star" />

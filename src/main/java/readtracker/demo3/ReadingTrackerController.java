@@ -92,6 +92,18 @@ public class ReadingTrackerController {
     @FXML
     private ChoiceBox<String> toLogTitle;
 
+    @FXML
+    void aboutPage(){
+        // Show alert with my information
+        Alert about = new Alert(Alert.AlertType.INFORMATION, """
+                Author: Ella Tomlinson and Lucy Ouyang
+                Version: v1.0
+                This is a program that tracks books read and books to read""");
+        about.setTitle("About");
+        about.show();
+
+    }
+
     /**
      * Creates a new book log entry, reading list entry, or transfers book from reading list to book log (based on user
      * selection)
