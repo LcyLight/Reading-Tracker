@@ -92,6 +92,9 @@ public class ReadingTrackerController {
     @FXML
     private ChoiceBox<String> toLogTitle;
 
+    /**
+     * Creates alert showing information about the program
+     */
     @FXML
     void aboutPage(){
         // Show alert with my information
