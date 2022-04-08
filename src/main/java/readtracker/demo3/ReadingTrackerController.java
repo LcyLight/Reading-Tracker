@@ -253,12 +253,8 @@ public class ReadingTrackerController {
      */
     @FXML
     void viewBookLog(){
-        StringBuilder bookLogText = new StringBuilder();
-
-        // Loop through all titles in book log
-        for (String title : bookLog.keySet()){
-            bookLogText.append(title).append("\n");
-        }
+        // Call bookLogView method to convert bookloghashmap into an output string of titles
+        StringBuilder bookLogText = ReadingTrackerMain.bookLogView(bookLog);
 
         // Set the bookLog text area to the titles
         logView.setText(bookLogText.toString());
@@ -269,12 +265,8 @@ public class ReadingTrackerController {
      */
     @FXML
     void viewReadingList(){
-        StringBuilder readingListText = new StringBuilder();
-
-        // Loop through all titles in reading list
-        for (String title : readingList.keySet()){
-            readingListText.append(title).append("\n");
-        }
+        // Call readingListView method to convert readinglist hashmap into an output string of titles
+        StringBuilder readingListText = ReadingTrackerMain.readingListView(readingList);
 
         // Set the reading list text area to the titles
         readView.setText(readingListText.toString());
