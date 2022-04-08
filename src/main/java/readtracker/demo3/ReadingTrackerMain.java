@@ -1,5 +1,6 @@
 package readtracker.demo3;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 
 public class ReadingTrackerMain {
@@ -170,6 +171,50 @@ public class ReadingTrackerMain {
         }
 
         return outputString;
+    }
+
+    /**
+     * Gets a book from reading list depending on highest interest rating, if 2 have the same interest rating, select
+     * random title from them
+     * @param readingList readingList Hashmap containing all readinglist items with titles as the key and objects as the values
+     * @return String recTitle, the title of the book rec
+     */
+    public static String getRec(HashMap<String, ReadingListItem> readingList){
+
+        int maxRating = 0;
+
+        // Loop through reading list hashmap keys and get values
+        for (String item: readingList.keySet()){
+            ReadingListItem bookInfo = readingList.get(item);
+            //get rating(how much you want to read) of books in reading list
+            int bookRating = bookInfo.getReadWantAmount();
+
+            if (bookRating > maxRating){
+                maxRating = bookRating;
+            }
+        }
+
+        // Loop through reading list hashmap keys and get values
+        ArrayList<String> nextReadOptions;
+        nextReadOptions = new ArrayList<>();
+        for (String item: readingList.keySet()){
+            ReadingListItem bookInfo = readingList.get(item);
+            //get rating(how much you want to read) of books in reading list
+            int bookRating = bookInfo.getReadWantAmount();
+
+            // if rating matches max rating, add title to list of next read options
+            if (bookRating == maxRating){
+                nextReadOptions.add(item);
+            }
+        }
+
+        // Select random index from list of the highest ranked books, get title
+        int randomInt = (int) Math.floor(Math.random()*(nextReadOptions.size()));
+
+        // Select random title using random int
+        // return rec
+        return nextReadOptions.get(randomInt);
+
     }
 
 }

@@ -408,38 +408,15 @@ public class ReadingTrackerController {
      */
     @FXML
     void readNext(){
-        int maxRating = 0;
-
-        // Loop through reading list hashmap keys and get values
-        for (String item: readingList.keySet()){
-            ReadingListItem bookInfo = readingList.get(item);
-            //get rating(how much you want to read) of books in reading list
-            int bookRating = bookInfo.getReadWantAmount();
-
-            if (bookRating > maxRating){
-                maxRating = bookRating;
-            }
+        if (readingList.isEmpty()){
+            output.setText("Add some books to your reading list before you can get a recommendation!");
         }
-
-        // Loop through reading list hashmap keys and get values
-        ArrayList<String> nextReadOptions;
-        nextReadOptions = new ArrayList<>();
-        for (String item: readingList.keySet()){
-            ReadingListItem bookInfo = readingList.get(item);
-            //get rating(how much you want to read) of books in reading list
-            int bookRating = bookInfo.getReadWantAmount();
-
-            // if rating matches max rating, add title to list of next read options
-            if (bookRating == maxRating){
-                nextReadOptions.add(item);
-            }
+        else{
+            // Call get rec to get the recommendation title
+            String recTitle = ReadingTrackerMain.getRec(readingList);
+            // set text to recommendation title
+            output.setText(recTitle);
         }
-
-        // Select random index from list of the highest ranked books, get title
-        int randomInt = (int) Math.floor(Math.random()*(nextReadOptions.size()));
-
-        // return randomly selected title
-        output.setText(nextReadOptions.get(randomInt));
 
         // Print success message
         statusField.setTextFill(BLACK);
