@@ -1,6 +1,5 @@
 package readtracker.demo3;
 
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.stage.FileChooser;
@@ -96,10 +95,9 @@ public class ReadingTrackerController {
     /**
      * Creates a new book log entry, reading list entry, or transfers book from reading list to book log (based on user
      * selection)
-     * @param event Create button is pressed
      */
     @FXML
-    void newTrack(ActionEvent event) {
+    void newTrack() {
         // Ensure only one option is selected, if not, print error
         if ((statusBookLog.isSelected() && statusReadingList.isSelected()) ||
                 (statusBookLog.isSelected() && statusToLog.isSelected()) ||
@@ -269,10 +267,9 @@ public class ReadingTrackerController {
 
     /**
      * Prints all book log info in the output window
-     * @param event View book log info function is requested in functions menu
      */
     @FXML
-    void viewLogInfo(ActionEvent event) {
+    void viewLogInfo() {
         StringBuilder outputString = new StringBuilder();
 
         // Get amount of books in book log
@@ -319,10 +316,9 @@ public class ReadingTrackerController {
 
     /**
      * Prints all reading list info in the output window
-     * @param event View reading list info function is requested in functions menu
      */
     @FXML
-    void viewListInfo(ActionEvent event) {
+    void viewListInfo() {
         StringBuilder outputString = new StringBuilder();
 
         // Get amount of books in reading list
@@ -369,10 +365,9 @@ public class ReadingTrackerController {
 
     /**
      * Prints out all books in both reading log and book log and their info
-     * @param event View all book info function is requested in functions menu
      */
     @FXML
-    void printAllBookInfo(ActionEvent event){
+    void printAllBookInfo(){
 
         StringBuilder outputString = new StringBuilder();
 
@@ -421,10 +416,9 @@ public class ReadingTrackerController {
 
     /**
      * Loads reading track log/list information from a pre-written csv file selected by the user
-     * @param event Open from file is selected from menu in file
      */
     @FXML
-    void openFile(ActionEvent event) {
+    void openFile() {
         // Create file chooser for user to pick file to load from
         FileChooser fileChooser = new FileChooser();
         File loadFile = fileChooser.showOpenDialog(new Stage());
@@ -505,10 +499,9 @@ public class ReadingTrackerController {
 
     /**
      * Figures out the highest ranked books in reading list and returns title as result\
-     * @param event  nextRead, the title of the book the user should read next
      */
     @FXML
-    void readNext(ActionEvent event){
+    void readNext(){
         int maxRating = 0;
 
         // Loop through reading list hashmap keys and get values
@@ -551,10 +544,9 @@ public class ReadingTrackerController {
 
     /**
      * Prints a list of all book log books sorted from the highest rated to the lowest rated\
-     * @param event  sortedBooks, Arraylist of all bookLog books sorted by rating
      */
     @FXML
-    void sortByRating(ActionEvent event){
+    void sortByRating(){
 
         StringBuilder outputString = new StringBuilder();
 
@@ -586,10 +578,9 @@ public class ReadingTrackerController {
 
     /**
      * Outputs a list of all book titles rated 1 stars
-     * @param event User selects view all books rated 1 stars option from functions menu
      */
     @FXML
-    void viewRating1(ActionEvent event) {
+    void viewRating1() {
         StringBuilder outputString = new StringBuilder();
         int counter = 0;
         ArrayList<String> oneStarTitles = new ArrayList<>();
@@ -626,10 +617,9 @@ public class ReadingTrackerController {
 
     /**
      * Outputs a list of all book titles rated 2 stars
-     * @param event User selects view all books rated 2 stars option from functions menu
      */
     @FXML
-    void viewRating2(ActionEvent event) {
+    void viewRating2() {
         StringBuilder outputString = new StringBuilder();
         int counter = 0;
         ArrayList<String> twoStarTitles = new ArrayList<>();
@@ -666,10 +656,9 @@ public class ReadingTrackerController {
 
     /**
      * Outputs a list of all book titles rated 3 stars
-     * @param event User selects view all books rated 3 stars option from functions menu
      */
     @FXML
-    void viewRating3(ActionEvent event) {
+    void viewRating3() {
         StringBuilder outputString = new StringBuilder();
         int counter = 0;
         ArrayList<String> threeStarTitles = new ArrayList<>();
@@ -706,10 +695,9 @@ public class ReadingTrackerController {
 
     /**
      * Outputs a list of all book titles rated 4 stars
-     * @param event User selects view all books rated 4 stars option from functions menu
      */
     @FXML
-    void viewRating4(ActionEvent event) {
+    void viewRating4() {
         StringBuilder outputString = new StringBuilder();
         int counter = 0;
         ArrayList<String> fourStarTitles = new ArrayList<>();
@@ -746,10 +734,9 @@ public class ReadingTrackerController {
 
     /**
      * Outputs a list of all book titles rated 5 stars
-     * @param event User selects view all books rated 5 stars option from functions menu
      */
     @FXML
-    void viewRating5(ActionEvent event) {
+    void viewRating5() {
         StringBuilder outputString = new StringBuilder();
         int counter = 0;
         ArrayList<String> fiveStarTitles = new ArrayList<>();
@@ -788,10 +775,9 @@ public class ReadingTrackerController {
 
     /**
      * shows the books read in a January and the total number of pages read in testArea
-     * @param event shows the books read in a January
      */
     @FXML
-    void monthStatsJan(ActionEvent event){
+    void monthStatsJan(){
 
         StringBuilder outputString = new StringBuilder();
 
@@ -834,10 +820,9 @@ public class ReadingTrackerController {
 
     /**
      * shows the books read in a February and the total number of pages read in testArea
-     * @param event shows the books read in a February
      */
     @FXML
-    void monthStatsFeb(ActionEvent event){
+    void monthStatsFeb(){
 
         StringBuilder outputString = new StringBuilder();
 
@@ -880,10 +865,9 @@ public class ReadingTrackerController {
 
     /**
      * shows the books read in a March and the total number of pages read in testArea
-     * @param event shows the books read in a March
      */
     @FXML
-    void monthStatsMar(ActionEvent event){
+    void monthStatsMar(){
 
         StringBuilder outputString = new StringBuilder();
 
@@ -925,10 +909,9 @@ public class ReadingTrackerController {
 
     /**
      * shows the books read in April and the total number of pages read in testArea
-     * @param event shows the books read in April
      */
     @FXML
-    void monthStatsApr(ActionEvent event){
+    void monthStatsApr(){
 
         StringBuilder outputString = new StringBuilder();
 
@@ -972,10 +955,9 @@ public class ReadingTrackerController {
 
     /**
      * shows the books read in a May and the total number of pages read in testArea
-     * @param event shows the books read in a May
      */
     @FXML
-    void monthStatsMay(ActionEvent event){
+    void monthStatsMay(){
 
         StringBuilder outputString = new StringBuilder();
 
@@ -1017,10 +999,9 @@ public class ReadingTrackerController {
 
     /**
      * shows the books read in a June and the total number of pages read in testArea
-     * @param event shows the books read in a June
      */
     @FXML
-    void monthStatsJun(ActionEvent event){
+    void monthStatsJun(){
 
         StringBuilder outputString = new StringBuilder();
 
@@ -1062,10 +1043,9 @@ public class ReadingTrackerController {
 
     /**
      * shows the books read in a July and the total number of pages read in testArea
-     * @param event shows the books read in a July
      */
     @FXML
-    void monthStatsJul(ActionEvent event){
+    void monthStatsJul(){
 
         StringBuilder outputString = new StringBuilder();
 
@@ -1107,10 +1087,9 @@ public class ReadingTrackerController {
 
     /**
      * shows the books read in August and the total number of pages read in testArea
-     * @param event shows the books read in August
      */
     @FXML
-    void monthStatsAug(ActionEvent event){
+    void monthStatsAug(){
 
         StringBuilder outputString = new StringBuilder();
 
@@ -1152,10 +1131,9 @@ public class ReadingTrackerController {
 
     /**
      * shows the books read in a September and the total number of pages read in testArea
-     * @param event shows the books read in a September
      */
     @FXML
-    void monthStatsSep(ActionEvent event){
+    void monthStatsSep(){
 
         StringBuilder outputString = new StringBuilder();
 
@@ -1197,10 +1175,9 @@ public class ReadingTrackerController {
 
     /**
      * shows the books read in October and the total number of pages read in testArea
-     * @param event shows the books read in October
      */
     @FXML
-    void monthStatsOct(ActionEvent event){
+    void monthStatsOct(){
 
         StringBuilder outputString = new StringBuilder();
 
@@ -1242,10 +1219,9 @@ public class ReadingTrackerController {
 
     /**
      * shows the books read in a November and the total number of pages read in testArea
-     * @param event shows the books read in a November
      */
     @FXML
-    void monthStatsNov(ActionEvent event){
+    void monthStatsNov(){
 
         StringBuilder outputString = new StringBuilder();
 
@@ -1287,10 +1263,9 @@ public class ReadingTrackerController {
 
     /**
      * shows the books read in a December and the total number of pages read in testArea
-     * @param event shows the books read in a December
      */
     @FXML
-    void monthStatsDec(ActionEvent event){
+    void monthStatsDec(){
 
         StringBuilder outputString = new StringBuilder();
 
@@ -1670,10 +1645,9 @@ public class ReadingTrackerController {
 
     /**
      * Saves book log and reading list information to a runable csv text file chosen by user
-     * @param event User selects save to file from file menu
      */
     @FXML
-    void saveToFile(ActionEvent event) {
+    void saveToFile() {
 
         // Create file chooser for user to pick file to save to
         FileChooser fileChooser = new FileChooser();
@@ -1726,10 +1700,9 @@ public class ReadingTrackerController {
 
     /**
      * Ends the program
-     * @param event Quit is selected in the menu bar under 'File'
      */
     @FXML
-    void quitProgram(ActionEvent event) {
+    void quitProgram() {
         javafx.application.Platform.exit();
     }
 }
