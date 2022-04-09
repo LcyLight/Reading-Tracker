@@ -430,26 +430,8 @@ public class ReadingTrackerController {
      */
     @FXML
     void sortByRating(){
-
-        StringBuilder outputString = new StringBuilder();
-
-        // Create arrayList for books that we'll sort
-        ArrayList<BookLogItem> sortedBooks = new ArrayList<>();
-
-        // Iterate through all books in bookLog
-        for (String key : bookLog.keySet()){
-            BookLogItem current = bookLog.get(key);
-            sortedBooks.add(current);
-        }
-
-        // Use comparator to sort books by ratings
-        sortedBooks.sort(Comparator.comparingInt(BookLogItem::getRating));
-
-        // Add all the books to the output string in reverse (highest to lowest) order
-        for (int i = sortedBooks.size() - 1; i >= 0; i--){
-            BookLogItem current = sortedBooks.get(i);
-            outputString.append(current);
-        }
+        // Get sorted string output from rateSortString method
+        StringBuilder outputString = ReadingTrackerMain.rateSortString(bookLog);
 
         // Print sorted ArrayList
         output.setText(String.valueOf(outputString));

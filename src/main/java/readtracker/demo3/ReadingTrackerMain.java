@@ -1,6 +1,7 @@
 package readtracker.demo3;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.HashMap;
 
 public class ReadingTrackerMain {
@@ -215,6 +216,36 @@ public class ReadingTrackerMain {
         // return rec
         return nextReadOptions.get(randomInt);
 
+    }
+
+    /**
+     * Creates a string builder with a formatted list of booklog items sorted from highest rating to lowest rating
+     * @param bookLog bookLog Hashmap containing all book log items with titles as the key and objects as the values
+     * @return StringBuilder object outputString, string of all books in book log sorted by rating
+     */
+    public static StringBuilder rateSortString(HashMap<String, BookLogItem> bookLog){
+        StringBuilder outputString = new StringBuilder();
+
+        // Create arrayList for books that we'll sort
+        ArrayList<BookLogItem> sortedBooks = new ArrayList<>();
+
+        // Iterate through all books in bookLog
+        for (String key : bookLog.keySet()){
+            BookLogItem current = bookLog.get(key);
+            sortedBooks.add(current);
+        }
+
+        // Use comparator to sort books by ratings
+        sortedBooks.sort(Comparator.comparingInt(BookLogItem::getRating));
+
+        // Add all the books to the output string in reverse (highest to lowest) order
+        for (int i = sortedBooks.size() - 1; i >= 0; i--){
+            BookLogItem current = sortedBooks.get(i);
+            outputString.append(current);
+        }
+
+        // return finished string
+        return outputString;
     }
 
 }
