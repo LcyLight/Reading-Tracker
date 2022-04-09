@@ -3,6 +3,7 @@ package readtracker.demo3;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.HashMap;
+import java.util.Objects;
 
 public class ReadingTrackerMain {
 
@@ -282,6 +283,50 @@ public class ReadingTrackerMain {
         for (String title : titles){
             outputString.append(title).append("\n");
         }
+
+        // Return final string
+        return outputString;
+    }
+
+    /**
+     *
+     * @param bookLog bookLog Hashmap containing all book log items with titles as the key and objects as the values
+     * @param readingList readingList Hashmap containing all readinglist items with titles as the key and objects as the values
+     * @param month Desired month to retrieve stats for
+     * @return StringBuilder object with list of titles from desired month, and a summary of stats for that month
+     */
+    public static StringBuilder stringMonthStats(HashMap<String, BookLogItem> bookLog,
+                                                 HashMap<String, ReadingListItem> readingList, String month){
+        StringBuilder outputString = new StringBuilder();
+
+        // Create book counter and total pages counter
+        int bookCount = 0;
+        int totalPages = 0;
+
+        outputString.append("The books you finished in the month of").append(month).append(" are:\n");
+
+        // Loop through each item in the book log and check if it has the same month value
+        for (String key : bookLog.keySet()){
+            // Get book log item
+            BookLogItem currentBook = bookLog.get(key);
+
+            // Get month value
+            String currentMonth = currentBook.getMonth();
+
+            if(Objects.equals(currentMonth, month)){
+                // If so, increment book counter
+                bookCount++;
+                // Get pages of current book and add to total pages
+                totalPages += currentBook.getPages();
+
+                // Print out book title
+                outputString.append(currentBook.getTitle()).append("\n");
+            }
+
+        }
+
+        // Print out stats
+        outputString.append("This is a total of ").append(bookCount).append(" books, and ").append(totalPages).append(" pages read!");
 
         // Return final string
         return outputString;

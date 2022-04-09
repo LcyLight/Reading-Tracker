@@ -528,37 +528,8 @@ public class ReadingTrackerController {
      */
     @FXML
     void monthStatsJan(){
-
-        StringBuilder outputString = new StringBuilder();
-
-        // Create book counter and total pages counter
-        int bookCount = 0;
-        int totalPages = 0;
-
-        outputString.append("The books you finished in the month of January are:\n");
-
-        // Loop through each item in the book log and check if it has the same month value
-        for (String key : bookLog.keySet()){
-            // Get book log item
-            BookLogItem currentBook = bookLog.get(key);
-
-            // Get month value
-            String currentMonth = currentBook.getMonth();
-
-            if(Objects.equals(currentMonth, "January")){
-                // If so, increment book counter
-                bookCount++;
-                // Get pages of current book and add to total pages
-                totalPages += currentBook.getPages();
-
-                // Print out book title
-                outputString.append(currentBook.getTitle()).append("\n");
-            }
-
-        }
-
-        // Print out stats
-        outputString.append("This is a total of ").append(bookCount).append(" books, and ").append(totalPages).append(" pages read!");
+        // Get stats from stringMonthStats method
+        StringBuilder outputString = ReadingTrackerMain.stringMonthStats(bookLog, readingList, "January");
 
         output.setText(String.valueOf(outputString));
 
@@ -573,37 +544,8 @@ public class ReadingTrackerController {
      */
     @FXML
     void monthStatsFeb(){
-
-        StringBuilder outputString = new StringBuilder();
-
-        // Create book counter and total pages counter
-        int bookCount = 0;
-        int totalPages = 0;
-
-        outputString.append("The books you finished in the month of February are:\n");
-
-        // Loop through each item in the book log and check if it has the same month value
-        for (String key : bookLog.keySet()){
-            // Get book log item
-            BookLogItem currentBook = bookLog.get(key);
-
-            // Get month value
-            String currentMonth = currentBook.getMonth();
-
-            if(Objects.equals(currentMonth, "February")){
-                // If so, increment book counter
-                bookCount++;
-                // Get pages of current book and add to total pages
-                totalPages += currentBook.getPages();
-
-                // Print out book title
-                outputString.append(currentBook.getTitle()).append("\n");
-            }
-
-        }
-
-        // Print out stats
-        outputString.append("This is a total of ").append(bookCount).append(" books, and ").append(totalPages).append(" pages read!");
+        // Get stats from stringMonthStats method
+        StringBuilder outputString = ReadingTrackerMain.stringMonthStats(bookLog, readingList, "February");
 
         output.setText(String.valueOf(outputString));
 
@@ -618,37 +560,8 @@ public class ReadingTrackerController {
      */
     @FXML
     void monthStatsMar(){
-
-        StringBuilder outputString = new StringBuilder();
-
-        // Create book counter and total pages counter
-        int bookCount = 0;
-        int totalPages = 0;
-
-        outputString.append("The books you finished in the month of March are:\n");
-
-        // Loop through each item in the book log and check if it has the same month value
-        for (String key : bookLog.keySet()){
-            // Get book log item
-            BookLogItem currentBook = bookLog.get(key);
-
-            // Get month value
-            String currentMonth = currentBook.getMonth();
-
-            if(Objects.equals(currentMonth, "March")){
-                // If so, increment book counter
-                bookCount++;
-                // Get pages of current book and add to total pages
-                totalPages += currentBook.getPages();
-
-                // Print out book title
-                outputString.append(currentBook.getTitle()).append("\n");
-            }
-
-        }
-
-        // Print out stats
-        outputString.append("This is a total of ").append(bookCount).append(" books, and ").append(totalPages).append(" pages read!");
+        // Get stats from stringMonthStats method
+        StringBuilder outputString = ReadingTrackerMain.stringMonthStats(bookLog, readingList, "March");
 
         output.setText(String.valueOf(outputString));
 
@@ -662,39 +575,8 @@ public class ReadingTrackerController {
      */
     @FXML
     void monthStatsApr(){
-
-        StringBuilder outputString = new StringBuilder();
-
-        // Create book counter and total pages counter
-        int bookCount = 0;
-        int totalPages = 0;
-
-        outputString.append("The books you finished in the month of April are:\n");
-
-        // Loop through each item in the book log and check if it has the same month value
-        for (String key : bookLog.keySet()){
-            // Get book log item
-            BookLogItem currentBook = bookLog.get(key);
-
-            // Get month value
-            String currentMonth = currentBook.getMonth();
-
-            if(Objects.equals(currentMonth, "April")){
-                // If so, increment book counter
-                bookCount++;
-                // Get pages of current book and add to total pages
-                totalPages += currentBook.getPages();
-
-                // Print out book title
-                outputString.append(currentBook.getTitle()).append("\n");
-            }
-
-        }
-
-
-
-        // Print out stats
-        outputString.append("This is a total of ").append(bookCount).append(" books, and ").append(totalPages).append(" pages read!");
+        // Get stats from stringMonthStats method
+        StringBuilder outputString = ReadingTrackerMain.stringMonthStats(bookLog, readingList, "April");
 
         output.setText(String.valueOf(outputString));
 
@@ -708,37 +590,8 @@ public class ReadingTrackerController {
      */
     @FXML
     void monthStatsMay(){
-
-        StringBuilder outputString = new StringBuilder();
-
-        // Create book counter and total pages counter
-        int bookCount = 0;
-        int totalPages = 0;
-
-        outputString.append("The books you finished in the month of May are:\n");
-
-        // Loop through each item in the book log and check if it has the same month value
-        for (String key : bookLog.keySet()){
-            // Get book log item
-            BookLogItem currentBook = bookLog.get(key);
-
-            // Get month value
-            String currentMonth = currentBook.getMonth();
-
-            if(Objects.equals(currentMonth, "May")){
-                // If so, increment book counter
-                bookCount++;
-                // Get pages of current book and add to total pages
-                totalPages += currentBook.getPages();
-
-                // Print out book title
-                outputString.append(currentBook.getTitle()).append("\n");
-            }
-
-        }
-
-        // Print out stats
-        outputString.append("This is a total of ").append(bookCount).append(" books, and ").append(totalPages).append(" pages read!");
+        // Get stats from stringMonthStats method
+        StringBuilder outputString = ReadingTrackerMain.stringMonthStats(bookLog, readingList, "May");
 
         output.setText(String.valueOf(outputString));
 
@@ -752,37 +605,8 @@ public class ReadingTrackerController {
      */
     @FXML
     void monthStatsJun(){
-
-        StringBuilder outputString = new StringBuilder();
-
-        // Create book counter and total pages counter
-        int bookCount = 0;
-        int totalPages = 0;
-
-        outputString.append("The books you finished in the month of June are:\n");
-
-        // Loop through each item in the book log and check if it has the same month value
-        for (String key : bookLog.keySet()){
-            // Get book log item
-            BookLogItem currentBook = bookLog.get(key);
-
-            // Get month value
-            String currentMonth = currentBook.getMonth();
-
-            if(Objects.equals(currentMonth, "June")){
-                // If so, increment book counter
-                bookCount++;
-                // Get pages of current book and add to total pages
-                totalPages += currentBook.getPages();
-
-                // Print out book title
-                outputString.append(currentBook.getTitle()).append("\n");
-            }
-
-        }
-
-        // Print out stats
-        outputString.append("This is a total of ").append(bookCount).append(" books, and ").append(totalPages).append(" pages read!");
+        // Get stats from stringMonthStats method
+        StringBuilder outputString = ReadingTrackerMain.stringMonthStats(bookLog, readingList, "June");
 
         output.setText(String.valueOf(outputString));
 
@@ -796,37 +620,8 @@ public class ReadingTrackerController {
      */
     @FXML
     void monthStatsJul(){
-
-        StringBuilder outputString = new StringBuilder();
-
-        // Create book counter and total pages counter
-        int bookCount = 0;
-        int totalPages = 0;
-
-        outputString.append("The books you finished in the month of July are:\n");
-
-        // Loop through each item in the book log and check if it has the same month value
-        for (String key : bookLog.keySet()){
-            // Get book log item
-            BookLogItem currentBook = bookLog.get(key);
-
-            // Get month value
-            String currentMonth = currentBook.getMonth();
-
-            if(Objects.equals(currentMonth, "July")){
-                // If so, increment book counter
-                bookCount++;
-                // Get pages of current book and add to total pages
-                totalPages += currentBook.getPages();
-
-                // Print out book title
-                outputString.append(currentBook.getTitle()).append("\n");
-            }
-
-        }
-
-        // Print out stats
-        outputString.append("This is a total of ").append(bookCount).append(" books, and ").append(totalPages).append(" pages read!");
+        // Get stats from stringMonthStats method
+        StringBuilder outputString = ReadingTrackerMain.stringMonthStats(bookLog, readingList, "July");
 
         output.setText(String.valueOf(outputString));
 
@@ -840,37 +635,8 @@ public class ReadingTrackerController {
      */
     @FXML
     void monthStatsAug(){
-
-        StringBuilder outputString = new StringBuilder();
-
-        // Create book counter and total pages counter
-        int bookCount = 0;
-        int totalPages = 0;
-
-        outputString.append("The books you finished in the month of August are:\n");
-
-        // Loop through each item in the book log and check if it has the same month value
-        for (String key : bookLog.keySet()){
-            // Get book log item
-            BookLogItem currentBook = bookLog.get(key);
-
-            // Get month value
-            String currentMonth = currentBook.getMonth();
-
-            if(Objects.equals(currentMonth, "August")){
-                // If so, increment book counter
-                bookCount++;
-                // Get pages of current book and add to total pages
-                totalPages += currentBook.getPages();
-
-                // Print out book title
-                outputString.append(currentBook.getTitle()).append("\n");
-            }
-
-        }
-
-        // Print out stats
-        outputString.append("This is a total of ").append(bookCount).append(" books, and ").append(totalPages).append(" pages read!");
+        // Get stats from stringMonthStats method
+        StringBuilder outputString = ReadingTrackerMain.stringMonthStats(bookLog, readingList, "August");
 
         output.setText(String.valueOf(outputString));
 
@@ -884,37 +650,8 @@ public class ReadingTrackerController {
      */
     @FXML
     void monthStatsSep(){
-
-        StringBuilder outputString = new StringBuilder();
-
-        // Create book counter and total pages counter
-        int bookCount = 0;
-        int totalPages = 0;
-
-        outputString.append("The books you finished in the month of September are:\n");
-
-        // Loop through each item in the book log and check if it has the same month value
-        for (String key : bookLog.keySet()){
-            // Get book log item
-            BookLogItem currentBook = bookLog.get(key);
-
-            // Get month value
-            String currentMonth = currentBook.getMonth();
-
-            if(Objects.equals(currentMonth, "September")){
-                // If so, increment book counter
-                bookCount++;
-                // Get pages of current book and add to total pages
-                totalPages += currentBook.getPages();
-
-                // Print out book title
-                outputString.append(currentBook.getTitle()).append("\n");
-            }
-
-        }
-
-        // Print out stats
-        outputString.append("This is a total of ").append(bookCount).append(" books, and ").append(totalPages).append(" pages read!");
+        // Get stats from stringMonthStats method
+        StringBuilder outputString = ReadingTrackerMain.stringMonthStats(bookLog, readingList, "September");
 
         output.setText(String.valueOf(outputString));
 
@@ -928,37 +665,8 @@ public class ReadingTrackerController {
      */
     @FXML
     void monthStatsOct(){
-
-        StringBuilder outputString = new StringBuilder();
-
-        // Create book counter and total pages counter
-        int bookCount = 0;
-        int totalPages = 0;
-
-        outputString.append("The books you finished in the month of October are:\n");
-
-        // Loop through each item in the book log and check if it has the same month value
-        for (String key : bookLog.keySet()){
-            // Get book log item
-            BookLogItem currentBook = bookLog.get(key);
-
-            // Get month value
-            String currentMonth = currentBook.getMonth();
-
-            if(Objects.equals(currentMonth, "October")){
-                // If so, increment book counter
-                bookCount++;
-                // Get pages of current book and add to total pages
-                totalPages += currentBook.getPages();
-
-                // Print out book title
-                outputString.append(currentBook.getTitle()).append("\n");
-            }
-
-        }
-
-        // Print out stats
-        outputString.append("This is a total of ").append(bookCount).append(" books, and ").append(totalPages).append(" pages read!");
+        // Get stats from stringMonthStats method
+        StringBuilder outputString = ReadingTrackerMain.stringMonthStats(bookLog, readingList, "October");
 
         output.setText(String.valueOf(outputString));
 
@@ -972,37 +680,8 @@ public class ReadingTrackerController {
      */
     @FXML
     void monthStatsNov(){
-
-        StringBuilder outputString = new StringBuilder();
-
-        // Create book counter and total pages counter
-        int bookCount = 0;
-        int totalPages = 0;
-
-        outputString.append("The books you finished in the month of November are:\n");
-
-        // Loop through each item in the book log and check if it has the same month value
-        for (String key : bookLog.keySet()){
-            // Get book log item
-            BookLogItem currentBook = bookLog.get(key);
-
-            // Get month value
-            String currentMonth = currentBook.getMonth();
-
-            if(Objects.equals(currentMonth, "November")){
-                // If so, increment book counter
-                bookCount++;
-                // Get pages of current book and add to total pages
-                totalPages += currentBook.getPages();
-
-                // Print out book title
-                outputString.append(currentBook.getTitle()).append("\n");
-            }
-
-        }
-
-        // Print out stats
-        outputString.append("This is a total of ").append(bookCount).append(" books, and ").append(totalPages).append(" pages read!");
+        // Get stats from stringMonthStats method
+        StringBuilder outputString = ReadingTrackerMain.stringMonthStats(bookLog, readingList, "November");
 
         output.setText(String.valueOf(outputString));
 
@@ -1016,37 +695,8 @@ public class ReadingTrackerController {
      */
     @FXML
     void monthStatsDec(){
-
-        StringBuilder outputString = new StringBuilder();
-
-        // Create book counter and total pages counter
-        int bookCount = 0;
-        int totalPages = 0;
-
-        outputString.append("The books you finished in the month of December are:\n");
-
-        // Loop through each item in the book log and check if it has the same month value
-        for (String key : bookLog.keySet()){
-            // Get book log item
-            BookLogItem currentBook = bookLog.get(key);
-
-            // Get month value
-            String currentMonth = currentBook.getMonth();
-
-            if(Objects.equals(currentMonth, "December")){
-                // If so, increment book counter
-                bookCount++;
-                // Get pages of current book and add to total pages
-                totalPages += currentBook.getPages();
-
-                // Print out book title
-                outputString.append(currentBook.getTitle()).append("\n");
-            }
-
-        }
-
-        // Print out stats
-        outputString.append("This is a total of ").append(bookCount).append(" books, and ").append(totalPages).append(" pages read!");
+        // Get stats from stringMonthStats method
+        StringBuilder outputString = ReadingTrackerMain.stringMonthStats(bookLog, readingList, "December");
 
         output.setText(String.valueOf(outputString));
 
