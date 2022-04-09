@@ -248,4 +248,43 @@ public class ReadingTrackerMain {
         return outputString;
     }
 
+    /**
+     * Creates a StringBuilder with a list of titles of desired rating, and a summary of information about the number
+     * of books
+     * @param bookLog bookLog Hashmap containing all book log items with titles as the key and objects as the values
+     * @param rating integer 1-5 representing the requested rating to retrieve books for
+     * @return StringBuilder object outputString, string of all books in book log of desired rating, and a summary of
+     * information
+     */
+    public static StringBuilder stringRatingView(HashMap<String, BookLogItem> bookLog, int rating){
+        StringBuilder outputString = new StringBuilder();
+        int counter = 0;
+        ArrayList<String> titles = new ArrayList<>();
+
+        // Iterate through all books in bookLog
+        for (String key : bookLog.keySet()){
+            // Get book log item
+            BookLogItem item = bookLog.get(key);
+
+            // Check if rating matches rating request, if so, add title to titles
+            if (item.getRating() == rating){
+                titles.add(key);
+
+                // increment counter
+                counter += 1;
+            }
+        }
+
+        // Add message for number of books
+        outputString.append("You rated ").append(counter).append(" books ").append(rating).append(" stars!\n");
+
+        // Add all the titles of 1 star rated books to output
+        for (String title : titles){
+            outputString.append(title).append("\n");
+        }
+
+        // Return final string
+        return outputString;
+    }
+
 }

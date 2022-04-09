@@ -446,31 +446,8 @@ public class ReadingTrackerController {
      */
     @FXML
     void viewRating1() {
-        StringBuilder outputString = new StringBuilder();
-        int counter = 0;
-        ArrayList<String> oneStarTitles = new ArrayList<>();
-
-        // Iterate through all books in bookLog
-        for (String key : bookLog.keySet()){
-            // Get book log item
-            BookLogItem item = bookLog.get(key);
-
-            // Check if rating is 1, if so, add title to one-star titles
-            if (item.getRating() == 1){
-                oneStarTitles.add(key);
-
-                // increment counter
-                counter += 1;
-            }
-        }
-
-        // Add message for number of books
-        outputString.append("You rated ").append(counter).append(" books 1 stars!\n");
-
-        // Add all the titles of 1 star rated books to output
-        for (String title : oneStarTitles){
-            outputString.append(title).append("\n");
-        }
+        // Get formatted list of one star books from stringRatingView method
+        StringBuilder outputString = ReadingTrackerMain.stringRatingView(bookLog, 1);
 
         // Print output to output window
         output.setText(outputString.toString());
@@ -485,31 +462,8 @@ public class ReadingTrackerController {
      */
     @FXML
     void viewRating2() {
-        StringBuilder outputString = new StringBuilder();
-        int counter = 0;
-        ArrayList<String> twoStarTitles = new ArrayList<>();
-
-        // Iterate through all books in bookLog
-        for (String key : bookLog.keySet()){
-            // Get book log item
-            BookLogItem item = bookLog.get(key);
-
-            // Check if rating is 2, if so, add title to two-star titles
-            if (item.getRating() == 2){
-                twoStarTitles.add(key);
-
-                // increment counter
-                counter += 1;
-            }
-        }
-
-        // Add message for number of books
-        outputString.append("You rated ").append(counter).append(" books 2 stars!\n");
-
-        // Add all the titles of 2 star rated books to output
-        for (String title : twoStarTitles){
-            outputString.append(title).append("\n");
-        }
+        // Get formatted list of two star books from stringRatingView method
+        StringBuilder outputString = ReadingTrackerMain.stringRatingView(bookLog, 2);
 
         // Print output to output window
         output.setText(outputString.toString());
@@ -524,31 +478,8 @@ public class ReadingTrackerController {
      */
     @FXML
     void viewRating3() {
-        StringBuilder outputString = new StringBuilder();
-        int counter = 0;
-        ArrayList<String> threeStarTitles = new ArrayList<>();
-
-        // Iterate through all books in bookLog
-        for (String key : bookLog.keySet()){
-            // Get book log item
-            BookLogItem item = bookLog.get(key);
-
-            // Check if rating is 3, if so, add title to three-star titles
-            if (item.getRating() == 3){
-                threeStarTitles.add(key);
-
-                // increment counter
-                counter += 1;
-            }
-        }
-
-        // Add message for number of books
-        outputString.append("You rated ").append(counter).append(" books 3 stars!\n");
-
-        // Add all the titles of 3 star rated books to output
-        for (String title : threeStarTitles){
-            outputString.append(title).append("\n");
-        }
+        // Get formatted list of three star books from stringRatingView method
+        StringBuilder outputString = ReadingTrackerMain.stringRatingView(bookLog, 3);
 
         // Print output to output window
         output.setText(outputString.toString());
@@ -563,31 +494,8 @@ public class ReadingTrackerController {
      */
     @FXML
     void viewRating4() {
-        StringBuilder outputString = new StringBuilder();
-        int counter = 0;
-        ArrayList<String> fourStarTitles = new ArrayList<>();
-
-        // Iterate through all books in bookLog
-        for (String key : bookLog.keySet()){
-            // Get book log item
-            BookLogItem item = bookLog.get(key);
-
-            // Check if rating is 5, if so, add title to four-star titles
-            if (item.getRating() == 4){
-                fourStarTitles.add(key);
-
-                // increment counter
-                counter += 1;
-            }
-        }
-
-        // Add message for number of books
-        outputString.append("You rated ").append(counter).append(" books 4 stars!\n");
-
-        // Add all the titles of 4 star rated books to output
-        for (String title : fourStarTitles){
-            outputString.append(title).append("\n");
-        }
+        // Get formatted list of four star books from stringRatingView method
+        StringBuilder outputString = ReadingTrackerMain.stringRatingView(bookLog, 4);
 
         // Print output to output window
         output.setText(outputString.toString());
@@ -602,31 +510,8 @@ public class ReadingTrackerController {
      */
     @FXML
     void viewRating5() {
-        StringBuilder outputString = new StringBuilder();
-        int counter = 0;
-        ArrayList<String> fiveStarTitles = new ArrayList<>();
-
-        // Iterate through all books in bookLog
-        for (String key : bookLog.keySet()){
-            // Get book log item
-            BookLogItem item = bookLog.get(key);
-
-            // Check if rating is 5, if so, add title to five-star titles
-            if (item.getRating() == 5){
-                fiveStarTitles.add(key);
-
-                // increment counter
-                counter += 1;
-            }
-        }
-
-        // Add message for number of books
-        outputString.append("You rated ").append(counter).append(" books 5 stars!\n");
-
-        // Add all the titles of 5 star rated books to output
-        for (String title : fiveStarTitles){
-            outputString.append(title).append("\n");
-        }
+        // Get formatted list of five star books from stringRatingView method
+        StringBuilder outputString = ReadingTrackerMain.stringRatingView(bookLog, 5);
 
         // Print output to output window
         output.setText(outputString.toString());
