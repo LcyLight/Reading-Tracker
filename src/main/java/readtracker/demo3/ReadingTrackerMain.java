@@ -1,11 +1,28 @@
 package readtracker.demo3;
 
+import javafx.application.Application;
+
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.HashMap;
 import java.util.Objects;
 
 public class ReadingTrackerMain {
+
+    //GLOBAL CONSTANTS
+    static final int TITLE_INDEX= 0;
+    static final int AUTHOR_INDEX = 1;
+    static final int MONTH_INDEX = 2;
+    static final int RATING_INDEX = 3;
+    static final int PAGES_INDEX = 4;
+    static final int GENRE_INDEX_BOOK_LOG = 5;
+    static final int READING_WANT_AMOUNT_INDEX = 2;
+
+    // Create args variable
+    private static String[] arguments;
 
     /**
      * Returns a formatted output string of all the titles in a book log
@@ -378,6 +395,85 @@ public class ReadingTrackerMain {
 
         // Return final string
         return outputString;
+    }
+
+    /**
+     * Loads previous data from a csv file given as a program argument
+     * @param bookLog bookLog Hashmap containing all book log items with titles as the key and objects as the values
+     * @param readingList readingList Hashmap containing all readinglist items with titles as the key and objects as the values
+     * @return boolean, whether running from args was successful or not
+     */
+    public static boolean runFromArgs(HashMap<String, BookLogItem> bookLog,
+                                   HashMap<String, ReadingListItem> readingList){
+
+        if (arguments != null){
+            if(arguments.length > 1){
+                return false;
+            }
+            else if (arguments.length == 1){
+                try {
+                    // Read info file
+                    FileReader file_reader = new FileReader(arguments[0]);
+                    BufferedReader buffered_reader = new BufferedReader(file_reader);
+                    String line = buffered_reader.readLine();
+
+                    // Read each line of file
+                    while (line != null) {
+                        // split line by commas
+                        String[] lineInfo = line.split(",");
+
+                        // Get the info that's shared in all book types from lineInfo (+1 because type position)
+                        String title = lineInfo[TITLE_INDEX + 1];
+                        String author = lineInfo[AUTHOR_INDEX + 1];
+
+                        // Get info type (reading list entry or book log entry
+                        String type = lineInfo[0];
+
+                        if (type.equals("READING LIST")) {
+                            // If type is reading list, get info from proper indices
+                            String genre = lineInfo[4];
+                            int readWant = Integer.parseInt(lineInfo[READING_WANT_AMOUNT_INDEX + 1]);
+
+                            // Create new reading list item with line info
+                            ReadingListItem newRList = new ReadingListItem(title, author, genre, readWant);
+                            // Add item to readingList hashmap with title as key and object as value
+                            readingList.put(title, newRList);
+
+
+                        } else if (type.equals("BOOK LOG")) {
+                            // If type is book log, get info from proper indices
+                            String month = lineInfo[MONTH_INDEX + 1];
+                            int rating = Integer.parseInt(lineInfo[RATING_INDEX + 1]);
+                            int pages = Integer.parseInt(lineInfo[PAGES_INDEX + 1]);
+                            String genre = lineInfo[GENRE_INDEX_BOOK_LOG + 1];
+
+                            // Create new book log item with line info
+                            BookLogItem newLog = new BookLogItem(title, author, month, rating, pages, genre);
+                            // Add item to bookLog hashmap with title as key and object as value
+                            bookLog.put(title, newLog);
+
+                        }
+
+                        // Read next line
+                        line = buffered_reader.readLine();
+                    }
+                } catch (IOException e) {
+                    return false;
+                }
+            }
+        }
+
+        return true;
+    }
+
+    /**
+     * Activates GUI when program is run
+     */
+    public static void main(String[] args){
+        Application.launch(ReadingTrackerApplication.class);
+
+        // Update variable args
+        arguments = args;
     }
 
 }

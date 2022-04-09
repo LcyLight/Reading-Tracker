@@ -246,6 +246,28 @@ public class ReadingTrackerController {
         toLogMonth.getItems().addAll("January", "February", "March", "April", "May", "June", "July", "August", "September",
                 "October", "November", "December");
         toLogRating.getItems().addAll(1,2,3,4,5);
+
+        // Check if there are any program arguments, if so, run file info
+        boolean success = ReadingTrackerMain.runFromArgs(bookLog, readingList);
+
+        if (success){
+            // Add readingList titles as title options in list to log
+            for (String title : readingList.keySet()){
+                toLogTitle.getItems().add(title);
+            }
+            // Update book log and reading list view
+            viewReadingList();
+            viewBookLog();
+            // Print success message
+            statusField.setTextFill(BLACK);
+            statusField.setText("Successfully loaded information from file");
+        }
+        else {
+            // Print failure message
+            statusField.setTextFill(RED);
+            statusField.setText("Incorrect entry for program arguments");
+        }
+
     }
 
     /**
