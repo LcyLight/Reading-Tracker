@@ -332,4 +332,54 @@ public class ReadingTrackerMain {
         return outputString;
     }
 
+    /**
+     * Creates a string with the book log and reading list titles within a specific genre, and a summary of stats in this
+     * genre
+     * @param bookLog bookLog Hashmap containing all book log items with titles as the key and objects as the values
+     * @param readingList readingList Hashmap containing all readinglist items with titles as the key and objects as the values
+     * @param genre Genre to collect stats for
+     * @return StringBuilder object with list of books from genre, and stats
+     */
+    public static StringBuilder stringGenreStats(HashMap<String, BookLogItem> bookLog,
+                                                 HashMap<String, ReadingListItem> readingList, String genre){
+
+        StringBuilder outputString = new StringBuilder();
+
+        outputString.append("The books you've read in the ").append(genre).append(" genre are:");
+
+        // Create book log genre counter
+        int bookLogCounter = 0;
+        // Loop through all the books in book log
+        for (String item: bookLog.keySet()){
+            BookLogItem currentBook = bookLog.get(item);
+            // Check if currentBook genre matches user entered genre, if so, print out title and update counter
+            if (currentBook.getGenre().equals(genre)){
+                outputString.append(item).append("\n");
+                bookLogCounter++;
+            }
+        }
+
+        outputString.append("The books want to read in the ").append(genre).append(" genre are:");
+        // Create reading list genre counter
+        int readingListCounter = 0;
+        // Loop through all the books in book log
+        for (String item: readingList.keySet()){
+            ReadingListItem currentBook = readingList.get(item);
+            // Check if currentBook genre matches user entered genre, if so, print out title and update counter
+            if (currentBook.getGenre().equals(genre)){
+                outputString.append(item).append("\n");
+                readingListCounter++;
+            }
+        }
+
+        // Create sum of books in genre
+        int genreSum = readingListCounter + bookLogCounter;
+        outputString.append("\nThis is ").append(bookLogCounter).append(" books read in this genre, and ")
+                .append(readingListCounter).append(" books you \nwant to read in this genre!\nIn total, you've tracked ")
+                .append(genreSum).append(" books for this genre!");
+
+        // Return final string
+        return outputString;
+    }
+
 }

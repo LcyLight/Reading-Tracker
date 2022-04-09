@@ -711,41 +711,8 @@ public class ReadingTrackerController {
      */
     @FXML
     void genreStatsFan(){
-
-        StringBuilder outputString = new StringBuilder();
-
-        outputString.append("The books you've read in the fantasy genre are: \n");
-
-        // Create book log genre counter
-        int bookLogCounter = 0;
-        // Loop through all the books in book log
-        for (String item: bookLog.keySet()){
-            BookLogItem currentBook = bookLog.get(item);
-            // Check if currentBook genre matches user entered genre, if so, print out title and update counter
-            if (currentBook.getGenre().equals("fantasy")){
-                outputString.append(item).append("\n");
-                bookLogCounter++;
-            }
-        }
-
-        outputString.append("\nThe books you want to read in the fantasy genre are: \n");
-        // Create reading list genre counter
-        int readingListCounter = 0;
-        // Loop through all the books in book log
-        for (String item: readingList.keySet()){
-            ReadingListItem currentBook = readingList.get(item);
-            // Check if currentBook genre matches user entered genre, if so, print out title and update counter
-            if (currentBook.getGenre().equals("fantasy")){
-                outputString.append(item).append("\n");
-                readingListCounter++;
-            }
-        }
-
-        // Create sum of books in genre
-        int genreSum = readingListCounter + bookLogCounter;
-        outputString.append("\nThis is ").append(bookLogCounter).append(" books read in this genre, and ")
-                .append(readingListCounter).append(" books you \nwant to read in this genre!\nIn total, you've tracked ")
-                .append(genreSum).append(" books for this genre!");
+        // Get stats from stringGenreStats method
+        StringBuilder outputString = ReadingTrackerMain.stringGenreStats(bookLog, readingList, "fantasy");
 
         output.setText(String.valueOf(outputString));
 
@@ -759,41 +726,8 @@ public class ReadingTrackerController {
      */
     @FXML
     void genreStatsCla(){
-
-        StringBuilder outputString = new StringBuilder();
-
-        outputString.append("The books you've read in the classics genre are: \n");
-
-        // Create book log genre counter
-        int bookLogCounter = 0;
-        // Loop through all the books in book log
-        for (String item: bookLog.keySet()){
-            BookLogItem currentBook = bookLog.get(item);
-            // Check if currentBook genre matches user entered genre, if so, print out title and update counter
-            if (currentBook.getGenre().equals("classics")){
-                outputString.append(item).append("\n");
-                bookLogCounter++;
-            }
-        }
-
-        outputString.append("\nThe books you want to read in the classics genre are: \n");
-        // Create reading list genre counter
-        int readingListCounter = 0;
-        // Loop through all the books in book log
-        for (String item: readingList.keySet()){
-            ReadingListItem currentBook = readingList.get(item);
-            // Check if currentBook genre matches user entered genre, if so, print out title and update counter
-            if (currentBook.getGenre().equals("classics")){
-                outputString.append(item).append("\n");
-                readingListCounter++;
-            }
-        }
-
-        // Create sum of books in genre
-        int genreSum = readingListCounter + bookLogCounter;
-        outputString.append("\nThis is ").append(bookLogCounter).append(" books read in this genre, and ")
-                .append(readingListCounter).append(" books you \nwant to read in this genre!\nIn total, you've tracked ")
-                .append(genreSum).append(" books for this genre!");
+        // Get stats from stringGenreStats method
+        StringBuilder outputString = ReadingTrackerMain.stringGenreStats(bookLog, readingList, "classics");
 
         output.setText(String.valueOf(outputString));
 
@@ -807,41 +741,8 @@ public class ReadingTrackerController {
      */
     @FXML
     void genreStatsMys(){
-
-        StringBuilder outputString = new StringBuilder();
-
-        outputString.append("The books you've read in the mystery genre are: \n");
-
-        // Create book log genre counter
-        int bookLogCounter = 0;
-        // Loop through all the books in book log
-        for (String item: bookLog.keySet()){
-            BookLogItem currentBook = bookLog.get(item);
-            // Check if currentBook genre matches user entered genre, if so, print out title and update counter
-            if (currentBook.getGenre().equals("mystery")){
-                outputString.append(item).append("\n");
-                bookLogCounter++;
-            }
-        }
-
-        outputString.append("\nThe books you want to read in the mystery genre are: \n");
-        // Create reading list genre counter
-        int readingListCounter = 0;
-        // Loop through all the books in book log
-        for (String item: readingList.keySet()){
-            ReadingListItem currentBook = readingList.get(item);
-            // Check if currentBook genre matches user entered genre, if so, print out title and update counter
-            if (currentBook.getGenre().equals("mystery")){
-                outputString.append(item).append("\n");
-                readingListCounter++;
-            }
-        }
-
-        // Create sum of books in genre
-        int genreSum = readingListCounter + bookLogCounter;
-        outputString.append("\nThis is ").append(bookLogCounter).append(" books read in this genre, and ")
-                .append(readingListCounter).append(" books you \nwant to read in this genre!\nIn total, you've tracked ")
-                .append(genreSum).append(" books for this genre!");
+        // Get stats from stringGenreStats method
+        StringBuilder outputString = ReadingTrackerMain.stringGenreStats(bookLog, readingList, "mystery");
 
         output.setText(String.valueOf(outputString));
 
@@ -855,41 +756,8 @@ public class ReadingTrackerController {
      */
     @FXML
     void genreStatsNonFic(){
-
-        StringBuilder outputString = new StringBuilder();
-
-        outputString.append("The books you've read in the non fiction genre are: \n");
-
-        // Create book log genre counter
-        int bookLogCounter = 0;
-        // Loop through all the books in book log
-        for (String item: bookLog.keySet()){
-            BookLogItem currentBook = bookLog.get(item);
-            // Check if currentBook genre matches user entered genre, if so, print out title and update counter
-            if (currentBook.getGenre().equals("non fiction")){
-                outputString.append(item).append("\n");
-                bookLogCounter++;
-            }
-        }
-
-        outputString.append("\nThe books you want to read in the non fiction genre are: \n");
-        // Create reading list genre counter
-        int readingListCounter = 0;
-        // Loop through all the books in book log
-        for (String item: readingList.keySet()){
-            ReadingListItem currentBook = readingList.get(item);
-            // Check if currentBook genre matches user entered genre, if so, print out title and update counter
-            if (currentBook.getGenre().equals("non fiction")){
-                outputString.append(item).append("\n");
-                readingListCounter++;
-            }
-        }
-
-        // Create sum of books in genre
-        int genreSum = readingListCounter + bookLogCounter;
-        outputString.append("\nThis is ").append(bookLogCounter).append(" books read in this genre, and ")
-                .append(readingListCounter).append(" books you \nwant to read in this genre!\nIn total, you've tracked ")
-                .append(genreSum).append(" books for this genre!");
+        // Get stats from stringGenreStats method
+        StringBuilder outputString = ReadingTrackerMain.stringGenreStats(bookLog, readingList, "non fiction");
 
         output.setText(String.valueOf(outputString));
 
@@ -903,41 +771,8 @@ public class ReadingTrackerController {
      */
     @FXML
     void genreStatsSci(){
-
-        StringBuilder outputString = new StringBuilder();
-
-        outputString.append("The books you've read in the sci-fi genre are: \n");
-
-        // Create book log genre counter
-        int bookLogCounter = 0;
-        // Loop through all the books in book log
-        for (String item: bookLog.keySet()){
-            BookLogItem currentBook = bookLog.get(item);
-            // Check if currentBook genre matches user entered genre, if so, print out title and update counter
-            if (currentBook.getGenre().equals("sci-fi")){
-                outputString.append(item).append("\n");
-                bookLogCounter++;
-            }
-        }
-
-        outputString.append("\nThe books you want to read in the sci-fi genre are: \n");
-        // Create reading list genre counter
-        int readingListCounter = 0;
-        // Loop through all the books in book log
-        for (String item: readingList.keySet()){
-            ReadingListItem currentBook = readingList.get(item);
-            // Check if currentBook genre matches user entered genre, if so, print out title and update counter
-            if (currentBook.getGenre().equals("sci-fi")){
-                outputString.append(item).append("\n");
-                readingListCounter++;
-            }
-        }
-
-        // Create sum of books in genre
-        int genreSum = readingListCounter + bookLogCounter;
-        outputString.append("\nThis is ").append(bookLogCounter).append(" books read in this genre, and ")
-                .append(readingListCounter).append(" books you \nwant to read in this genre!\nIn total, you've tracked ")
-                .append(genreSum).append(" books for this genre!");
+        // Get stats from stringGenreStats method
+        StringBuilder outputString = ReadingTrackerMain.stringGenreStats(bookLog, readingList, "sci-fi");
 
         output.setText(String.valueOf(outputString));
 
@@ -951,41 +786,8 @@ public class ReadingTrackerController {
      */
     @FXML
     void genreStatsTri(){
-
-        StringBuilder outputString = new StringBuilder();
-
-        outputString.append("The books you've read in the thriller genre are: \n");
-
-        // Create book log genre counter
-        int bookLogCounter = 0;
-        // Loop through all the books in book log
-        for (String item: bookLog.keySet()){
-            BookLogItem currentBook = bookLog.get(item);
-            // Check if currentBook genre matches user entered genre, if so, print out title and update counter
-            if (currentBook.getGenre().equals("thriller")){
-                outputString.append(item).append("\n");
-                bookLogCounter++;
-            }
-        }
-
-        outputString.append("\nThe books you want to read in the thriller genre are: \n");
-        // Create reading list genre counter
-        int readingListCounter = 0;
-        // Loop through all the books in book log
-        for (String item: readingList.keySet()){
-            ReadingListItem currentBook = readingList.get(item);
-            // Check if currentBook genre matches user entered genre, if so, print out title and update counter
-            if (currentBook.getGenre().equals("thriller")){
-                outputString.append(item).append("\n");
-                readingListCounter++;
-            }
-        }
-
-        // Create sum of books in genre
-        int genreSum = readingListCounter + bookLogCounter;
-        outputString.append("\nThis is ").append(bookLogCounter).append(" books read in this genre, and ")
-                .append(readingListCounter).append(" books you \nwant to read in this genre!\nIn total, you've tracked ")
-                .append(genreSum).append(" books for this genre!");
+        // Get stats from stringGenreStats method
+        StringBuilder outputString = ReadingTrackerMain.stringGenreStats(bookLog, readingList, "thriller");
 
         output.setText(String.valueOf(outputString));
 
@@ -999,41 +801,8 @@ public class ReadingTrackerController {
      */
     @FXML
     void genreStatsRom(){
-
-        StringBuilder outputString = new StringBuilder();
-
-        outputString.append("The books you've read in the romance genre are: \n");
-
-        // Create book log genre counter
-        int bookLogCounter = 0;
-        // Loop through all the books in book log
-        for (String item: bookLog.keySet()){
-            BookLogItem currentBook = bookLog.get(item);
-            // Check if currentBook genre matches user entered genre, if so, print out title and update counter
-            if (currentBook.getGenre().equals("romance")){
-                outputString.append(item).append("\n");
-                bookLogCounter++;
-            }
-        }
-
-        outputString.append("\nThe books you want to read in the romance genre are: \n");
-        // Create reading list genre counter
-        int readingListCounter = 0;
-        // Loop through all the books in book log
-        for (String item: readingList.keySet()){
-            ReadingListItem currentBook = readingList.get(item);
-            // Check if currentBook genre matches user entered genre, if so, print out title and update counter
-            if (currentBook.getGenre().equals("romance")){
-                outputString.append(item).append("\n");
-                readingListCounter++;
-            }
-        }
-
-        // Create sum of books in genre
-        int genreSum = readingListCounter + bookLogCounter;
-        outputString.append("\nThis is ").append(bookLogCounter).append(" books read in this genre, and ")
-                .append(readingListCounter).append(" books you \nwant to read in this genre!\nIn total, you've tracked ")
-                .append(genreSum).append(" books for this genre!");
+        // Get stats from stringGenreStats method
+        StringBuilder outputString = ReadingTrackerMain.stringGenreStats(bookLog, readingList, "romance");
 
         output.setText(String.valueOf(outputString));
 
