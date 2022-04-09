@@ -291,12 +291,10 @@ public class ReadingTrackerMain {
     /**
      *
      * @param bookLog bookLog Hashmap containing all book log items with titles as the key and objects as the values
-     * @param readingList readingList Hashmap containing all readinglist items with titles as the key and objects as the values
      * @param month Desired month to retrieve stats for
      * @return StringBuilder object with list of titles from desired month, and a summary of stats for that month
      */
-    public static StringBuilder stringMonthStats(HashMap<String, BookLogItem> bookLog,
-                                                 HashMap<String, ReadingListItem> readingList, String month){
+    public static StringBuilder stringMonthStats(HashMap<String, BookLogItem> bookLog,String month){
         StringBuilder outputString = new StringBuilder();
 
         // Create book counter and total pages counter

@@ -529,7 +529,7 @@ public class ReadingTrackerController {
     @FXML
     void monthStatsJan(){
         // Get stats from stringMonthStats method
-        StringBuilder outputString = ReadingTrackerMain.stringMonthStats(bookLog, readingList, "January");
+        StringBuilder outputString = ReadingTrackerMain.stringMonthStats(bookLog, "January");
 
         output.setText(String.valueOf(outputString));
 
@@ -545,7 +545,7 @@ public class ReadingTrackerController {
     @FXML
     void monthStatsFeb(){
         // Get stats from stringMonthStats method
-        StringBuilder outputString = ReadingTrackerMain.stringMonthStats(bookLog, readingList, "February");
+        StringBuilder outputString = ReadingTrackerMain.stringMonthStats(bookLog,"February");
 
         output.setText(String.valueOf(outputString));
 
@@ -561,7 +561,7 @@ public class ReadingTrackerController {
     @FXML
     void monthStatsMar(){
         // Get stats from stringMonthStats method
-        StringBuilder outputString = ReadingTrackerMain.stringMonthStats(bookLog, readingList, "March");
+        StringBuilder outputString = ReadingTrackerMain.stringMonthStats(bookLog,"March");
 
         output.setText(String.valueOf(outputString));
 
@@ -576,7 +576,7 @@ public class ReadingTrackerController {
     @FXML
     void monthStatsApr(){
         // Get stats from stringMonthStats method
-        StringBuilder outputString = ReadingTrackerMain.stringMonthStats(bookLog, readingList, "April");
+        StringBuilder outputString = ReadingTrackerMain.stringMonthStats(bookLog, "April");
 
         output.setText(String.valueOf(outputString));
 
@@ -591,7 +591,7 @@ public class ReadingTrackerController {
     @FXML
     void monthStatsMay(){
         // Get stats from stringMonthStats method
-        StringBuilder outputString = ReadingTrackerMain.stringMonthStats(bookLog, readingList, "May");
+        StringBuilder outputString = ReadingTrackerMain.stringMonthStats(bookLog, "May");
 
         output.setText(String.valueOf(outputString));
 
@@ -606,7 +606,7 @@ public class ReadingTrackerController {
     @FXML
     void monthStatsJun(){
         // Get stats from stringMonthStats method
-        StringBuilder outputString = ReadingTrackerMain.stringMonthStats(bookLog, readingList, "June");
+        StringBuilder outputString = ReadingTrackerMain.stringMonthStats(bookLog, "June");
 
         output.setText(String.valueOf(outputString));
 
@@ -621,7 +621,7 @@ public class ReadingTrackerController {
     @FXML
     void monthStatsJul(){
         // Get stats from stringMonthStats method
-        StringBuilder outputString = ReadingTrackerMain.stringMonthStats(bookLog, readingList, "July");
+        StringBuilder outputString = ReadingTrackerMain.stringMonthStats(bookLog, "July");
 
         output.setText(String.valueOf(outputString));
 
@@ -636,7 +636,7 @@ public class ReadingTrackerController {
     @FXML
     void monthStatsAug(){
         // Get stats from stringMonthStats method
-        StringBuilder outputString = ReadingTrackerMain.stringMonthStats(bookLog, readingList, "August");
+        StringBuilder outputString = ReadingTrackerMain.stringMonthStats(bookLog, "August");
 
         output.setText(String.valueOf(outputString));
 
@@ -651,7 +651,7 @@ public class ReadingTrackerController {
     @FXML
     void monthStatsSep(){
         // Get stats from stringMonthStats method
-        StringBuilder outputString = ReadingTrackerMain.stringMonthStats(bookLog, readingList, "September");
+        StringBuilder outputString = ReadingTrackerMain.stringMonthStats(bookLog, "September");
 
         output.setText(String.valueOf(outputString));
 
@@ -666,7 +666,7 @@ public class ReadingTrackerController {
     @FXML
     void monthStatsOct(){
         // Get stats from stringMonthStats method
-        StringBuilder outputString = ReadingTrackerMain.stringMonthStats(bookLog, readingList, "October");
+        StringBuilder outputString = ReadingTrackerMain.stringMonthStats(bookLog, "October");
 
         output.setText(String.valueOf(outputString));
 
@@ -681,7 +681,7 @@ public class ReadingTrackerController {
     @FXML
     void monthStatsNov(){
         // Get stats from stringMonthStats method
-        StringBuilder outputString = ReadingTrackerMain.stringMonthStats(bookLog, readingList, "November");
+        StringBuilder outputString = ReadingTrackerMain.stringMonthStats(bookLog, "November");
 
         output.setText(String.valueOf(outputString));
 
@@ -696,7 +696,7 @@ public class ReadingTrackerController {
     @FXML
     void monthStatsDec(){
         // Get stats from stringMonthStats method
-        StringBuilder outputString = ReadingTrackerMain.stringMonthStats(bookLog, readingList, "December");
+        StringBuilder outputString = ReadingTrackerMain.stringMonthStats(bookLog, "December");
 
         output.setText(String.valueOf(outputString));
 
