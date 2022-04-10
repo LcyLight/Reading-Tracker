@@ -5,10 +5,7 @@ import javafx.application.Application;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Comparator;
-import java.util.HashMap;
-import java.util.Objects;
+import java.util.*;
 
 public class ReadingTrackerMain {
 
@@ -457,12 +454,12 @@ public class ReadingTrackerMain {
                         // Read next line
                         line = buffered_reader.readLine();
                     }
+                    return true;
                 } catch (IOException e) {
                     return false;
                 }
             }
         }
-
         return true;
     }
 
@@ -470,10 +467,11 @@ public class ReadingTrackerMain {
      * Activates GUI when program is run
      */
     public static void main(String[] args){
-        Application.launch(ReadingTrackerApplication.class);
-
         // Update variable args
         arguments = args;
+
+        // Launch GUI
+        Application.launch(ReadingTrackerApplication.class);
     }
 
 }
