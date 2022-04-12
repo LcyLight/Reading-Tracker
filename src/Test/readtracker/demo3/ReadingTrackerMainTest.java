@@ -27,7 +27,18 @@ class ReadingTrackerMainTest {
     @Test
     void readingListView() {
 
-        
+        HashMap<String, ReadingListItem> readingList = new HashMap<>();
+
+        ReadingListItem item1 = new ReadingListItem("Anne of Green Gables","Ella Tomlinson","romance",5);
+        ReadingListItem item2 = new ReadingListItem("Harry Potter","J.K Rowling","fantasy",7);
+
+        readingList.put("Anne of Green Gables", item1);
+        readingList.put("Harry Potter", item2);
+
+        String myString = String.valueOf(ReadingTrackerMain.readingListView(readingList));
+
+        assertEquals("Harry Potter\nAnne of Green Gables\n", myString);
+
     }
 
     @Test
