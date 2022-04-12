@@ -355,7 +355,41 @@ class ReadingTrackerMainTest {
 
 
     @Test
-    void getRec() {
+    void getRecAllDiff() {
+
+        HashMap<String, ReadingListItem> readingList = new HashMap<>();
+
+        ReadingListItem item4 = new ReadingListItem("Anne of Green Gables","Ella Tomlinson","romance",5);
+        ReadingListItem item5 = new ReadingListItem("Harry Potter","J.K Rowling","fantasy",7);
+        ReadingListItem item6 = new ReadingListItem("Lord of the Rings","J.R.R Tolkien","classics",8);
+
+        readingList.put("Anne of Green Gables", item4);
+        readingList.put("Harry Potter", item5);
+        readingList.put("Lord of the Rings", item6);
+
+        String outputString = ReadingTrackerMain.getRec(readingList);
+
+        assertEquals("Lord of the Rings", outputString);
+
+    }
+
+    @Test
+    void getRecTwoSame() {
+
+        HashMap<String, ReadingListItem> readingList = new HashMap<>();
+
+        ReadingListItem item4 = new ReadingListItem("Anne of Green Gables","Ella Tomlinson","romance",7);
+        ReadingListItem item5 = new ReadingListItem("Harry Potter","J.K Rowling","fantasy",8);
+        ReadingListItem item6 = new ReadingListItem("Lord of the Rings","J.R.R Tolkien","classics",8);
+
+        readingList.put("Anne of Green Gables", item4);
+        readingList.put("Harry Potter", item5);
+        readingList.put("Lord of the Rings", item6);
+
+        String outputString = ReadingTrackerMain.getRec(readingList);
+
+        assertNotEquals("Lord of the Rings", outputString);
+
     }
 
     @Test
