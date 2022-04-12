@@ -99,7 +99,7 @@ public class ReadingTrackerController {
     void aboutPage(){
         // Show alert with my information
         Alert about = new Alert(Alert.AlertType.INFORMATION, """
-                Author: Ella Tomlinson and Lucy Ouyang
+                Author: Ella Tomlinson and Lucy OuYang
                 Version: v1.0
                 This is a program that tracks books read and books to read""");
         about.setTitle("About");
@@ -275,7 +275,7 @@ public class ReadingTrackerController {
      */
     @FXML
     void viewBookLog(){
-        // Call bookLogView method to convert bookloghashmap into an output string of titles
+        // Call bookLogView method to convert bookLogHashmap into an output string of titles
         StringBuilder bookLogText = ReadingTrackerMain.bookLogView(bookLog);
 
         // Set the bookLog text area to the titles
@@ -287,7 +287,7 @@ public class ReadingTrackerController {
      */
     @FXML
     void viewReadingList(){
-        // Call readingListView method to convert readinglist hashmap into an output string of titles
+        // Call readingListView method to convert readingList hashmap into an output string of titles
         StringBuilder readingListText = ReadingTrackerMain.readingListView(readingList);
 
         // Set the reading list text area to the titles
@@ -299,7 +299,7 @@ public class ReadingTrackerController {
      */
     @FXML
     void viewLogInfo() {
-        // Call logInfoView method to convert booklog hashmap into an output string of book info
+        // Call logInfoView method to convert bookLog hashmap into an output string of book info
         StringBuilder outputString = ReadingTrackerMain.logInfoView(bookLog);
 
         // Update output window
@@ -316,7 +316,7 @@ public class ReadingTrackerController {
      */
     @FXML
     void viewListInfo() {
-        // Call logInfoView method to convert readinglist hashmap into an output string of book info
+        // Call logInfoView method to convert readingList hashmap into an output string of book info
         StringBuilder outputString = ReadingTrackerMain.listInfoView(readingList);
 
         // Update output window
@@ -468,7 +468,7 @@ public class ReadingTrackerController {
      */
     @FXML
     void viewRating1() {
-        // Get formatted list of one star books from stringRatingView method
+        // Get formatted list of one-star books from stringRatingView method
         StringBuilder outputString = ReadingTrackerMain.stringRatingView(bookLog, 1);
 
         // Print output to output window
@@ -484,7 +484,7 @@ public class ReadingTrackerController {
      */
     @FXML
     void viewRating2() {
-        // Get formatted list of two star books from stringRatingView method
+        // Get formatted list of two-star books from stringRatingView method
         StringBuilder outputString = ReadingTrackerMain.stringRatingView(bookLog, 2);
 
         // Print output to output window
@@ -500,7 +500,7 @@ public class ReadingTrackerController {
      */
     @FXML
     void viewRating3() {
-        // Get formatted list of three star books from stringRatingView method
+        // Get formatted list of three-star books from stringRatingView method
         StringBuilder outputString = ReadingTrackerMain.stringRatingView(bookLog, 3);
 
         // Print output to output window
@@ -516,7 +516,7 @@ public class ReadingTrackerController {
      */
     @FXML
     void viewRating4() {
-        // Get formatted list of four star books from stringRatingView method
+        // Get formatted list of four-star books from stringRatingView method
         StringBuilder outputString = ReadingTrackerMain.stringRatingView(bookLog, 4);
 
         // Print output to output window
@@ -532,7 +532,7 @@ public class ReadingTrackerController {
      */
     @FXML
     void viewRating5() {
-        // Get formatted list of five star books from stringRatingView method
+        // Get formatted list of five-star books from stringRatingView method
         StringBuilder outputString = ReadingTrackerMain.stringRatingView(bookLog, 5);
 
         // Print output to output window
@@ -835,7 +835,7 @@ public class ReadingTrackerController {
     }
 
     /**
-     * Saves book log and reading list information to a runable csv text file chosen by user
+     * Saves book log and reading list information to a runnable csv text file chosen by user
      */
     @FXML
     void saveToFile() {
