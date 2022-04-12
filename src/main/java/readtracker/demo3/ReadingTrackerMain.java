@@ -24,7 +24,7 @@ public class ReadingTrackerMain {
     /**
      * Returns a formatted output string of all the titles in a book log
      * @param bookLog Hashmap containing all book log items with titles as the key and objects as the values
-     * @return StringBuilder object bookLogText, string of all the titles in booklog
+     * @return StringBuilder object bookLogText, string of all the titles in bookLog
      */
     public static StringBuilder bookLogView(HashMap<String, BookLogItem> bookLog) {
         // Create a string builder for the output text
@@ -54,9 +54,9 @@ public class ReadingTrackerMain {
     }
 
     /**
-     * Creates a formatted string of all the booklog info
+     * Creates a formatted string of all the bookLog info
      * @param bookLog Hashmap containing all book log items with titles as the key and objects as the values
-     * @return StringBuilder object outputString, string of all booklog info
+     * @return StringBuilder object outputString, string of all bookLog info
      */
     public static StringBuilder logInfoView(HashMap<String, BookLogItem> bookLog){
         StringBuilder outputString = new StringBuilder();
@@ -98,9 +98,9 @@ public class ReadingTrackerMain {
     }
 
     /**
-     * Creates a formatted string of all the readinglist info
-     * @param readingList Hashmap containing all readinglist items with titles as the key and objects as the values
-     * @return StringBuilder object outputString, string of all readinglist info
+     * Creates a formatted string of all the readingList info
+     * @param readingList Hashmap containing all readingList items with titles as the key and objects as the values
+     * @return StringBuilder object outputString, string of all readingList info
      */
     public static StringBuilder listInfoView(HashMap<String, ReadingListItem> readingList){
         StringBuilder outputString = new StringBuilder();
@@ -143,7 +143,7 @@ public class ReadingTrackerMain {
 
     /**
      * Creates a formatted string of all the book info
-     * @param readingList readingList Hashmap containing all readinglist items with titles as the key and objects as the values
+     * @param readingList readingList Hashmap containing all readingList items with titles as the key and objects as the values
      * @param bookLog bookLog Hashmap containing all book log items with titles as the key and objects as the values
      * @return StringBuilder object outputString, string of all book info
      */
@@ -192,7 +192,7 @@ public class ReadingTrackerMain {
     /**
      * Gets a book from reading list depending on highest interest rating, if 2 have the same interest rating, select
      * random title from them
-     * @param readingList readingList Hashmap containing all readinglist items with titles as the key and objects as the values
+     * @param readingList readingList Hashmap containing all readingList items with titles as the key and objects as the values
      * @return String recTitle, the title of the book rec
      */
     public static String getRec(HashMap<String, ReadingListItem> readingList){
@@ -234,7 +234,7 @@ public class ReadingTrackerMain {
     }
 
     /**
-     * Creates a string builder with a formatted list of booklog items sorted from highest rating to lowest rating
+     * Creates a string builder with a formatted list of bookLog items sorted from the highest rating to the lowest rating
      * @param bookLog bookLog Hashmap containing all book log items with titles as the key and objects as the values
      * @return StringBuilder object outputString, string of all books in book log sorted by rating
      */
@@ -348,7 +348,7 @@ public class ReadingTrackerMain {
      * Creates a string with the book log and reading list titles within a specific genre, and a summary of stats in this
      * genre
      * @param bookLog bookLog Hashmap containing all book log items with titles as the key and objects as the values
-     * @param readingList readingList Hashmap containing all readinglist items with titles as the key and objects as the values
+     * @param readingList readingList Hashmap containing all readingList items with titles as the key and objects as the values
      * @param genre Genre to collect stats for
      * @return StringBuilder object with list of books from genre, and stats
      */
@@ -397,11 +397,11 @@ public class ReadingTrackerMain {
     /**
      * Loads previous data from a csv file given as a program argument
      * @param bookLog bookLog Hashmap containing all book log items with titles as the key and objects as the values
-     * @param readingList readingList Hashmap containing all readinglist items with titles as the key and objects as the values
+     * @param readingList readingList Hashmap containing all readingList items with titles as the key and objects as the values
      * @return boolean, whether running from args was successful or not
      */
     public static boolean runFromArgs(HashMap<String, BookLogItem> bookLog,
-                                   HashMap<String, ReadingListItem> readingList){
+                                      HashMap<String, ReadingListItem> readingList){
 
         if (arguments != null){
             if(arguments.length > 1){
