@@ -12,17 +12,22 @@ class ReadingTrackerMainTest {
     void bookLogView() {
 
         HashMap<String, BookLogItem> bookLog = new HashMap<>();
-        BookLogItem item = new BookLogItem("Goodnight Moon", "Tim Orwell", "February", 4, 534, "fantasy");
 
-        bookLog.put("Goodnight Moon", item);
+        BookLogItem item1 = new BookLogItem("Goodnight Moon", "Tim Orwell", "February", 4, 534, "fantasy");
+        BookLogItem item2 = new BookLogItem("Diary of a Wimpy Kid","Jeff Kinney","December",3,200,"mystery");
+
+        bookLog.put("Goodnight Moon", item1);
+        bookLog.put("Diary of a Wimpy Kid", item2);
 
         String myString = String.valueOf(ReadingTrackerMain.bookLogView(bookLog));
 
-        assertEquals("Goodnight Moon\n",myString);
+        assertEquals("Diary of a Wimpy Kid\nGoodnight Moon\n",myString);
     }
 
     @Test
     void readingListView() {
+
+        
     }
 
     @Test
