@@ -76,6 +76,53 @@ class ReadingTrackerMainTest {
 
     }
 
+    @Test
+    void logInfoViewMultiBooks() {
+
+        HashMap<String, BookLogItem> bookLog = new HashMap<>();
+
+        BookLogItem item1 = new BookLogItem("Goodnight Moon", "Tim Orwell", "February", 4, 534, "fantasy");
+        BookLogItem item2 = new BookLogItem("Diary of a Wimpy Kid","Jeff Kinney","December",3,200,"mystery");
+        BookLogItem item3 = new BookLogItem("Hitchhiker's Guide to the Galaxy","Douglas Adams","March",5,700,"sci-fi");
+
+        bookLog.put("Goodnight Moon", item1);
+        bookLog.put("Diary of a Wimpy Kid", item2);
+        bookLog.put("Hitchhiker's Guide to the Galaxy", item3);
+
+        String outputString = String.valueOf(ReadingTrackerMain.logInfoView(bookLog));
+
+        assertEquals("""
+                You have 3 books in your Book Log, they are:
+                TITLE: Diary of a Wimpy Kid
+                AUTHOR: Jeff Kinney
+                GENRE: mystery
+                MONTH READ: December
+                RATING: 3
+                PAGES: 200
+                ----------------------------------------
+                                
+                TITLE: Hitchhiker's Guide to the Galaxy
+                AUTHOR: Douglas Adams
+                GENRE: sci-fi
+                MONTH READ: March
+                RATING: 5
+                PAGES: 700
+                ----------------------------------------
+                                
+                TITLE: Goodnight Moon
+                AUTHOR: Tim Orwell
+                GENRE: fantasy
+                MONTH READ: February
+                RATING: 4
+                PAGES: 534
+                ----------------------------------------
+                
+                """, outputString);
+
+    }
+
+
+
 
     @Test
     void listInfoView() {
