@@ -199,8 +199,160 @@ class ReadingTrackerMainTest {
 
 
     @Test
-    void allInfoView() {
+    void allInfoViewOnlyBookLog() {
+
+        HashMap<String, BookLogItem> bookLog = new HashMap<>();
+        HashMap<String, ReadingListItem> readingList = new HashMap<>();
+
+        BookLogItem item1 = new BookLogItem("Goodnight Moon", "Tim Orwell", "February", 4, 534, "fantasy");
+        BookLogItem item2 = new BookLogItem("Diary of a Wimpy Kid","Jeff Kinney","December",3,200,"mystery");
+        BookLogItem item3 = new BookLogItem("Hitchhiker's Guide to the Galaxy","Douglas Adams","March",5,700,"sci-fi");
+
+        bookLog.put("Goodnight Moon", item1);
+        bookLog.put("Diary of a Wimpy Kid", item2);
+        bookLog.put("Hitchhiker's Guide to the Galaxy", item3);
+
+        String outputString = String.valueOf(ReadingTrackerMain.allInfoView(readingList, bookLog));
+
+        assertEquals("""
+                Book 1 in Book Log:\s
+                TITLE: Diary of a Wimpy Kid
+                AUTHOR: Jeff Kinney
+                GENRE: mystery
+                MONTH READ: December
+                RATING: 3
+                PAGES: 200
+                ----------------------------------------
+                Book 2 in Book Log:\s
+                TITLE: Hitchhiker's Guide to the Galaxy
+                AUTHOR: Douglas Adams
+                GENRE: sci-fi
+                MONTH READ: March
+                RATING: 5
+                PAGES: 700
+                ----------------------------------------
+                Book 3 in Book Log:\s
+                TITLE: Goodnight Moon
+                AUTHOR: Tim Orwell
+                GENRE: fantasy
+                MONTH READ: February
+                RATING: 4
+                PAGES: 534
+                ----------------------------------------
+                """, outputString);
+
     }
+
+    @Test
+    void allInfoViewOnlyReadingList() {
+        HashMap<String, BookLogItem> bookLog = new HashMap<>();
+        HashMap<String, ReadingListItem> readingList = new HashMap<>();
+
+        ReadingListItem item1 = new ReadingListItem("Anne of Green Gables","Ella Tomlinson","romance",5);
+        ReadingListItem item2 = new ReadingListItem("Harry Potter","J.K Rowling","fantasy",7);
+        ReadingListItem item3 = new ReadingListItem("Lord of the Rings","J.R.R Tolkien","classics",8);
+
+        readingList.put("Anne of Green Gables", item1);
+        readingList.put("Harry Potter", item2);
+        readingList.put("Lord of the Rings", item3);
+
+        String outputString = String.valueOf(ReadingTrackerMain.allInfoView(readingList, bookLog));
+
+        assertEquals("""
+                Book 1 in Reading List:\s
+                TITLE: Harry Potter
+                AUTHOR: J.K Rowling
+                GENRE: fantasy
+                INTEREST: 7
+                ----------------------------------------
+                Book 2 in Reading List:\s
+                TITLE: Anne of Green Gables
+                AUTHOR: Ella Tomlinson
+                GENRE: romance
+                INTEREST: 5
+                ----------------------------------------
+                Book 3 in Reading List:\s
+                TITLE: Lord of the Rings
+                AUTHOR: J.R.R Tolkien
+                GENRE: classics
+                INTEREST: 8
+                ----------------------------------------
+                """, outputString);
+
+    }
+
+    @Test
+    void allInfoViewBoth() {
+
+        HashMap<String, BookLogItem> bookLog = new HashMap<>();
+        HashMap<String, ReadingListItem> readingList = new HashMap<>();
+
+        BookLogItem item1 = new BookLogItem("Goodnight Moon", "Tim Orwell", "February", 4, 534, "fantasy");
+        BookLogItem item2 = new BookLogItem("Diary of a Wimpy Kid","Jeff Kinney","December",3,200,"mystery");
+        BookLogItem item3 = new BookLogItem("Hitchhiker's Guide to the Galaxy","Douglas Adams","March",5,700,"sci-fi");
+
+        bookLog.put("Goodnight Moon", item1);
+        bookLog.put("Diary of a Wimpy Kid", item2);
+        bookLog.put("Hitchhiker's Guide to the Galaxy", item3);
+
+        ReadingListItem item4 = new ReadingListItem("Anne of Green Gables","Ella Tomlinson","romance",5);
+        ReadingListItem item5 = new ReadingListItem("Harry Potter","J.K Rowling","fantasy",7);
+        ReadingListItem item6 = new ReadingListItem("Lord of the Rings","J.R.R Tolkien","classics",8);
+
+        readingList.put("Anne of Green Gables", item4);
+        readingList.put("Harry Potter", item5);
+        readingList.put("Lord of the Rings", item6);
+
+        String outputString = String.valueOf(ReadingTrackerMain.allInfoView(readingList, bookLog));
+
+        assertEquals("""
+                Book 1 in Book Log:\s
+                TITLE: Diary of a Wimpy Kid
+                AUTHOR: Jeff Kinney
+                GENRE: mystery
+                MONTH READ: December
+                RATING: 3
+                PAGES: 200
+                ----------------------------------------
+                Book 2 in Book Log:\s
+                TITLE: Hitchhiker's Guide to the Galaxy
+                AUTHOR: Douglas Adams
+                GENRE: sci-fi
+                MONTH READ: March
+                RATING: 5
+                PAGES: 700
+                ----------------------------------------
+                Book 3 in Book Log:\s
+                TITLE: Goodnight Moon
+                AUTHOR: Tim Orwell
+                GENRE: fantasy
+                MONTH READ: February
+                RATING: 4
+                PAGES: 534
+                ----------------------------------------
+                Book 1 in Reading List:\s
+                TITLE: Harry Potter
+                AUTHOR: J.K Rowling
+                GENRE: fantasy
+                INTEREST: 7
+                ----------------------------------------
+                Book 2 in Reading List:\s
+                TITLE: Anne of Green Gables
+                AUTHOR: Ella Tomlinson
+                GENRE: romance
+                INTEREST: 5
+                ----------------------------------------
+                Book 3 in Reading List:\s
+                TITLE: Lord of the Rings
+                AUTHOR: J.R.R Tolkien
+                GENRE: classics
+                INTEREST: 8
+                ----------------------------------------
+                """, outputString);
+
+    }
+
+
 
     @Test
     void getRec() {
