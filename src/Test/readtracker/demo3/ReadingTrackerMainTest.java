@@ -483,6 +483,100 @@ class ReadingTrackerMainTest {
     }
 
     @Test
+    void stringRatingView3() {
+
+        HashMap<String, BookLogItem> bookLog = new HashMap<>();
+        int rating = 3;
+
+        BookLogItem item1 = new BookLogItem("Goodnight Moon", "Tim Orwell", "February", 3, 534, "fantasy");
+        BookLogItem item2 = new BookLogItem("Diary of a Wimpy Kid","Jeff Kinney","December",3,200,"mystery");
+        BookLogItem item3 = new BookLogItem("Hitchhiker's Guide to the Galaxy","Douglas Adams","March",4,700,"sci-fi");
+
+        bookLog.put("Goodnight Moon", item1);
+        bookLog.put("Diary of a Wimpy Kid", item2);
+        bookLog.put("Hitchhiker's Guide to the Galaxy", item3);
+
+        String outputString = String.valueOf(ReadingTrackerMain.stringRatingView(bookLog, rating));
+
+        assertEquals("""
+                You rated 2 books 3 stars!
+                Diary of a Wimpy Kid
+                Goodnight Moon
+                """, outputString);
+
+    }
+
+    @Test
+    void stringRatingView4() {
+
+        HashMap<String, BookLogItem> bookLog = new HashMap<>();
+        int rating = 4;
+
+        BookLogItem item1 = new BookLogItem("Goodnight Moon", "Tim Orwell", "February", 4, 534, "fantasy");
+        BookLogItem item2 = new BookLogItem("Diary of a Wimpy Kid","Jeff Kinney","December",4,200,"mystery");
+        BookLogItem item3 = new BookLogItem("Hitchhiker's Guide to the Galaxy","Douglas Adams","March",3,700,"sci-fi");
+
+        bookLog.put("Goodnight Moon", item1);
+        bookLog.put("Diary of a Wimpy Kid", item2);
+        bookLog.put("Hitchhiker's Guide to the Galaxy", item3);
+
+        String outputString = String.valueOf(ReadingTrackerMain.stringRatingView(bookLog, rating));
+
+        assertEquals("""
+                You rated 2 books 4 stars!
+                Diary of a Wimpy Kid
+                Goodnight Moon
+                """, outputString);
+
+    }
+
+    @Test
+    void stringRatingView5() {
+
+        HashMap<String, BookLogItem> bookLog = new HashMap<>();
+        int rating = 5;
+
+        BookLogItem item1 = new BookLogItem("Goodnight Moon", "Tim Orwell", "February", 5, 534, "fantasy");
+        BookLogItem item2 = new BookLogItem("Diary of a Wimpy Kid","Jeff Kinney","December",5,200,"mystery");
+        BookLogItem item3 = new BookLogItem("Hitchhiker's Guide to the Galaxy","Douglas Adams","March",3,700,"sci-fi");
+
+        bookLog.put("Goodnight Moon", item1);
+        bookLog.put("Diary of a Wimpy Kid", item2);
+        bookLog.put("Hitchhiker's Guide to the Galaxy", item3);
+
+        String outputString = String.valueOf(ReadingTrackerMain.stringRatingView(bookLog, rating));
+
+        assertEquals("""
+                You rated 2 books 5 stars!
+                Diary of a Wimpy Kid
+                Goodnight Moon
+                """, outputString);
+
+    }
+
+    @Test
+    void stringRatingViewNone() {
+
+        HashMap<String, BookLogItem> bookLog = new HashMap<>();
+        int rating = 5;
+
+        BookLogItem item1 = new BookLogItem("Goodnight Moon", "Tim Orwell", "February", 2, 534, "fantasy");
+        BookLogItem item2 = new BookLogItem("Diary of a Wimpy Kid","Jeff Kinney","December",2,200,"mystery");
+        BookLogItem item3 = new BookLogItem("Hitchhiker's Guide to the Galaxy","Douglas Adams","March",3,700,"sci-fi");
+
+        bookLog.put("Goodnight Moon", item1);
+        bookLog.put("Diary of a Wimpy Kid", item2);
+        bookLog.put("Hitchhiker's Guide to the Galaxy", item3);
+
+        String outputString = String.valueOf(ReadingTrackerMain.stringRatingView(bookLog, rating));
+
+        assertEquals("""
+                You rated 0 books 5 stars!
+                """, outputString);
+
+    }
+
+    @Test
     void stringMonthStats() {
     }
 
