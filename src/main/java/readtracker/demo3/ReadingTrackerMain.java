@@ -315,7 +315,7 @@ public class ReadingTrackerMain {
         int bookCount = 0;
         int totalPages = 0;
 
-        outputString.append("The books you finished in the month of").append(month).append(" are:\n");
+        outputString.append("The books you finished in the month of ").append(month).append(" are:\n");
 
         // Loop through each item in the book log and check if it has the same month value
         for (String key : bookLog.keySet()){
