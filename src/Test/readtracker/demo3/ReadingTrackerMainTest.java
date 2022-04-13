@@ -872,8 +872,310 @@ class ReadingTrackerMainTest {
                 The books you finished in the month of January are:
                 This is a total of 0 books, and 0 pages read!""", outputString);
     }
+
     @Test
-    void stringGenreStats() {
+    void stringGenreStatsFan() {
+
+        HashMap<String, BookLogItem> bookLog = new HashMap<>();
+        HashMap<String, ReadingListItem> readingList = new HashMap<>();
+
+        String genre = "fantasy";
+
+        BookLogItem item1 = new BookLogItem("Goodnight Moon", "Tim Orwell", "February", 4, 534, "fantasy");
+        BookLogItem item2 = new BookLogItem("Diary of a Wimpy Kid","Jeff Kinney","December",3,200,"fantasy");
+        BookLogItem item3 = new BookLogItem("Hitchhiker's Guide to the Galaxy","Douglas Adams","March",5,700,"sci-fi");
+
+        bookLog.put("Goodnight Moon", item1);
+        bookLog.put("Diary of a Wimpy Kid", item2);
+        bookLog.put("Hitchhiker's Guide to the Galaxy", item3);
+
+        ReadingListItem item4 = new ReadingListItem("Anne of Green Gables","Ella Tomlinson","fantasy",5);
+        ReadingListItem item5 = new ReadingListItem("Harry Potter","J.K Rowling","fantasy",7);
+        ReadingListItem item6 = new ReadingListItem("Lord of the Rings","J.R.R Tolkien","classics",8);
+
+        readingList.put("Anne of Green Gables", item4);
+        readingList.put("Harry Potter", item5);
+        readingList.put("Lord of the Rings", item6);
+
+        String outputString = String.valueOf(ReadingTrackerMain.stringGenreStats(bookLog, readingList, genre));
+
+        assertEquals("""
+                The books you've read in the fantasy genre are:Diary of a Wimpy Kid
+                Goodnight Moon
+                The books want to read in the fantasy genre are:Harry Potter
+                Anne of Green Gables
+
+                This is 2 books read in this genre, and 2 books you\s
+                want to read in this genre!
+                In total, you've tracked 4 books for this genre!""", outputString);
+
+
+    }
+
+    @Test
+    void stringGenreStatsCla() {
+
+        HashMap<String, BookLogItem> bookLog = new HashMap<>();
+        HashMap<String, ReadingListItem> readingList = new HashMap<>();
+
+        String genre = "classics";
+
+        BookLogItem item1 = new BookLogItem("Goodnight Moon", "Tim Orwell", "February", 4, 534, "classics");
+        BookLogItem item2 = new BookLogItem("Diary of a Wimpy Kid","Jeff Kinney","December",3,200,"classics");
+        BookLogItem item3 = new BookLogItem("Hitchhiker's Guide to the Galaxy","Douglas Adams","March",5,700,"sci-fi");
+
+        bookLog.put("Goodnight Moon", item1);
+        bookLog.put("Diary of a Wimpy Kid", item2);
+        bookLog.put("Hitchhiker's Guide to the Galaxy", item3);
+
+        ReadingListItem item4 = new ReadingListItem("Anne of Green Gables","Ella Tomlinson","classics",5);
+        ReadingListItem item5 = new ReadingListItem("Harry Potter","J.K Rowling","classics",7);
+        ReadingListItem item6 = new ReadingListItem("Lord of the Rings","J.R.R Tolkien","fantasy",8);
+
+        readingList.put("Anne of Green Gables", item4);
+        readingList.put("Harry Potter", item5);
+        readingList.put("Lord of the Rings", item6);
+
+        String outputString = String.valueOf(ReadingTrackerMain.stringGenreStats(bookLog, readingList, genre));
+
+        assertEquals("""
+                The books you've read in the classics genre are:Diary of a Wimpy Kid
+                Goodnight Moon
+                The books want to read in the classics genre are:Harry Potter
+                Anne of Green Gables
+
+                This is 2 books read in this genre, and 2 books you\s
+                want to read in this genre!
+                In total, you've tracked 4 books for this genre!""", outputString);
+    }
+
+    @Test
+    void stringGenreStatsMys() {
+
+        HashMap<String, BookLogItem> bookLog = new HashMap<>();
+        HashMap<String, ReadingListItem> readingList = new HashMap<>();
+
+        String genre = "mystery";
+
+        BookLogItem item1 = new BookLogItem("Goodnight Moon", "Tim Orwell", "February", 4, 534, "mystery");
+        BookLogItem item2 = new BookLogItem("Diary of a Wimpy Kid","Jeff Kinney","December",3,200,"mystery");
+        BookLogItem item3 = new BookLogItem("Hitchhiker's Guide to the Galaxy","Douglas Adams","March",5,700,"sci-fi");
+
+        bookLog.put("Goodnight Moon", item1);
+        bookLog.put("Diary of a Wimpy Kid", item2);
+        bookLog.put("Hitchhiker's Guide to the Galaxy", item3);
+
+        ReadingListItem item4 = new ReadingListItem("Anne of Green Gables","Ella Tomlinson","mystery",5);
+        ReadingListItem item5 = new ReadingListItem("Harry Potter","J.K Rowling","mystery",7);
+        ReadingListItem item6 = new ReadingListItem("Lord of the Rings","J.R.R Tolkien","classics",8);
+
+        readingList.put("Anne of Green Gables", item4);
+        readingList.put("Harry Potter", item5);
+        readingList.put("Lord of the Rings", item6);
+
+        String outputString = String.valueOf(ReadingTrackerMain.stringGenreStats(bookLog, readingList, genre));
+
+        assertEquals("""
+                The books you've read in the mystery genre are:Diary of a Wimpy Kid
+                Goodnight Moon
+                The books want to read in the mystery genre are:Harry Potter
+                Anne of Green Gables
+
+                This is 2 books read in this genre, and 2 books you\s
+                want to read in this genre!
+                In total, you've tracked 4 books for this genre!""", outputString);
+
+    }
+
+    @Test
+    void stringGenreStatsNon() {
+
+        HashMap<String, BookLogItem> bookLog = new HashMap<>();
+        HashMap<String, ReadingListItem> readingList = new HashMap<>();
+
+        String genre = "non fiction";
+
+        BookLogItem item1 = new BookLogItem("Goodnight Moon", "Tim Orwell", "February", 4, 534, "non fiction");
+        BookLogItem item2 = new BookLogItem("Diary of a Wimpy Kid","Jeff Kinney","December",3,200,"non fiction");
+        BookLogItem item3 = new BookLogItem("Hitchhiker's Guide to the Galaxy","Douglas Adams","March",5,700,"sci-fi");
+
+        bookLog.put("Goodnight Moon", item1);
+        bookLog.put("Diary of a Wimpy Kid", item2);
+        bookLog.put("Hitchhiker's Guide to the Galaxy", item3);
+
+        ReadingListItem item4 = new ReadingListItem("Anne of Green Gables","Ella Tomlinson","non fiction",5);
+        ReadingListItem item5 = new ReadingListItem("Harry Potter","J.K Rowling","non fiction",7);
+        ReadingListItem item6 = new ReadingListItem("Lord of the Rings","J.R.R Tolkien","classics",8);
+
+        readingList.put("Anne of Green Gables", item4);
+        readingList.put("Harry Potter", item5);
+        readingList.put("Lord of the Rings", item6);
+
+        String outputString = String.valueOf(ReadingTrackerMain.stringGenreStats(bookLog, readingList, genre));
+
+        assertEquals("""
+                The books you've read in the non fiction genre are:Diary of a Wimpy Kid
+                Goodnight Moon
+                The books want to read in the non fiction genre are:Harry Potter
+                Anne of Green Gables
+
+                This is 2 books read in this genre, and 2 books you\s
+                want to read in this genre!
+                In total, you've tracked 4 books for this genre!""", outputString);
+
+
+    }
+
+    @Test
+    void stringGenreStatsSci() {
+
+        HashMap<String, BookLogItem> bookLog = new HashMap<>();
+        HashMap<String, ReadingListItem> readingList = new HashMap<>();
+
+        String genre = "sci-fi";
+
+        BookLogItem item1 = new BookLogItem("Goodnight Moon", "Tim Orwell", "February", 4, 534, "sci-fi");
+        BookLogItem item2 = new BookLogItem("Diary of a Wimpy Kid","Jeff Kinney","December",3,200,"sci-fi");
+        BookLogItem item3 = new BookLogItem("Hitchhiker's Guide to the Galaxy","Douglas Adams","March",5,700,"classics");
+
+        bookLog.put("Goodnight Moon", item1);
+        bookLog.put("Diary of a Wimpy Kid", item2);
+        bookLog.put("Hitchhiker's Guide to the Galaxy", item3);
+
+        ReadingListItem item4 = new ReadingListItem("Anne of Green Gables","Ella Tomlinson","sci-fi",5);
+        ReadingListItem item5 = new ReadingListItem("Harry Potter","J.K Rowling","sci-fi",7);
+        ReadingListItem item6 = new ReadingListItem("Lord of the Rings","J.R.R Tolkien","classics",8);
+
+        readingList.put("Anne of Green Gables", item4);
+        readingList.put("Harry Potter", item5);
+        readingList.put("Lord of the Rings", item6);
+
+        String outputString = String.valueOf(ReadingTrackerMain.stringGenreStats(bookLog, readingList, genre));
+
+        assertEquals("""
+                The books you've read in the sci-fi genre are:Diary of a Wimpy Kid
+                Goodnight Moon
+                The books want to read in the sci-fi genre are:Harry Potter
+                Anne of Green Gables
+
+                This is 2 books read in this genre, and 2 books you\s
+                want to read in this genre!
+                In total, you've tracked 4 books for this genre!""", outputString);
+
+
+    }
+
+    @Test
+    void stringGenreStatsThr() {
+
+        HashMap<String, BookLogItem> bookLog = new HashMap<>();
+        HashMap<String, ReadingListItem> readingList = new HashMap<>();
+
+        String genre = "thriller";
+
+        BookLogItem item1 = new BookLogItem("Goodnight Moon", "Tim Orwell", "February", 4, 534, "thriller");
+        BookLogItem item2 = new BookLogItem("Diary of a Wimpy Kid","Jeff Kinney","December",3,200,"thriller");
+        BookLogItem item3 = new BookLogItem("Hitchhiker's Guide to the Galaxy","Douglas Adams","March",5,700,"sci-fi");
+
+        bookLog.put("Goodnight Moon", item1);
+        bookLog.put("Diary of a Wimpy Kid", item2);
+        bookLog.put("Hitchhiker's Guide to the Galaxy", item3);
+
+        ReadingListItem item4 = new ReadingListItem("Anne of Green Gables","Ella Tomlinson","thriller",5);
+        ReadingListItem item5 = new ReadingListItem("Harry Potter","J.K Rowling","thriller",7);
+        ReadingListItem item6 = new ReadingListItem("Lord of the Rings","J.R.R Tolkien","classics",8);
+
+        readingList.put("Anne of Green Gables", item4);
+        readingList.put("Harry Potter", item5);
+        readingList.put("Lord of the Rings", item6);
+
+        String outputString = String.valueOf(ReadingTrackerMain.stringGenreStats(bookLog, readingList, genre));
+
+        assertEquals("""
+                The books you've read in the thriller genre are:Diary of a Wimpy Kid
+                Goodnight Moon
+                The books want to read in the thriller genre are:Harry Potter
+                Anne of Green Gables
+
+                This is 2 books read in this genre, and 2 books you\s
+                want to read in this genre!
+                In total, you've tracked 4 books for this genre!""", outputString);
+
+
+    }
+
+    @Test
+    void stringGenreStatsRom() {
+
+        HashMap<String, BookLogItem> bookLog = new HashMap<>();
+        HashMap<String, ReadingListItem> readingList = new HashMap<>();
+
+        String genre = "romance";
+
+        BookLogItem item1 = new BookLogItem("Goodnight Moon", "Tim Orwell", "February", 4, 534, "romance");
+        BookLogItem item2 = new BookLogItem("Diary of a Wimpy Kid","Jeff Kinney","December",3,200,"romance");
+        BookLogItem item3 = new BookLogItem("Hitchhiker's Guide to the Galaxy","Douglas Adams","March",5,700,"sci-fi");
+
+        bookLog.put("Goodnight Moon", item1);
+        bookLog.put("Diary of a Wimpy Kid", item2);
+        bookLog.put("Hitchhiker's Guide to the Galaxy", item3);
+
+        ReadingListItem item4 = new ReadingListItem("Anne of Green Gables","Ella Tomlinson","romance",5);
+        ReadingListItem item5 = new ReadingListItem("Harry Potter","J.K Rowling","romance",7);
+        ReadingListItem item6 = new ReadingListItem("Lord of the Rings","J.R.R Tolkien","classics",8);
+
+        readingList.put("Anne of Green Gables", item4);
+        readingList.put("Harry Potter", item5);
+        readingList.put("Lord of the Rings", item6);
+
+        String outputString = String.valueOf(ReadingTrackerMain.stringGenreStats(bookLog, readingList, genre));
+
+        assertEquals("""
+                The books you've read in the romance genre are:Diary of a Wimpy Kid
+                Goodnight Moon
+                The books want to read in the romance genre are:Harry Potter
+                Anne of Green Gables
+
+                This is 2 books read in this genre, and 2 books you\s
+                want to read in this genre!
+                In total, you've tracked 4 books for this genre!""", outputString);
+
+
+    }
+
+    @Test
+    void stringGenreStatsNone() {
+
+        HashMap<String, BookLogItem> bookLog = new HashMap<>();
+        HashMap<String, ReadingListItem> readingList = new HashMap<>();
+
+        String genre = "fantasy";
+
+        BookLogItem item1 = new BookLogItem("Goodnight Moon", "Tim Orwell", "February", 4, 534, "romance");
+        BookLogItem item2 = new BookLogItem("Diary of a Wimpy Kid","Jeff Kinney","December",3,200,"romance");
+        BookLogItem item3 = new BookLogItem("Hitchhiker's Guide to the Galaxy","Douglas Adams","March",5,700,"sci-fi");
+
+        bookLog.put("Goodnight Moon", item1);
+        bookLog.put("Diary of a Wimpy Kid", item2);
+        bookLog.put("Hitchhiker's Guide to the Galaxy", item3);
+
+        ReadingListItem item4 = new ReadingListItem("Anne of Green Gables","Ella Tomlinson","romance",5);
+        ReadingListItem item5 = new ReadingListItem("Harry Potter","J.K Rowling","romance",7);
+        ReadingListItem item6 = new ReadingListItem("Lord of the Rings","J.R.R Tolkien","classics",8);
+
+        readingList.put("Anne of Green Gables", item4);
+        readingList.put("Harry Potter", item5);
+        readingList.put("Lord of the Rings", item6);
+
+        String outputString = String.valueOf(ReadingTrackerMain.stringGenreStats(bookLog, readingList, genre));
+
+        assertEquals("""
+                The books you've read in the fantasy genre are:The books want to read in the fantasy genre are:
+                This is 0 books read in this genre, and 0 books you\s
+                want to read in this genre!
+                In total, you've tracked 0 books for this genre!""", outputString);
+
+
     }
 
     @Test
