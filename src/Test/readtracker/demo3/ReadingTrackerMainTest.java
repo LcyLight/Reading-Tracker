@@ -388,7 +388,7 @@ class ReadingTrackerMainTest {
 
         String outputString = ReadingTrackerMain.getRec(readingList);
 
-        assertNotEquals("Lord of the Rings", outputString);
+        assertNotEquals("Anne of Green Gables", outputString);
 
     }
 
@@ -435,7 +435,51 @@ class ReadingTrackerMainTest {
     }
 
     @Test
-    void stringRatingView() {
+    void stringRatingView1() {
+
+        HashMap<String, BookLogItem> bookLog = new HashMap<>();
+        int rating = 1;
+
+        BookLogItem item1 = new BookLogItem("Goodnight Moon", "Tim Orwell", "February", 1, 534, "fantasy");
+        BookLogItem item2 = new BookLogItem("Diary of a Wimpy Kid","Jeff Kinney","December",1,200,"mystery");
+        BookLogItem item3 = new BookLogItem("Hitchhiker's Guide to the Galaxy","Douglas Adams","March",5,700,"sci-fi");
+
+        bookLog.put("Goodnight Moon", item1);
+        bookLog.put("Diary of a Wimpy Kid", item2);
+        bookLog.put("Hitchhiker's Guide to the Galaxy", item3);
+
+        String outputString = String.valueOf(ReadingTrackerMain.stringRatingView(bookLog, rating));
+
+        assertEquals("""
+                You rated 2 books 1 stars!
+                Diary of a Wimpy Kid
+                Goodnight Moon
+                """, outputString);
+
+    }
+
+    @Test
+    void stringRatingView2() {
+
+        HashMap<String, BookLogItem> bookLog = new HashMap<>();
+        int rating = 2;
+
+        BookLogItem item1 = new BookLogItem("Goodnight Moon", "Tim Orwell", "February", 2, 534, "fantasy");
+        BookLogItem item2 = new BookLogItem("Diary of a Wimpy Kid","Jeff Kinney","December",2,200,"mystery");
+        BookLogItem item3 = new BookLogItem("Hitchhiker's Guide to the Galaxy","Douglas Adams","March",3,700,"sci-fi");
+
+        bookLog.put("Goodnight Moon", item1);
+        bookLog.put("Diary of a Wimpy Kid", item2);
+        bookLog.put("Hitchhiker's Guide to the Galaxy", item3);
+
+        String outputString = String.valueOf(ReadingTrackerMain.stringRatingView(bookLog, rating));
+
+        assertEquals("""
+                You rated 2 books 2 stars!
+                Diary of a Wimpy Kid
+                Goodnight Moon
+                """, outputString);
+
     }
 
     @Test
