@@ -31,7 +31,7 @@ class ReadingTrackerMainTest {
 
     /**
      * Tests readingListView function
-     * Test should pass if readingListView creats a string that matches the expected output
+     * Test should pass if readingListView creates a string that matches the expected output
      */
     @Test
     void readingListView() {
@@ -411,7 +411,7 @@ class ReadingTrackerMainTest {
     }
 
     /**
-     * Tests if getRec function properly retrieves a recommendation based on interest when the highest enterest is shared
+     * Tests if getRec function properly retrieves a recommendation based on interest when the highest interest is shared
      * by more than one book (utilized randomizer)
      */
     @Test
@@ -479,7 +479,7 @@ class ReadingTrackerMainTest {
     }
 
     /**
-     * Checks if stringRatingView function properly fetches books of a 1 star rating
+     * Checks if stringRatingView function properly fetches books of a 1-star rating
      */
     @Test
     void stringRatingView1() {
@@ -506,7 +506,7 @@ class ReadingTrackerMainTest {
     }
 
     /**
-     * Checks if stringRatingView function properly fetches books of a 2 star rating
+     * Checks if stringRatingView function properly fetches books of a 2-star rating
      */
     @Test
     void stringRatingView2() {
@@ -533,7 +533,7 @@ class ReadingTrackerMainTest {
     }
 
     /**
-     * Checks if stringRatingView function properly fetches books of a 3 star rating
+     * Checks if stringRatingView function properly fetches books of a 3-star rating
      */
     @Test
     void stringRatingView3() {
@@ -560,7 +560,7 @@ class ReadingTrackerMainTest {
     }
 
     /**
-     * Checks if stringRatingView function properly fetches books of a 4 star rating
+     * Checks if stringRatingView function properly fetches books of a 4-star rating
      */
     @Test
     void stringRatingView4() {
@@ -587,7 +587,7 @@ class ReadingTrackerMainTest {
     }
 
     /**
-     * Checks if stringRatingView function properly fetches books of a 5 star rating
+     * Checks if stringRatingView function properly fetches books of a 5-star rating
      */
     @Test
     void stringRatingView5() {
@@ -1098,7 +1098,7 @@ class ReadingTrackerMainTest {
     }
 
     /**
-     * Checks if stringGenreStats function properly fetches stats for non fiction genre
+     * Checks if stringGenreStats function properly fetches stats for non-fiction genre
      */
     @Test
     void stringGenreStatsNon() {
@@ -1140,7 +1140,7 @@ class ReadingTrackerMainTest {
     }
 
     /**
-     * Checks if stringGenreStats function properly fetches stats for sci fi genre
+     * Checks if stringGenreStats function properly fetches stats for sci-fi genre
      */
     @Test
     void stringGenreStatsSci() {
