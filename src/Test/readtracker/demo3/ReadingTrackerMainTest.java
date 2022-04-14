@@ -4,10 +4,15 @@ import org.junit.jupiter.api.Test;
 
 import java.util.HashMap;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotEquals;
 
 class ReadingTrackerMainTest {
 
+    /**
+     * Tests bookLogView function
+     * Test should pass if bookLogView creates a string that matches the expected output
+     */
     @Test
     void bookLogView() {
 
@@ -24,6 +29,10 @@ class ReadingTrackerMainTest {
         assertEquals("Diary of a Wimpy Kid\nGoodnight Moon\n",myString);
     }
 
+    /**
+     * Tests readingListView function
+     * Test should pass if readingListView creats a string that matches the expected output
+     */
     @Test
     void readingListView() {
 
@@ -41,6 +50,9 @@ class ReadingTrackerMainTest {
 
     }
 
+    /**
+     * Tests if logInfoView method returns proper String when bookLog is empty
+     */
     @Test
     void logInfoViewNoBooks() {
 
@@ -52,6 +64,9 @@ class ReadingTrackerMainTest {
 
     }
 
+    /**
+     * Tests if logInfoView method returns proper String when bookLog has a single book in it
+     */
     @Test
     void logInfoView1Book() {
 
@@ -76,6 +91,9 @@ class ReadingTrackerMainTest {
 
     }
 
+    /**
+     * Tests if logInfoView method returns proper String when bookLog has a variation of multiple books in it
+     */
     @Test
     void logInfoViewMultiBooks() {
 
@@ -122,8 +140,9 @@ class ReadingTrackerMainTest {
     }
 
 
-
-
+    /**
+     * Tests if listInfoView method returns proper String when readingList is empty
+     */
     @Test
     void listInfoViewNoBooks() {
 
@@ -135,6 +154,9 @@ class ReadingTrackerMainTest {
 
     }
 
+    /**
+     * Tests if listInfoView method returns proper String when readingList has a single book in it
+     */
     @Test
     void listInfoView1Book() {
 
@@ -158,6 +180,9 @@ class ReadingTrackerMainTest {
 
     }
 
+    /**
+     * Tests if listInfoView method returns proper String when readingList has multiple books in it
+     */
     @Test
     void listInfoViewMultiBooks() {
 
@@ -198,6 +223,9 @@ class ReadingTrackerMainTest {
     }
 
 
+    /**
+     * Tests if allInfoView method works with just the bookLog portion (empty readingList)
+     */
     @Test
     void allInfoViewOnlyBookLog() {
 
@@ -243,6 +271,9 @@ class ReadingTrackerMainTest {
 
     }
 
+    /**
+     * Tests if allInfoView method works with just the readingList portion (empty bookLog)
+     */
     @Test
     void allInfoViewOnlyReadingList() {
         HashMap<String, BookLogItem> bookLog = new HashMap<>();
@@ -281,6 +312,9 @@ class ReadingTrackerMainTest {
 
     }
 
+    /**
+     * Tests if allInfoView function properly handles bookLog and readingList with a variation of books
+     */
     @Test
     void allInfoViewBoth() {
 
@@ -353,7 +387,10 @@ class ReadingTrackerMainTest {
     }
 
 
-
+    /**
+     * Tests if getRec function properly retrieves a recommendation based on interest when the books all have different
+     * interest ratings (doesn't utilize randomizer portion)
+     */
     @Test
     void getRecAllDiff() {
 
@@ -373,6 +410,10 @@ class ReadingTrackerMainTest {
 
     }
 
+    /**
+     * Tests if getRec function properly retrieves a recommendation based on interest when the highest enterest is shared
+     * by more than one book (utilized randomizer)
+     */
     @Test
     void getRecTwoSame() {
 
@@ -392,6 +433,9 @@ class ReadingTrackerMainTest {
 
     }
 
+    /**
+     * Tests that rateSortString function properly formats books into a String sorted by rating (highest to lowest)
+     */
     @Test
     void rateSortString() {
 
@@ -434,6 +478,9 @@ class ReadingTrackerMainTest {
 
     }
 
+    /**
+     * Checks if stringRatingView function properly fetches books of a 1 star rating
+     */
     @Test
     void stringRatingView1() {
 
@@ -458,6 +505,9 @@ class ReadingTrackerMainTest {
 
     }
 
+    /**
+     * Checks if stringRatingView function properly fetches books of a 2 star rating
+     */
     @Test
     void stringRatingView2() {
 
@@ -482,6 +532,9 @@ class ReadingTrackerMainTest {
 
     }
 
+    /**
+     * Checks if stringRatingView function properly fetches books of a 3 star rating
+     */
     @Test
     void stringRatingView3() {
 
@@ -506,6 +559,9 @@ class ReadingTrackerMainTest {
 
     }
 
+    /**
+     * Checks if stringRatingView function properly fetches books of a 4 star rating
+     */
     @Test
     void stringRatingView4() {
 
@@ -530,6 +586,9 @@ class ReadingTrackerMainTest {
 
     }
 
+    /**
+     * Checks if stringRatingView function properly fetches books of a 5 star rating
+     */
     @Test
     void stringRatingView5() {
 
@@ -554,6 +613,9 @@ class ReadingTrackerMainTest {
 
     }
 
+    /**
+     * Checks if stringRatingView function properly handles when there are no books of the requested rating
+     */
     @Test
     void stringRatingViewNone() {
 
@@ -576,6 +638,9 @@ class ReadingTrackerMainTest {
 
     }
 
+    /**
+     * Checks if stringMonthStats function properly fetches stats for books in January
+     */
     @Test
     void stringMonthStatsJan() {
 
@@ -599,6 +664,9 @@ class ReadingTrackerMainTest {
                 This is a total of 2 books, and 734 pages read!""", outputString);
     }
 
+    /**
+     * Checks if stringMonthStats function properly fetches stats for books in February
+     */
     @Test
     void stringMonthStatsFeb() {
 
@@ -622,6 +690,9 @@ class ReadingTrackerMainTest {
                 This is a total of 2 books, and 734 pages read!""", outputString);
     }
 
+    /**
+     * Checks if stringMonthStats function properly fetches stats for books in March
+     */
     @Test
     void stringMonthStatsMar() {
 
@@ -645,6 +716,9 @@ class ReadingTrackerMainTest {
                 This is a total of 2 books, and 734 pages read!""", outputString);
     }
 
+    /**
+     * Checks if stringMonthStats function properly fetches stats for books in April
+     */
     @Test
     void stringMonthStatsApr() {
 
@@ -668,6 +742,9 @@ class ReadingTrackerMainTest {
                 This is a total of 2 books, and 734 pages read!""", outputString);
     }
 
+    /**
+     * Checks if stringMonthStats function properly fetches stats for books in May
+     */
     @Test
     void stringMonthStatsMay() {
 
@@ -691,6 +768,9 @@ class ReadingTrackerMainTest {
                 This is a total of 2 books, and 734 pages read!""", outputString);
     }
 
+    /**
+     * Checks if stringMonthStats function properly fetches stats for books in June
+     */
     @Test
     void stringMonthStatsJun() {
 
@@ -714,6 +794,9 @@ class ReadingTrackerMainTest {
                 This is a total of 2 books, and 734 pages read!""", outputString);
     }
 
+    /**
+     * Checks if stringMonthStats function properly fetches stats for books in July
+     */
     @Test
     void stringMonthStatsJuly() {
 
@@ -737,6 +820,9 @@ class ReadingTrackerMainTest {
                 This is a total of 2 books, and 734 pages read!""", outputString);
     }
 
+    /**
+     * Checks if stringMonthStats function properly fetches stats for books in August
+     */
     @Test
     void stringMonthStatsAug() {
 
@@ -760,6 +846,9 @@ class ReadingTrackerMainTest {
                 This is a total of 2 books, and 734 pages read!""", outputString);
     }
 
+    /**
+     * Checks if stringMonthStats function properly fetches stats for books in September
+     */
     @Test
     void stringMonthStatsSep() {
 
@@ -783,6 +872,9 @@ class ReadingTrackerMainTest {
                 This is a total of 2 books, and 734 pages read!""", outputString);
     }
 
+    /**
+     * Checks if stringMonthStats function properly fetches stats for books in October
+     */
     @Test
     void stringMonthStatsOct() {
 
@@ -806,6 +898,9 @@ class ReadingTrackerMainTest {
                 This is a total of 2 books, and 734 pages read!""", outputString);
     }
 
+    /**
+     * Checks if stringMonthStats function properly fetches stats for books in November
+     */
     @Test
     void stringMonthStatsNov() {
 
@@ -829,6 +924,9 @@ class ReadingTrackerMainTest {
                 This is a total of 2 books, and 734 pages read!""", outputString);
     }
 
+    /**
+     * Checks if stringMonthStats function properly fetches stats for books in December
+     */
     @Test
     void stringMonthStatsDec() {
 
@@ -852,6 +950,9 @@ class ReadingTrackerMainTest {
                 This is a total of 2 books, and 734 pages read!""", outputString);
     }
 
+    /**
+     * Checks if stringMonthStats function properly handles when there are no books of the requested month
+     */
     @Test
     void stringMonthStatsNoBooks() {
 
@@ -873,6 +974,9 @@ class ReadingTrackerMainTest {
                 This is a total of 0 books, and 0 pages read!""", outputString);
     }
 
+    /**
+     * Checks if stringGenreStats function properly fetches stats for fantasy genre
+     */
     @Test
     void stringGenreStatsFan() {
 
@@ -912,6 +1016,9 @@ class ReadingTrackerMainTest {
 
     }
 
+    /**
+     * Checks if stringGenreStats function properly fetches stats for classics genre
+     */
     @Test
     void stringGenreStatsCla() {
 
@@ -949,6 +1056,9 @@ class ReadingTrackerMainTest {
                 In total, you've tracked 4 books for this genre!""", outputString);
     }
 
+    /**
+     * Checks if stringGenreStats function properly fetches stats for mystery genre
+     */
     @Test
     void stringGenreStatsMys() {
 
@@ -987,6 +1097,9 @@ class ReadingTrackerMainTest {
 
     }
 
+    /**
+     * Checks if stringGenreStats function properly fetches stats for non fiction genre
+     */
     @Test
     void stringGenreStatsNon() {
 
@@ -1026,6 +1139,9 @@ class ReadingTrackerMainTest {
 
     }
 
+    /**
+     * Checks if stringGenreStats function properly fetches stats for sci fi genre
+     */
     @Test
     void stringGenreStatsSci() {
 
@@ -1065,6 +1181,9 @@ class ReadingTrackerMainTest {
 
     }
 
+    /**
+     * Checks if stringGenreStats function properly fetches stats for thriller genre
+     */
     @Test
     void stringGenreStatsThr() {
 
@@ -1104,6 +1223,9 @@ class ReadingTrackerMainTest {
 
     }
 
+    /**
+     * Checks if stringGenreStats function properly fetches stats for romance genre
+     */
     @Test
     void stringGenreStatsRom() {
 
@@ -1143,6 +1265,9 @@ class ReadingTrackerMainTest {
 
     }
 
+    /**
+     * Checks if stringGenreStats function properly handles when there are no books of the requested genre
+     */
     @Test
     void stringGenreStatsNone() {
 
@@ -1176,9 +1301,5 @@ class ReadingTrackerMainTest {
                 In total, you've tracked 0 books for this genre!""", outputString);
 
 
-    }
-
-    @Test
-    void runFromArgs() {
     }
 }
