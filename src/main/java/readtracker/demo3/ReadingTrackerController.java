@@ -100,8 +100,9 @@ public class ReadingTrackerController {
         // Show alert with my information
         Alert about = new Alert(Alert.AlertType.INFORMATION, """
                 Author: Ella Tomlinson and Lucy OuYang
+                Contact: ella.tomlinson@ucalgary.ca and yiting.ouyang@ucalgary.ca
                 Version: v1.0
-                This is a program that tracks books read and books to read""");
+                This is a program that tracks books read and books to read.""");
         about.setTitle("About");
         about.show();
 
