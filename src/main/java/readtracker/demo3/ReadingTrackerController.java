@@ -251,22 +251,24 @@ public class ReadingTrackerController {
         // Check if there are any program arguments, if so, run file info
         boolean success = ReadingTrackerMain.runFromArgs(bookLog, readingList);
 
-        if (success){
-            // Add readingList titles as title options in list to log
-            for (String title : readingList.keySet()){
-                toLogTitle.getItems().add(title);
+        if (success) {
+            // If argument was entered, update title options and view and print success message
+            if (!(bookLog.isEmpty() && readingList.isEmpty())){
+                // Add readingList titles as title options in list to log
+                for (String title : readingList.keySet()) {
+                    toLogTitle.getItems().add(title);
+                }
+                // Update book log and reading list view
+                viewReadingList();
+                viewBookLog();
+                // Print success message
+                statusField.setTextFill(BLACK);
+                statusField.setText("Successfully loaded information from file");
             }
-            // Update book log and reading list view
-            viewReadingList();
-            viewBookLog();
-            // Print success message
-            statusField.setTextFill(BLACK);
-            statusField.setText("Successfully loaded information from file");
-        }
-        else {
+        } else {
             // Print failure message
             statusField.setTextFill(RED);
-            statusField.setText("Incorrect entry for program arguments");
+            statusField.setText("Incorrect arguments entered");
         }
 
     }
