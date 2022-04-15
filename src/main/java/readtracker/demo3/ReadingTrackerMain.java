@@ -454,12 +454,15 @@ public class ReadingTrackerMain {
                         // Read next line
                         line = buffered_reader.readLine();
                     }
+                    // Make success true
                     return true;
                 } catch (IOException e) {
+                    // Make success false
                     return false;
                 }
             }
         }
+        // Make success true (no program arguments)
         return true;
     }
 
