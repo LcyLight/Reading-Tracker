@@ -357,7 +357,7 @@ public class ReadingTrackerMain {
 
         StringBuilder outputString = new StringBuilder();
 
-        outputString.append("The books you've read in the ").append(genre).append(" genre are:");
+        outputString.append("The books you've read in the ").append(genre).append(" genre are:\n");
 
         // Create book log genre counter
         int bookLogCounter = 0;
@@ -371,7 +371,7 @@ public class ReadingTrackerMain {
             }
         }
 
-        outputString.append("The books want to read in the ").append(genre).append(" genre are:");
+        outputString.append("The books want to read in the ").append(genre).append(" genre are:\n");
         // Create reading list genre counter
         int readingListCounter = 0;
         // Loop through all the books in book log
